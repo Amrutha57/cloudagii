@@ -1,109 +1,204 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Link from "next/link";
+import Image from "next/image";
 
-export default function Blog6() {
+export default function BlogScalingAIToolsPage() {
   return (
-    <main className="relative bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden transition-colors duration-300">
-      <section className="relative py-16 bg-gray-50 dark:bg-slate-900">
-        <div className="max-w-3xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Link href="/blog" className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block">
-              ← Back to Blog
-            </Link>
-            <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              How Much Does a Custom AI Agent Actually Cost?
-            </h1>
-            <div className="flex items-center gap-6 text-gray-600 dark:text-gray-400">
-              <span>Mar 8, 2025</span>
-              <span>6 min read</span>
-              <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-sm">Business</span>
+    <main className="bg-dark-bg text-white min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-16">
+
+          {/* ================= CONTENTS ================= */}
+          <aside className="hidden lg:block sticky top-28 h-fit">
+            <div className="rounded-xl border border-dark-border glass p-6">
+              <h4 className="text-base font-semibold mb-5">Contents</h4>
+              <nav className="space-y-4 text-sm">
+                <a href="#intro" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
+                  Introduction
+                </a>
+                <a href="#early" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
+                  Why tools feel powerful early
+                </a>
+                <a href="#scale" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
+                  What breaks at scale
+                </a>
+                <a href="#problem" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
+                  The real scaling problem
+                </a>
+                <a href="#cloudagi" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
+                  How CloudAGI enables scale
+                </a>
+                <a href="#forward" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
+                  A better way forward
+                </a>
+              </nav>
             </div>
-          </motion.div>
+          </aside>
+
+          {/* ================= BLOG ================= */}
+          <article className="max-w-3xl">
+
+            {/* HERO IMAGE */}
+            <div className="mb-12">
+              <Image
+                src="/blog6.png"
+                alt="Why AI Tools Break at Scale"
+                width={1200}
+                height={600}
+                className="rounded-xl border border-border"
+              />
+            </div>
+
+            {/* TITLE */}
+            <h1
+              className="text-5xl font-semibold tracking-tight mb-6"
+              id="intro"
+            >
+              Why “Just Using AI Tools” Breaks at Scale
+            </h1>
+
+            <p className="text-xl text-muted-foreground mb-16">
+              Scaling AI requires systems, not more software
+            </p>
+
+            {/* INTRO */}
+            <section className="mb-24">
+              <p className="text-lg text-muted-foreground mb-6">
+                📈 AI tools are easy to adopt.
+                Within days, teams see faster writing,
+                quicker analysis, and lighter workloads.
+              </p>
+
+              <p className="text-lg text-muted-foreground mb-6">
+                But as usage grows, something subtle happens.
+                Productivity gains plateau.
+                Confusion increases.
+                Trust begins to erode.
+              </p>
+
+              <p className="text-lg text-muted-foreground">
+                This isn’t a tooling problem.
+                It’s a scaling problem.
+              </p>
+            </section>
+
+            {/* EARLY */}
+            <section id="early" className="mb-24">
+              <h2 className="text-3xl font-semibold mb-6">
+                Why AI tools feel powerful in the beginning
+              </h2>
+
+              <p className="text-lg text-muted-foreground mb-6">
+                Early adoption works because the environment is simple.
+                Few users, clear intent, and minimal dependencies.
+              </p>
+
+              <ul className="text-lg text-muted-foreground space-y-3 ml-6 list-disc">
+                <li>Clear ownership</li>
+                <li>Short feedback loops</li>
+                <li>Low coordination cost</li>
+                <li>Minimal failure impact</li>
+              </ul>
+            </section>
+
+            {/* SCALE */}
+            <section id="scale" className="mb-24">
+              <h2 className="text-3xl font-semibold mb-6">
+                What changes as AI adoption scales?
+              </h2>
+
+              <p className="text-lg text-muted-foreground mb-6">
+                As more people, workflows, and systems rely on AI,
+                the environment becomes non-linear.
+              </p>
+
+              <ul className="text-lg text-muted-foreground space-y-3 ml-6 list-disc">
+                <li>Intent varies across teams</li>
+                <li>Context becomes fragmented</li>
+                <li>Outputs affect downstream decisions</li>
+                <li>Failures compound silently</li>
+              </ul>
+
+              <p className="text-lg text-muted-foreground">
+                Tools were never designed for this level of coordination.
+              </p>
+            </section>
+
+            {/* PROBLEM */}
+            <section id="problem" className="mb-24">
+              <h2 className="text-3xl font-semibold mb-6">
+                The real scaling problem most teams miss ⚙️
+              </h2>
+
+              <p className="text-lg text-muted-foreground mb-6">
+                Scaling AI is not about better prompts
+                or switching vendors.
+              </p>
+
+              <p className="text-lg text-muted-foreground mb-6">
+                It’s about introducing a system layer
+                that governs how intelligence flows.
+              </p>
+
+              <ul className="text-lg text-muted-foreground space-y-3 ml-6 list-disc">
+                <li>Who owns decisions?</li>
+                <li>How is context assembled?</li>
+                <li>How are failures handled?</li>
+                <li>How does the system improve?</li>
+              </ul>
+            </section>
+
+            {/* CLOUDAGI */}
+            <section id="cloudagi" className="mb-24">
+              <h2 className="text-3xl font-semibold mb-6">
+                How CloudAGI enables AI to scale
+              </h2>
+
+              <p className="text-lg text-muted-foreground mb-6">
+                CloudAGI introduces an execution-first,
+                agentic coordination layer.
+              </p>
+
+              <ul className="text-lg text-muted-foreground space-y-3 ml-6 list-disc">
+                <li>Business intent is normalized</li>
+                <li>Context is assembled consistently</li>
+                <li>Decisions follow defined logic</li>
+                <li>Workflows execute predictably</li>
+              </ul>
+
+              <p className="text-lg text-muted-foreground mt-6">
+                This transforms AI from scattered tools
+                into a scalable system.
+              </p>
+            </section>
+
+            {/* FORWARD */}
+            <section id="forward">
+              <h2 className="text-3xl font-semibold mb-6">
+                A better way forward 🧭
+              </h2>
+
+              <p className="text-lg text-muted-foreground mb-6">
+                The future of AI adoption isn’t about
+                adding more tools.
+              </p>
+
+              <p className="text-xl font-medium mb-2">
+                Tools enable experiments.
+              </p>
+              <p className="text-xl font-medium">
+                Systems enable scale.
+              </p>
+
+              <p className="text-lg text-muted-foreground mt-6">
+                CloudAGI exists to help teams
+                make that transition deliberately.
+              </p>
+            </section>
+
+          </article>
         </div>
-      </section>
-
-      <section className="relative py-16">
-        <div className="max-w-3xl mx-auto px-6">
-          <motion.article
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="prose dark:prose-invert max-w-none"
-          >
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-              You know an AI agent could save your business time and money. But before you commit, you want to know: what's this going to cost?
-            </p>
-
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">The Short Answer</h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              A custom AI agent typically costs $10K-$50K depending on complexity. Most see ROI within 2-4 months.
-            </p>
-
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">What Affects the Price?</h2>
-
-            <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mt-8 mb-3">1. Complexity</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Simple agent that reads data and sends emails? Lower cost. Complex agent that needs to make decisions, access multiple systems, and handle edge cases? Higher cost.
-            </p>
-
-            <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mt-8 mb-3">2. System Integrations</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Each system your agent needs to connect to adds time. One integration vs. five integrations is a big difference.
-            </p>
-
-            <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mt-8 mb-3">3. Data Volume</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              High-volume processing requires more robust error handling and monitoring. That adds cost but also value.
-            </p>
-
-            <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mt-8 mb-3">4. Security Requirements</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Healthcare, finance, or regulated industries? Security costs more. But the liability of NOT securing it properly costs way more.
-            </p>
-
-            <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mt-8 mb-3">5. Team Training & Handoff</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Do we just build it and hand it off? Or do we train your team and stick around for support? That affects price too.
-            </p>
-
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">ROI Math That Actually Works</h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Let's say your team spends 40 hours per month on the task an AI agent will handle. At a $50/hour fully-loaded cost, that's $2,000/month you're currently spending.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              If the agent costs $30K, you break even in 15 months. But most of our clients see 50-60% time savings, not 100%, AND the quality improves. So realistic timeline: 10 months to payback.
-            </p>
-
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">What We Recommend</h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Start with your biggest pain point. That's where ROI is clearest. Prove the value with one agent, then expand to others.
-            </p>
-
-            <p className="text-gray-700 dark:text-gray-300 text-lg font-semibold mt-12">
-              Good AI agents cost money. Not building them costs more.
-            </p>
-          </motion.article>
-        </div>
-      </section>
-
-      <section className="relative py-16 bg-black dark:bg-black text-white">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4">Let's Calculate Your ROI</h2>
-          <p className="text-gray-300 mb-8">Share your challenge, and we'll show you the financial case for an AI agent.</p>
-          <Link
-            href="/contact"
-            className="inline-flex px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-all"
-          >
-            Get a Quote →
-          </Link>
-        </div>
-      </section>
+      </div>
     </main>
   );
 }

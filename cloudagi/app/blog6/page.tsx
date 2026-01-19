@@ -4,31 +4,31 @@ import Image from "next/image";
 
 export default function BlogScalingAIToolsPage() {
   return (
-    <main className="bg-background text-foreground min-h-screen">
+    <main className="bg-dark-bg text-white min-h-screen">
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-16">
 
           {/* ================= CONTENTS ================= */}
           <aside className="hidden lg:block sticky top-28 h-fit">
-            <div className="rounded-xl border border-border bg-muted p-6">
+            <div className="rounded-xl border border-dark-border glass p-6">
               <h4 className="text-base font-semibold mb-5">Contents</h4>
               <nav className="space-y-4 text-sm">
-                <a href="#intro" className="block text-muted-foreground hover:text-foreground">
+                <a href="#intro" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   Introduction
                 </a>
-                <a href="#early" className="block text-muted-foreground hover:text-foreground">
+                <a href="#early" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   Why tools feel powerful early
                 </a>
-                <a href="#scale" className="block text-muted-foreground hover:text-foreground">
+                <a href="#scale" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   What breaks at scale
                 </a>
-                <a href="#problem" className="block text-muted-foreground hover:text-foreground">
+                <a href="#problem" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   The real scaling problem
                 </a>
-                <a href="#cloudagi" className="block text-muted-foreground hover:text-foreground">
+                <a href="#cloudagi" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   How CloudAGI enables scale
                 </a>
-                <a href="#forward" className="block text-muted-foreground hover:text-foreground">
+                <a href="#forward" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   A better way forward
                 </a>
               </nav>

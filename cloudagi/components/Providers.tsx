@@ -1,24 +1,12 @@
 "use client";
 
-import { ThemeProvider } from "next-themes";
-import { useEffect, useState } from "react";
+import * as React from "react";
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
+  React.useEffect(() => {
+    // Force dark mode
+    document.documentElement.classList.add("dark");
   }, []);
 
-  return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="light"
-      enableSystem={false}
-      storageKey="cloudagi-theme"
-      forcedTheme={!mounted ? undefined : undefined}
-    >
-      {children}
-    </ThemeProvider>
-  );
+  return <>{children}</>;
 }

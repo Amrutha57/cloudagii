@@ -39,7 +39,7 @@ export default function Blog1() {
             className="prose dark:prose-invert max-w-none"
           >
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-              If you've been following the AI revolution, you've probably heard the term "AI agent" thrown around. But what exactly is an AI agent, and more importantly, how can it actually save your business time and money?
+              If you&apos;ve been following the AI revolution, you&apos;ve probably heard the term &quot;AI agent&quot; thrown around. But what exactly is an AI agent, and more importantly, how can it actually save your business time and money?
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">The Simple Definition</h2>
@@ -68,11 +68,11 @@ export default function Blog1() {
 
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">Where Do You Start?</h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              The key is to identify your biggest bottleneck—the task that eats the most time and has the clearest ROI. Don't try to automate everything at once. Start small, prove the value, and scale from there.
+              The key is to identify your biggest bottleneck—the task that eats the most time and has the clearest ROI. Don&apos;t try to automate everything at once. Start small, prove the value, and scale from there.
             </p>
 
             <p className="text-gray-700 dark:text-gray-300 text-lg font-semibold mt-12">
-              Ready to explore what AI agents could do for your business? Let's talk.
+              Ready to explore what AI agents could do for your business? Let&apos;s talk.
             </p>
           </motion.article>
         </div>
@@ -82,7 +82,7 @@ export default function Blog1() {
       <section className="relative py-16 bg-black dark:bg-black text-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Automate Your Business?</h2>
-          <p className="text-gray-300 mb-8">Let's discuss which process could benefit most from AI agents.</p>
+          <p className="text-gray-300 mb-8">Let&apos;s discuss which process could benefit most from AI agents.</p>
           <Link
             href="/contact"
             className="inline-flex px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-all"

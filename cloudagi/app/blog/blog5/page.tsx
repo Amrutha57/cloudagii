@@ -37,7 +37,7 @@ export default function Blog5() {
             className="prose dark:prose-invert max-w-none"
           >
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-              You've decided to build an AI agent for your business. You've seen proof of concept that it works. But how do you actually get from "this might work" to "this is now part of our daily operations"?
+              You&apos;ve decided to build an AI agent for your business. You&apos;ve seen proof of concept that it works. But how do you actually get from &quot;this might work&quot; to &quot;this is now part of our daily operations&quot;?
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">Week 1-2: Design & Specification</h2>
@@ -72,7 +72,7 @@ export default function Blog5() {
 
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">Week 5: Training & Preparation</h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Prepare your team. What will their workflow look like? How do they report issues? What are the agent's limitations?
+              Prepare your team. What will their workflow look like? How do they report issues? What are the agent&apos;s limitations?
             </p>
             <ul className="text-gray-700 dark:text-gray-300 space-y-2 mb-6 list-disc list-inside">
               <li>Train end-users on the tool</li>
@@ -92,7 +92,7 @@ export default function Blog5() {
 
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">The Key to Success</h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Don't rush the design phase. Don't skip testing. Don't launch without training your team. The 6 weeks of structure saves months of problems down the road.
+              Don&apos;t rush the design phase. Don&apos;t skip testing. Don&apos;t launch without training your team. The 6 weeks of structure saves months of problems down the road.
             </p>
           </motion.article>
         </div>
@@ -101,7 +101,7 @@ export default function Blog5() {
       <section className="relative py-16 bg-black dark:bg-black text-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for Your AI Agent Launch?</h2>
-          <p className="text-gray-300 mb-8">We'll guide you through each phase, from concept to production.</p>
+          <p className="text-gray-300 mb-8">We&apos;ll guide you through each phase, from concept to production.</p>
           <Link
             href="/contact"
             className="inline-flex px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-all"

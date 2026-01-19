@@ -1,20 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { Metadata } from "next";
 import Link from "next/link";
 
 export default function About() {
   return (
-    <main className="relative bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden transition-colors duration-300">
+    <main className="relative bg-dark-bg text-white overflow-hidden">
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[60vh] flex items-center bg-white dark:bg-slate-950 py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center w-full">
+      <section className="relative min-h-[60vh] flex items-center bg-gradient-dark py-24">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+          <div className="absolute top-40 right-10 w-80 h-80 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center w-full">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+            className="text-5xl md:text-6xl font-bold text-white mb-6"
           >
             About CloudAGI
           </motion.h1>
@@ -22,7 +25,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto"
+            className="text-xl text-gray-400 max-w-3xl mx-auto"
           >
             We exist to make AI agents accessible, affordable, and profitable for small and medium-sized businesses
           </motion.p>
@@ -30,7 +33,7 @@ export default function About() {
       </section>
 
       {/* ================= MISSION, VISION, VALUES ================= */}
-      <section className="relative py-24 bg-gray-50 dark:bg-slate-900">
+      <section className="relative py-24 bg-dark-card">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -39,7 +42,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white">Our Foundation</h2>
+            <h2 className="text-4xl font-bold text-white">Our Foundation</h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-12">
             {[
@@ -65,17 +68,21 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 border border-gray-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:border-gray-300 dark:hover:border-slate-700"
+                className="glass p-8 rounded-lg border border-dark-border group overflow-hidden hover:border-accent-blue transition-all duration-300"
               >
-                <motion.div
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="text-4xl mb-4"
-                >
-                  {item.icon}
-                </motion.div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{item.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{item.content}</p>
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                <div className="relative z-10">
+                  <motion.div
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    className="text-4xl mb-4"
+                  >
+                    {item.icon}
+                  </motion.div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
+                  <p className="text-gray-400 leading-relaxed">{item.content}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -83,7 +90,7 @@ export default function About() {
       </section>
 
       {/* ================= VALUES ================= */}
-      <section className="relative py-24 bg-white dark:bg-slate-950">
+      <section className="relative py-24 bg-dark-bg">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -92,8 +99,8 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Core Values</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">What guides every decision we make</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Core Values</h2>
+            <p className="text-xl text-gray-400">What guides every decision we make</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -129,10 +136,10 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 border border-gray-200 dark:border-slate-800 rounded-lg hover:border-gray-300 dark:hover:border-slate-700 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300"
+                className="p-8 border border-slate-800 rounded-lg hover:border-slate-700 hover:shadow-slate-900/50 transition-all duration-300"
               >
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{value.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{value.desc}</p>
+                <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{value.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -140,7 +147,7 @@ export default function About() {
       </section>
 
       {/* ================= FOUNDER ================= */}
-      <section className="relative py-24 bg-gray-50 dark:bg-slate-900">
+      <section className="relative py-24 bg-black">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -149,7 +156,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Meet Your Partner</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Meet Your Partner</h2>
           </motion.div>
 
           <motion.div
@@ -157,7 +164,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="p-12 border border-gray-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 shadow-lg dark:shadow-slate-900/50"
+            className="p-12 border border-slate-800 rounded-lg bg-slate-950 shadow-lg shadow-slate-900/50"
           >
             <motion.div
               initial={{ opacity: 0 }}
@@ -165,8 +172,8 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Arya Teja Rudraraju</h3>
-              <p className="text-lg text-gray-600 dark:text-gray-400 font-medium mb-8">Founder & AI Strategist</p>
+              <h3 className="text-3xl font-bold  text-white mb-2">Arya Teja Rudraraju</h3>
+              <p className="text-lg text-gray-400 font-medium mb-8">Founder & AI Strategist</p>
             </motion.div>
 
             <div className="space-y-8">
@@ -191,10 +198,10 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15, duration: 0.6 }}
                 >
-                  <h4 className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-3">
+                  <h4 className="text-sm font-bold text-gray-300 uppercase tracking-wide mb-3">
                     {section.title}
                   </h4>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <p className="text-gray-400 leading-relaxed">
                     {section.content}
                   </p>
                 </motion.div>
@@ -205,7 +212,7 @@ export default function About() {
       </section>
 
       {/* ================= WHY WE'RE DIFFERENT ================= */}
-      <section className="relative py-24 bg-white dark:bg-slate-950">
+      <section className="relative py-24 bg-black">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -214,8 +221,8 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Why We're Different</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">CloudAGI vs. Other Options</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Why We&apos;re Different</h2>
+            <p className="text-xl text-gray-400">CloudAGI vs. Other Options</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -243,10 +250,10 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 border border-gray-200 dark:border-slate-800 rounded-lg hover:border-gray-300 dark:hover:border-slate-700 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300"
+                className="p-8 border border-slate-800 rounded-lg hover:border-gray-300 dark:hover:border-slate-700 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300"
               >
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{comparison.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{comparison.desc}</p>
+                <h3 className="text-xl font-bold text-white mb-3">{comparison.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{comparison.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -263,7 +270,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl font-bold text-white mb-6">Ready to Work Together?</h2>
-            <p className="text-xl text-gray-300 mb-8">Let's start with a conversation about your business needs</p>
+            <p className="text-xl text-gray-300 mb-8">Let&apos;s start with a conversation about your business needs</p>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

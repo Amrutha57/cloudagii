@@ -4,22 +4,22 @@ import Image from "next/image";
 
 export default function BlogToolChaosPage() {
   return (
-    <main className="bg-background text-foreground min-h-screen">
+    <main className="bg-dark-bg text-white min-h-screen">
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-16">
 
           {/* ================= CONTENTS (LEFT) ================= */}
           <aside className="hidden lg:block sticky top-28 h-fit">
-            <div className="rounded-xl border border-border bg-muted p-6">
+            <div className="rounded-xl border border-dark-border glass p-6">
               <h4 className="text-base font-semibold mb-5">Contents</h4>
               <nav className="space-y-4 text-sm">
-                <a href="#intro" className="block text-muted-foreground hover:text-foreground">Introduction</a>
-                <a href="#problem" className="block text-muted-foreground hover:text-foreground">The hidden problem</a>
-                <a href="#integration" className="block text-muted-foreground hover:text-foreground">Why integrations fail</a>
-                <a href="#coordination" className="block text-muted-foreground hover:text-foreground">Coordination layer</a>
-                <a href="#impact" className="block text-muted-foreground hover:text-foreground">Execution impact</a>
-                <a href="#smb" className="block text-muted-foreground hover:text-foreground">What this means for SMBs</a>
-                <a href="#philosophy" className="block text-muted-foreground hover:text-foreground">CloudAGI philosophy</a>
+                <a href="#intro" className="block text-gray-300/400 hover:text-accent-blue transition-colors">Introduction</a>
+                <a href="#problem" className="block text-gray-300/400 hover:text-accent-blue transition-colors">The hidden problem</a>
+                <a href="#integration" className="block text-gray-300/400 hover:text-accent-blue transition-colors">Why integrations fail</a>
+                <a href="#coordination" className="block text-gray-300/400 hover:text-accent-blue transition-colors">Coordination layer</a>
+                <a href="#impact" className="block text-gray-300/400 hover:text-accent-blue transition-colors">Execution impact</a>
+                <a href="#smb" className="block text-gray-300/400 hover:text-accent-blue transition-colors">What this means for SMBs</a>
+                <a href="#philosophy" className="block text-gray-300/400 hover:text-accent-blue transition-colors">CloudAGI philosophy</a>
               </nav>
             </div>
           </aside>
@@ -34,7 +34,7 @@ export default function BlogToolChaosPage() {
                 alt="From Tool Chaos to Integrated AI Systems"
                 width={1200}
                 height={600}
-                className="rounded-xl border border-border"
+                className="rounded-xl border border-dark-border"
               />
             </div>
 

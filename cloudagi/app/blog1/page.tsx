@@ -23,19 +23,19 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <main className="bg-background text-foreground min-h-screen">
+    <main className="bg-dark-bg text-white min-h-screen">
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-16">
 
           {/* ================= CONTENTS (LEFT) ================= */}
           <aside className="hidden lg:block sticky top-28 h-fit">
-            <div className="rounded-xl border border-border bg-muted p-6">
+            <div className="rounded-xl border border-dark-border glass p-6">
               <h4 className="text-base font-semibold mb-5">Contents</h4>
               <nav className="space-y-4 text-sm">
-                <a href="#intro" className="block text-muted-foreground hover:text-foreground">
+                <a href="#intro" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   Introduction
                 </a>
-                <a href="#problem" className="block text-muted-foreground hover:text-foreground">
+                <a href="#problem" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   Why AI systems fail
                 </a>
                 <a href="#shift" className="block text-muted-foreground hover:text-foreground">

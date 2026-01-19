@@ -72,7 +72,7 @@ export default function Blog2() {
 
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">The Common Thread</h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              All of these have one thing in common: they're repetitive, rule-based, and high-volume. These are AI agent sweet spots.
+              All of these have one thing in common: they&apos;re repetitive, rule-based, and high-volume. These are AI agent sweet spots.
             </p>
           </motion.article>
         </div>
@@ -80,8 +80,8 @@ export default function Blog2() {
 
       <section className="relative py-16 bg-black dark:bg-black text-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4">Which Process Eats Your Team's Time?</h2>
-          <p className="text-gray-300 mb-8">Let's identify your fastest ROI automation opportunity.</p>
+          <h2 className="text-3xl font-bold mb-4">Which Process Eats Your Team&apos;s Time?</h2>
+          <p className="text-gray-300 mb-8">Let&apos;s identify your fastest ROI automation opportunity.</p>
           <Link
             href="/contact"
             className="inline-flex px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-all"

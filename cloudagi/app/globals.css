@@ -1,33 +1,72 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --bg: #ffffff;
-  --text: #111827;
-  --accent: #6366f1;
+  --background: #050508;
+  --foreground: #ffffff;
+  --bg: #050508;
+  --text: #ffffff;
+  --accent: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --card-bg: #0f1117;
+  --border-color: #1a1f2e;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f1729;
+    --foreground: #ffffff;
+    --bg: #0f1729;
+    --text: #ffffff;
   }
 }
 
 .dark {
-  --bg: #020617;
-  --text: #f8fafc;
-  /* Ensure consistency for dark mode class */
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --bg: #050508;
+  --text: #ffffff;
+  --background: #050508;
+  --foreground: #ffffff;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(15, 17, 23, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.glass-dark {
+  background: rgba(5, 5, 8, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Blue glow effect */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.glow-blue-hover:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+}
+
 .light-rays-container {
   width: 100%;
   height: 100%;
@@ -36,6 +75,7 @@ body {
   z-index: 3;
   overflow: hidden;
 }
+
 .light-ray {
   position: absolute;
   width: 200%;
@@ -44,8 +84,72 @@ body {
   left: -50%;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.15) 0%,
-    rgba(255, 255, 255, 0) 70%
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(59, 130, 246, 0) 70%
   );
   animation: rotateRay 20s linear infinite;
+}
+
+@keyframes rotateRay {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+button, a {
+  transition-duration: 300ms;
+}
+
+/* Sparkling star effect */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #3b82f6;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.8), 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+.star.twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.star.fall {
+  animation: fall linear forwards;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh) translateX(0);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(50px);
+    opacity: 0;
+  }
 }

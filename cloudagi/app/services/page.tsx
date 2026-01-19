@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -22,21 +21,25 @@ export const metadata: Metadata = {
 
 export default function Services() {
   return (
-    <main className="relative bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden transition-colors duration-300">
+    <main className="relative bg-dark-bg text-white overflow-hidden">
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[60vh] flex items-center bg-white dark:bg-slate-950 py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center w-full">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+      <section className="relative min-h-[60vh] flex items-center bg-gradient-dark py-24">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-20 right-10 w-80 h-80 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+          <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center w-full">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Our Services
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Practical solutions designed to solve real business problems with measurable ROI
           </p>
         </div>
       </section>
 
       {/* ================= SERVICE DETAILS ================= */}
-      <section className="relative py-24 bg-gray-50 dark:bg-slate-900">
+      <section className="relative py-24 bg-dark-bg">
         <div className="max-w-6xl mx-auto px-6">
           {[
             {
@@ -118,45 +121,49 @@ export default function Services() {
                 </div>
 
                 {/* Right: Details */}
-                <div className="md:col-span-2 p-8 border border-gray-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950">
-                  <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{service.title}</h3>
-                  <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">{service.overview}</p>
+                <div className="md:col-span-2 glass p-8 rounded-lg border border-dark-border relative overflow-hidden group hover:border-accent-blue transition-all duration-300">
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                  <div className="relative z-10">
+                    <h3 className="text-3xl font-bold text-white mb-4">{service.title}</h3>
+                    <p className="text-lg text-gray-300 mb-6">{service.overview}</p>
 
-                  <div className="grid md:grid-cols-2 gap-8 mb-8">
-                    <div>
-                      <h4 className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-3">What's Included</h4>
-                      <ul className="space-y-2">
-                        {service.includes.map((item, j) => (
-                          <li key={j} className="text-gray-600 dark:text-gray-400 text-sm flex items-start">
-                            <span className="text-gray-900 dark:text-white mr-2 font-bold">✓</span>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="grid md:grid-cols-2 gap-8 mb-8">
+                      <div>
+                        <h4 className="text-sm font-bold text-gray-200 uppercase tracking-wide mb-3">What&apos;s Included</h4>
+                        <ul className="space-y-2">
+                          {service.includes.map((item, j) => (
+                            <li key={j} className="text-gray-400 text-sm flex items-start">
+                              <span className="text-accent-blue mr-2 font-bold">✓</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="space-y-4">
+                        <div>
+                          <p className="text-sm font-bold text-gray-200 uppercase tracking-wide">Timeline</p>
+                          <p className="text-lg font-medium text-white">{service.timeline}</p>
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold text-gray-200 uppercase tracking-wide">Investment</p>
+                          <p className="text-lg font-medium text-white">{service.investment}</p>
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold text-gray-200 uppercase tracking-wide">Best For</p>
+                          <p className="text-sm text-gray-400">{service.best}</p>
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="space-y-4">
-                      <div>
-                        <p className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide">Timeline</p>
-                        <p className="text-lg font-medium text-gray-900 dark:text-white">{service.timeline}</p>
-                      </div>
-                      <div>
-                        <p className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide">Investment</p>
-                        <p className="text-lg font-medium text-gray-900 dark:text-white">{service.investment}</p>
-                      </div>
-                      <div>
-                        <p className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide">Best For</p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{service.best}</p>
-                      </div>
-                    </div>
+                    <Link
+                      href="/contact"
+                      className="inline-flex px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 transform"
+                    >
+                      Learn More →
+                    </Link>
                   </div>
-
-                  <Link
-                    href="/contact"
-                    className="inline-flex px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-medium rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200"
-                  >
-                    Learn More →
-                  </Link>
                 </div>
               </div>
             </div>
@@ -165,11 +172,11 @@ export default function Services() {
       </section>
 
       {/* ================= PROCESS ================= */}
-      <section className="relative py-24 bg-white dark:bg-slate-950">
+      <section className="relative py-24 bg-dark-card">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Process</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">No matter which service, we follow a proven methodology</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Our Process</h2>
+            <p className="text-xl text-gray-400">No matter which service, we follow a proven methodology</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
@@ -181,11 +188,11 @@ export default function Services() {
             ].map((step, i) => (
               <div
                 key={i}
-                className="p-6 border border-gray-200 dark:border-slate-800 rounded-lg text-center"
+                className="glass p-6 rounded-lg text-center hover:border-accent-blue hover:shadow-glow-blue transition-all duration-300"
               >
-                <div className="text-4xl font-bold text-gray-300 dark:text-slate-800 mb-3">{i + 1}</div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{step.desc}</p>
+                <div className="text-4xl font-bold text-accent-blue mb-3">{i + 1}</div>
+                <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
+                <p className="text-sm text-gray-400">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -193,13 +200,17 @@ export default function Services() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="relative py-24 bg-black dark:bg-black">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="relative py-24 bg-gradient-dark">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-gray-300 mb-8">Let's discuss which service is right for your business</p>
+          <p className="text-xl text-gray-300 mb-8">Let&apos;s discuss which service is right for your business</p>
           <Link
             href="/contact"
-            className="inline-flex px-8 py-4 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-all duration-200"
+            className="inline-flex px-8 py-4 bg-gradient-blue text-white font-medium rounded-lg hover:shadow-glow-blue transition-all duration-300 hover:scale-105 transform"
           >
             Schedule a Consultation
           </Link>

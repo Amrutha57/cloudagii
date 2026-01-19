@@ -1,13 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useScroll } from "@/hooks/use-scroll";
 import { Logo } from "@/components/logo";
 import { Button, buttonVariants } from "@/components/button";
 import { cn } from "@/components/lib/utils";
 import { MobileNav } from "@/components/mobile-nav";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 
 export const navLinks = [
   { label: "Home", href: "/" },
@@ -18,20 +16,13 @@ export const navLinks = [
 
 export function Header() {
   const scrolled = useScroll(10);
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-  }, []);
 
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 mx-auto w-full max-w-4xl border-transparent border-b md:rounded-md md:border md:transition-all md:ease-out",
+        "sticky top-0 z-50 mx-auto w-full max-w-4xl border-transparent border-b md:rounded-md md:border md:transition-all md:ease-out bg-dark-bg/80 backdrop-blur-sm",
         {
-          "border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50 md:top-2 md:max-w-3xl md:shadow":
+          "border-dark-border bg-dark-bg/95 backdrop-blur-md md:top-2 md:max-w-3xl md:shadow-glow-blue":
             scrolled,
         }
       )}
@@ -60,16 +51,6 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-
-          {/* ✅ WORKING TOGGLE - Improved Styling */}
-          <button
-            type="button"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="w-10 h-10 rounded-lg flex items-center justify-center text-xl hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors duration-200"
-            aria-label="Toggle theme"
-          >
-            {mounted ? (theme === "dark" ? "🌙" : "☀️") : "☀️"}
-          </button>
 
           <Button variant="outline">Sign In</Button>
           <Button>Get Started</Button>

@@ -37,10 +37,10 @@ export default function Blog3() {
             className="prose dark:prose-invert max-w-none"
           >
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-              You've decided to build a custom AI tool to solve a specific business problem. Great decision. But here's the critical question: how do you ensure it doesn't accidentally break your existing systems or expose sensitive data?
+              You&apos;ve decided to build a custom AI tool to solve a specific business problem. Great decision. But here&apos;s the critical question: how do you ensure it doesn&apos;t accidentally break your existing systems or expose sensitive data?
             </p>
 
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">What's a Sandbox?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">What&apos;s a Sandbox?</h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               A sandbox is an isolated environment where your AI tool can test actions and access data without touching your production systems. Think of it like a practice range before going live.
             </p>
@@ -50,12 +50,12 @@ export default function Blog3() {
               <li><strong>Risk mitigation:</strong> Test behavior before it affects real customers</li>
               <li><strong>Data protection:</strong> Keep sensitive data separate from experimental AI actions</li>
               <li><strong>Compliance:</strong> Meets regulatory requirements for AI governance</li>
-              <li><strong>Confidence:</strong> Your team can trust the tool because it's been safely tested</li>
+              <li><strong>Confidence:</strong> Your team can trust the tool because it&apos;s been safely tested</li>
             </ul>
 
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">Real Example: Email Automation</h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Imagine you're building an AI tool to auto-respond to customer emails. Without a sandbox, a bug could send automated responses to every email in your history. With a sandbox, you test the logic on duplicate data first, catch the bug, fix it, and only then go live.
+              Imagine you&apos;re building an AI tool to auto-respond to customer emails. Without a sandbox, a bug could send automated responses to every email in your history. With a sandbox, you test the logic on duplicate data first, catch the bug, fix it, and only then go live.
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4">How We Build Sandboxes</h2>
@@ -64,7 +64,7 @@ export default function Blog3() {
             </p>
 
             <p className="text-gray-700 dark:text-gray-300 text-lg font-semibold mt-12">
-              Your AI tool is powerful. Make sure it's safely powerful.
+              Your AI tool is powerful. Make sure it&apos;s safely powerful.
             </p>
           </motion.article>
         </div>
@@ -73,7 +73,7 @@ export default function Blog3() {
       <section className="relative py-16 bg-black dark:bg-black text-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">Building Custom AI Tools?</h2>
-          <p className="text-gray-300 mb-8">Let's ensure security and reliability from day one.</p>
+          <p className="text-gray-300 mb-8">Let&apos;s ensure security and reliability from day one.</p>
           <Link
             href="/contact"
             className="inline-flex px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-all"

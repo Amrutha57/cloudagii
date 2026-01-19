@@ -1,101 +1,113 @@
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 
 export default function BlogPage() {
   const blogs = [
     {
-      slug: "blog1",
-      title: "What is an AI Agent and How Can It Save Your Business 10 Hours a Week?",
-      excerpt: "De-mystifying AI agents and showing how they can automate repetitive tasks without replacing human expertise.",
+      slug: "query-intelligence",
+      title: "Designing Query Intelligence",
+      excerpt: "How CloudAGI turns raw human intent into execution-ready AI systems",
       date: "Jan 15, 2025",
-      category: "AI Fundamentals",
+      category: "AI Systems",
       readTime: "8 min read"
     },
     {
-      slug: "blog2",
-      title: "5 Workflow Automations That ROI in Under 30 Days",
-      excerpt: "The five quickest-to-implement automations with measurable ROI: lead scoring, invoicing, triage, data entry, and scheduling.",
-      date: "Feb 3, 2025",
-      category: "Automation",
-      readTime: "6 min read"
+      slug: "tool-chaos",
+      title: "From Tool Chaos to Integrated AI Systems",
+      excerpt: "Why most AI stacks fail — and how CloudAGI designs execution-first systems that scale",
+      date: "Jan 12, 2025",
+      category: "Architecture",
+      readTime: "10 min read"
     },
     {
-      slug: "blog3",
-      title: "Why Your Custom AI Tool Needs a Sandbox (And What That Means)",
-      excerpt: "How isolated testing environments keep your production systems safe while you build and refine AI agents.",
-      date: "Feb 10, 2025",
-      category: "Security",
-      readTime: "5 min read"
-    },
-    {
-      slug: "blog4",
-      title: "AI Literacy for Your Team: Why Training Matters (And What to Cover)",
-      excerpt: "How to prepare your team to use AI tools effectively, from understanding capabilities to knowing the limits.",
-      date: "Feb 20, 2025",
-      category: "Training",
-      readTime: "7 min read"
-    },
-    {
-      slug: "blog5",
-      title: "From Proof of Concept to Production: A 6-Week Implementation Roadmap",
-      excerpt: "The structured approach to taking an AI agent from 'this might work' to 'this is now part of operations.'",
-      date: "Feb 28, 2025",
-      category: "Implementation",
+      slug: "ai-roi",
+      title: "Why Most Businesses Don't Get ROI from AI",
+      excerpt: "And how CloudAGI designs AI systems that actually pay off",
+      date: "Jan 8, 2025",
+      category: "Business ROI",
       readTime: "9 min read"
     },
     {
+      slug: "production-reliability",
+      title: "Why AI Feels Unreliable in Production",
+      excerpt: "It's not the models. It's the missing system layer.",
+      date: "Jan 5, 2025",
+      category: "Production",
+      readTime: "11 min read"
+    },
+    {
+      slug: "scaling-ai-tools",
+      title: "Why 'Just Using AI Tools' Breaks at Scale",
+      excerpt: "Scaling AI requires systems, not more software",
+      date: "Dec 30, 2024",
+      category: "Scaling",
+      readTime: "10 min read"
+    },
+    {
       slug: "blog6",
-      title: "How Much Does a Custom AI Agent Actually Cost?",
-      excerpt: "Breaking down the cost factors: complexity, integrations, data volume, security, and training—plus how ROI math works.",
-      date: "Mar 8, 2025",
-      category: "Business",
-      readTime: "6 min read"
+      title: "The Future of Business AI: From Tools to Systems",
+      excerpt: "How the shift from point solutions to integrated AI infrastructure changes competitive advantage",
+      date: "Dec 25, 2024",
+      category: "Future Trends",
+      readTime: "12 min read"
     }
   ];
 
   return (
-    <main className="relative bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden transition-colors duration-300">
+    <main className="relative bg-dark-bg text-white overflow-hidden">
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[50vh] flex items-center bg-white dark:bg-slate-950 py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center w-full">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+      <section className="relative min-h-[50vh] flex items-center bg-gradient-dark py-24">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-20 right-10 w-80 h-80 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-15"></div>
+          <div className="absolute top-40 left-10 w-72 h-72 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-15"></div>
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center w-full">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             CloudAGI Blog
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Practical insights on building AI systems that work, implementing agents that deliver ROI, and navigating the AI revolution for SMBs.
           </p>
         </div>
       </section>
 
       {/* ================= BLOG GRID ================= */}
-      <section className="relative py-24 bg-gray-50 dark:bg-slate-900">
+      <section className="relative py-24 bg-dark-bg">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.map((blog) => (
               <Link
                 key={blog.slug}
-                href={`/blog/${blog.slug}`}
-                className="group p-6 border border-gray-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 hover:border-gray-300 dark:hover:border-slate-700 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300"
+                href={blog.slug === "query-intelligence" ? "/blog1" : 
+                      blog.slug === "tool-chaos" ? "/blog2" :
+                      blog.slug === "ai-roi" ? "/blog4" :
+                      blog.slug === "production-reliability" ? "/blog5" :
+                      blog.slug === "scaling-ai-tools" ? "/blog6" :
+                      `/blog/${blog.slug}`}
+                className="group glass p-6 rounded-lg border border-dark-border relative overflow-hidden hover:border-accent-blue transition-all duration-300"
               >
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 text-xs font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-slate-900 rounded-full">
-                    {blog.category}
-                  </span>
-                </div>
-                
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors line-clamp-2">
-                  {blog.title}
-                </h3>
-                
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
-                  {blog.excerpt}
-                </p>
-                
-                <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-slate-800">
-                  <span className="text-xs text-gray-500 dark:text-gray-500">{blog.date}</span>
-                  <span className="text-xs text-gray-500 dark:text-gray-500">{blog.readTime}</span>
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                <div className="relative z-10">
+                  <div className="mb-4">
+                    <span className="inline-block px-3 py-1 text-xs font-medium text-accent-blue bg-accent-blue/10 rounded-full">
+                      {blog.category}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-accent-blue transition-colors line-clamp-2">
+                    {blog.title}
+                  </h3>
+                  
+                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                    {blog.excerpt}
+                  </p>
+                  
+                  <div className="flex items-center justify-between pt-4 border-t border-dark-border">
+                    <span className="text-xs text-gray-500">{blog.date}</span>
+                    <span className="text-xs text-gray-500">{blog.readTime}</span>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -104,21 +116,21 @@ export default function BlogPage() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="relative py-24 bg-white dark:bg-slate-950">
+      <section className="relative py-24 bg-dark-card">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Subscribe to Our Newsletter</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-6">Subscribe to Our Newsletter</h2>
+          <p className="text-xl text-gray-300 mb-8">
             Get the latest insights on AI implementation, business automation, and practical strategies delivered to your inbox.
           </p>
           <form className="max-w-md mx-auto flex gap-2">
             <input
               type="email"
               placeholder="Your email"
-              className="flex-1 px-4 py-3 border border-gray-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+              className="flex-1 px-4 py-3 border border-dark-border rounded-lg bg-dark-bg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-blue"
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-medium rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200"
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg"
             >
               Subscribe
             </button>

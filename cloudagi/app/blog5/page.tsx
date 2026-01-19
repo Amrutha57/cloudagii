@@ -4,31 +4,31 @@ import Image from "next/image";
 
 export default function BlogProductionReliabilityPage() {
   return (
-    <main className="bg-background text-foreground min-h-screen">
+    <main className="bg-dark-bg text-white min-h-screen">
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-16">
 
           {/* ================= CONTENTS (LEFT) ================= */}
           <aside className="hidden lg:block sticky top-28 h-fit">
-            <div className="rounded-xl border border-border bg-muted p-6">
+            <div className="rounded-xl border border-dark-border glass p-6">
               <h4 className="text-base font-semibold mb-5">Contents</h4>
               <nav className="space-y-4 text-sm">
-                <a href="#intro" className="block text-muted-foreground hover:text-foreground">
+                <a href="#intro" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   Introduction
                 </a>
-                <a href="#demo" className="block text-muted-foreground hover:text-foreground">
+                <a href="#demo" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   Why AI works in demos
                 </a>
-                <a href="#production" className="block text-muted-foreground hover:text-foreground">
+                <a href="#production" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   What breaks in production
                 </a>
-                <a href="#layer" className="block text-muted-foreground hover:text-foreground">
+                <a href="#layer" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   The missing system layer
                 </a>
-                <a href="#cloudagi" className="block text-muted-foreground hover:text-foreground">
+                <a href="#cloudagi" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   How CloudAGI fixes reliability
                 </a>
-                <a href="#reliable" className="block text-muted-foreground hover:text-foreground">
+                <a href="#reliable" className="block text-gray-300/400 hover:text-accent-blue transition-colors">
                   What reliable AI looks like
                 </a>
               </nav>
