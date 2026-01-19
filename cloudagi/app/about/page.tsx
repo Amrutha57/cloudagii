@@ -1,91 +1,283 @@
-import Section from "@/components/Section";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "About CloudAGI – Strategic AI Consultancy for SMBs",
-  description: "CloudAGI empowers small and medium-sized businesses with intelligent agentic solutions to solve critical problems and drive growth using AI.",
-  keywords: ["CloudAGI", "AI consultancy", "agentic solutions", "SMB AI", "business AI", "AI workflows", "strategic AI"],
-  openGraph: {
-    title: "About CloudAGI – Strategic AI Consultancy for SMBs",
-    description: "Empowering SMBs with practical AI agent solutions for measurable business growth.",
-    url: "https://cloudagi.com/about",
-    siteName: "CloudAGI",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About CloudAGI – Strategic AI Consultancy for SMBs",
-    description: "Strategic AI consultancy bridging business needs and AI complexities for SMBs.",
-  },
-};
+import { motion } from "framer-motion";
+import type { Metadata } from "next";
+import Link from "next/link";
 
 export default function About() {
   return (
-    <main>
-      <Section>
-        <h1 className="text-3xl font-semibold">About CloudAGI</h1>
-        <p className="mt-6 opacity-80 max-w-3xl">
-          CloudAGI is a strategic AI consultancy that empowers small and medium-sized businesses (SMBs) to solve critical business problems and drive growth using intelligent agentic solutions.
-        </p>
-        <p className="mt-4 opacity-80 max-w-3xl">
-          We bridge the gap between your business needs and the complexities of artificial intelligence. We don&apos;t just build tech; we design and implement targeted AI agent workflows that increase efficiency, create new capabilities, and deliver a measurable return on investment.
-        </p>
-      </Section>
+    <main className="relative bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden transition-colors duration-300">
+      {/* ================= HERO ================= */}
+      <section className="relative min-h-[60vh] flex items-center bg-white dark:bg-slate-950 py-24">
+        <div className="max-w-4xl mx-auto px-6 text-center w-full">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+          >
+            About CloudAGI
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto"
+          >
+            We exist to make AI agents accessible, affordable, and profitable for small and medium-sized businesses
+          </motion.p>
+        </div>
+      </section>
 
-      <Section>
-        <h2 className="text-2xl font-semibold">Meet Arya Teja Rudraraju</h2>
-        <p className="mt-4 opacity-80 max-w-3xl">
-          CloudAGI is led by <strong>Arya Teja Rudraraju</strong>, a founder with a rare blend of deep technical expertise and strategic business acumen.
-        </p>
-        <p className="mt-4 opacity-80 max-w-3xl">
-          <strong>Why This Matters to You:</strong><br />
-          You get a partner who not only understands the underlying technology but is relentlessly focused on how it can be applied to solve your business problems.
-        </p>
-        <h3 className="text-xl font-semibold mt-6">Proven Technical Execution:</h3>
-        <ul className="mt-4 space-y-2 opacity-80">
-          <li><strong>A Builder, Not Just a Theorist:</strong> With experience shipping numerous AI products and proof-of-concepts, Arya has a proven track record of turning ideas into working solutions.</li>
-          <li><strong>Full-Stack AI Knowledge:</strong> Expertise ranges from backend development (Python, FastAPI) to UI (Streamlit) and architecting end-to-end AI systems like ChatterBox-TTS.</li>
-          <li><strong>Hands-On with Modern Tools:</strong> Constantly testing and implementing with the latest, most effective tools in the agentic AI space.</li>
-        </ul>
-        <h3 className="text-xl font-semibold mt-6">Strategic Business Focus:</h3>
-        <ul className="mt-4 space-y-2 opacity-80">
-          <li><strong>MBA-Informed Approach:</strong> With a background in business analysis, project management, and entrepreneurship, we approach every project with a focus on clear goals, timelines, and measurable ROI.</li>
-          <li><strong>Product Mindset:</strong> We don&apos;t just deliver code; we help you design a <em>solution</em> that your team can actually use and that fits into your broader business strategy.</li>
-          <li><strong>Thought Leadership:</strong> We are not just users of AI; we are actively shaping the conversation around its practical application, ensuring you get the most current and effective advice.</li>
-        </ul>
-      </Section>
+      {/* ================= MISSION, VISION, VALUES ================= */}
+      <section className="relative py-24 bg-gray-50 dark:bg-slate-900">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white">Our Foundation</h2>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              {
+                title: "Our Mission",
+                icon: "🎯",
+                content: "To make the power of AI agents accessible and profitable for small and medium-sized businesses."
+              },
+              {
+                title: "Our Vision",
+                icon: "👁️",
+                content: "To be the most trusted partner for SMBs navigating the AI revolution, turning complex technology into a competitive advantage."
+              },
+              {
+                title: "Our Promise",
+                icon: "🤝",
+                content: "ROI-driven partnerships. We don't deliver complexity—we deliver results that make money, save money, or create strategic advantage."
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="p-8 border border-gray-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:border-gray-300 dark:hover:border-slate-700"
+              >
+                <motion.div
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="text-4xl mb-4"
+                >
+                  {item.icon}
+                </motion.div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{item.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{item.content}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <Section>
-        <h2 className="text-2xl font-semibold">Who We Serve</h2>
-        <p className="mt-4 opacity-80 max-w-3xl">
-          Ambitious business leaders and SMB owners who see the potential of AI but are blocked by high costs, a lack of in-house expertise, and strategic uncertainty.
-        </p>
-      </Section>
+      {/* ================= VALUES ================= */}
+      <section className="relative py-24 bg-white dark:bg-slate-950">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Core Values</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400">What guides every decision we make</p>
+          </motion.div>
 
-      <Section>
-        <h2 className="text-2xl font-semibold">How We&apos;re Different</h2>
-        <p className="mt-4 opacity-80 max-w-3xl">
-          We are your expert partner, combining deep, hands-on technical experience with a business-first (MBA-informed) approach. Unlike large, expensive consulting firms or disconnected freelancers, we provide practical, cost-effective solutions tailored to your specific business goals. We move fast, start small, and focus on delivering value from day one.
-        </p>
-      </Section>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "Business-First, Technology-Second",
+                desc: "We start with your business problem, then find the right AI solution—not the other way around."
+              },
+              {
+                title: "Pragmatic & Action-Oriented",
+                desc: "We prioritize practical, working solutions that deliver value quickly. No theoretical 'science projects.'"
+              },
+              {
+                title: "Transparent Partnership",
+                desc: "We educate you throughout the process. You'll understand what we're building and why, empowering you to own the solution long-term."
+              },
+              {
+                title: "Expertise with Humility",
+                desc: "We are experts in our niche, but we are also honest about limitations and focused on continuous learning."
+              },
+              {
+                title: "ROI-Driven",
+                desc: "Every project is designed to either make you money, save you money, or create a clear strategic advantage."
+              },
+              {
+                title: "Move Fast, Start Small",
+                desc: "We prove value with low-risk proof-of-concepts first. Then scale. No massive upfront commitments needed."
+              },
+            ].map((value, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="p-8 border border-gray-200 dark:border-slate-800 rounded-lg hover:border-gray-300 dark:hover:border-slate-700 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300"
+              >
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{value.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{value.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <Section>
-        <h2 className="text-2xl font-semibold">Our Immediate Focus</h2>
-        <p className="mt-4 opacity-80 max-w-3xl">
-          Establish CloudAGI as the go-to consultancy for SMBs looking to implement their first high-impact AI agentic solution.
-        </p>
-      </Section>
+      {/* ================= FOUNDER ================= */}
+      <section className="relative py-24 bg-gray-50 dark:bg-slate-900">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Meet Your Partner</h2>
+          </motion.div>
 
-      <Section>
-        <h2 className="text-2xl font-semibold">Our Core Values</h2>
-        <ul className="mt-6 space-y-4 opacity-80">
-          <li><strong>Business-First, Technology-Second:</strong> We start with your business problem, then find the right AI solution—not the other way around.</li>
-          <li><strong>Pragmatic & Action-Oriented:</strong> We prioritize practical, working solutions that deliver value quickly. No theoretical &quot;science projects.&quot;</li>
-          <li><strong>Transparent Partnership:</strong> We educate you throughout the process. You&apos;ll understand what we&apos;re building and why, empowering you to own the solution long-term.</li>
-          <li><strong>Expertise with Humility:</strong> We are experts in our niche, but we are also honest about limitations and focused on continuous learning.</li>
-          <li><strong>ROI-Driven:</strong> Every project is designed to either make you money, save you money, or create a clear strategic advantage.</li>
-        </ul>
-      </Section>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="p-12 border border-gray-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 shadow-lg dark:shadow-slate-900/50"
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Arya Teja Rudraraju</h3>
+              <p className="text-lg text-gray-600 dark:text-gray-400 font-medium mb-8">Founder & AI Strategist</p>
+            </motion.div>
+
+            <div className="space-y-8">
+              {[
+                {
+                  title: "The Builder",
+                  content: "Not just a theorist. Arya has shipped numerous AI products and proof-of-concepts with proven track records of turning ideas into working solutions. From backend development (Python, FastAPI) to UI (Streamlit) and architecting end-to-end AI systems, he brings hands-on experience with the latest agentic AI tools."
+                },
+                {
+                  title: "The Business Strategist",
+                  content: "With an MBA-informed approach and background in business analysis, project management, and entrepreneurship, Arya approaches every project with a focus on clear goals, timelines, and measurable ROI. This is not just technology—it's a solution designed for your business to use and own."
+                },
+                {
+                  title: "Why This Matters to You",
+                  content: "You get a partner who understands both the technology and your business. Someone relentlessly focused on delivering practical, cost-effective solutions that actually work. Not someone selling you complexity—someone solving your problems."
+                },
+              ].map((section, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15, duration: 0.6 }}
+                >
+                  <h4 className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-3">
+                    {section.title}
+                  </h4>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {section.content}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ================= WHY WE'RE DIFFERENT ================= */}
+      <section className="relative py-24 bg-white dark:bg-slate-950">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Why We're Different</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400">CloudAGI vs. Other Options</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "vs. Large Consulting Firms",
+                desc: "They're expensive, slow, and sell you big projects. We start small, prove value first, and scale with you. No $100k engagements upfront."
+              },
+              {
+                title: "vs. Disconnected Freelancers",
+                desc: "They execute code but don't think strategically. We design solutions with your business goals in mind, ensuring long-term success."
+              },
+              {
+                title: "vs. Building In-House",
+                desc: "Hiring an AI expert costs $150k-$250k/year, and they're hard to find. We're your fractional expert—expert guidance at a fraction of the cost."
+              },
+              {
+                title: "vs. Going it Alone",
+                desc: "The AI landscape is confusing and moves fast. We cut through the noise, identify your highest-impact use case, and build a roadmap."
+              },
+            ].map((comparison, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="p-8 border border-gray-200 dark:border-slate-800 rounded-lg hover:border-gray-300 dark:hover:border-slate-700 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300"
+              >
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{comparison.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{comparison.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <section className="relative py-24 bg-black dark:bg-black">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl font-bold text-white mb-6">Ready to Work Together?</h2>
+            <p className="text-xl text-gray-300 mb-8">Let's start with a conversation about your business needs</p>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                href="/contact"
+                className="inline-flex px-8 py-4 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-all duration-200"
+              >
+                Start a Conversation
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
     </main>
   );
 }

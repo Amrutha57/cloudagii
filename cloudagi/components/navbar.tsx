@@ -50,7 +50,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-2 md:flex">
           {navLinks.map((link, i) => (
             <Link
               key={i}
@@ -61,17 +61,14 @@ export function Header() {
             </Link>
           ))}
 
-          {/* ✅ WORKING TOGGLE */}
+          {/* ✅ WORKING TOGGLE - Improved Styling */}
           <button
             type="button"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className={cn(
-              buttonVariants({ variant: "ghost" }),
-              "w-9 px-0 text-lg"
-            )}
+            className="w-10 h-10 rounded-lg flex items-center justify-center text-xl hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors duration-200"
             aria-label="Toggle theme"
           >
-            {mounted && theme === "dark" ? "🌙" : "☀️"}
+            {mounted ? (theme === "dark" ? "🌙" : "☀️") : "☀️"}
           </button>
 
           <Button variant="outline">Sign In</Button>

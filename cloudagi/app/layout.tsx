@@ -1,9 +1,8 @@
 import "./globals.css";
 
 import { Header } from "@/components/navbar";
-
 import Footer from "@/components/footer";
-import { ThemeProvider } from "next-themes";
+import { Providers } from "@/components/Providers";
 
 export const metadata = {
   title: "CloudAGI – Strategic AI Consultancy for SMBs",
@@ -82,11 +81,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <Providers>
           <Header />
           {children}
           <Footer />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

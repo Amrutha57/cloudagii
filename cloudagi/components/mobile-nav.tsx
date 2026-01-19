@@ -1,3 +1,5 @@
+"use client";
+
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Button, buttonVariants } from "@/components/button";
 import { cn } from "../components/lib/utils";
@@ -6,10 +8,17 @@ import React from "react";
 import { createPortal } from "react-dom";
 import { navLinks } from "@/components/navbar";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 export function MobileNav() {
 	const [open, setOpen] = React.useState(false);
 	const { isMobile } = useMediaQuery();
+	const { theme, setTheme } = useTheme();
+	const [mounted, setMounted] = React.useState(false);
+
+	React.useEffect(() => {
+		setMounted(true);
+	}, []);
 
 	// 🚫 Disable body scroll when open
 	React.useEffect(() => {
@@ -71,6 +80,14 @@ export function MobileNav() {
 										{link.label}
 									</Link>
 								))}
+								{/* Theme Toggle for Mobile */}
+								<button
+									type="button"
+									onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+									className="flex items-center justify-start px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors duration-200"
+								>
+									{mounted ? (theme === "dark" ? "🌙 Dark Mode" : "☀️ Light Mode") : "☀️ Light Mode"}
+								</button>
 							</div>
 							<div className="mt-12 flex flex-col gap-2">
 								<Button className="w-full" variant="outline">
