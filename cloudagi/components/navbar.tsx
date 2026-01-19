@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { useScroll } from "@/hooks/use-scroll";
 import { Logo } from "@/components/logo";
 import { Button, buttonVariants } from "@/components/button";
-import { cn } from "../components/lib/utils";
+import { cn } from "@/components/lib/utils";
 import { MobileNav } from "@/components/mobile-nav";
+import Link from "next/link";
+import { useTheme } from "next-themes";
 
 export const navLinks = [
   { label: "Home", href: "/" },
@@ -16,17 +18,13 @@ export const navLinks = [
 
 export function Header() {
   const scrolled = useScroll(10);
-  const [dark, setDark] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  // 🔥 APPLY THEME TO HTML
   useEffect(() => {
-    const root = document.documentElement;
-    if (dark) {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-  }, [dark]);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   return (
     <header
@@ -47,33 +45,33 @@ export function Header() {
         )}
       >
         {/* Logo */}
-        <a className="rounded-md p-2 hover:bg-accent" href="/">
+        <Link className="rounded-md p-2 hover:bg-accent" href="/">
           <Logo className="h-4.5" />
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-1 md:flex">
           {navLinks.map((link, i) => (
-            <a
+            <Link
               key={i}
               href={link.href}
               className={buttonVariants({ variant: "ghost" })}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
 
           {/* ✅ WORKING TOGGLE */}
           <button
             type="button"
-            onClick={() => setDark((v) => !v)}
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className={cn(
               buttonVariants({ variant: "ghost" }),
               "w-9 px-0 text-lg"
             )}
             aria-label="Toggle theme"
           >
-            {dark ? "🌙" : "☀️"}
+            {mounted && theme === "dark" ? "🌙" : "☀️"}
           </button>
 
           <Button variant="outline">Sign In</Button>

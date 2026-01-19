@@ -6,16 +6,16 @@ import Footer from "@/components/footer";
 import { ThemeProvider } from "next-themes";
 
 export const metadata = {
-  title: "CloudAGI – Practical AI & Digital Execution",
+  title: "CloudAGI – Strategic AI Consultancy for SMBs",
   description:
-    "CloudAGI helps startups and businesses build AI workflows, SEO-driven websites, and content systems that scale.",
-  keywords: ["CloudAGI", "AI workflows", "SEO websites", "content systems", "digital execution", "business automation"],
+    "CloudAGI empowers SMBs with intelligent agentic solutions to solve critical business problems and drive growth using AI.",
+  keywords: ["CloudAGI", "AI consultancy", "agentic solutions", "SMB AI", "business AI", "AI workflows", "strategic AI"],
   authors: [{ name: "CloudAGI Team" }],
   creator: "CloudAGI",
   publisher: "CloudAGI",
   openGraph: {
-    title: "CloudAGI – Practical AI & Digital Execution",
-    description: "Turning fragmented tools into reliable execution workflows. Practical AI for real systems.",
+    title: "CloudAGI – Strategic AI Consultancy for SMBs",
+    description: "Empowering SMBs with practical AI agent solutions for measurable business growth.",
     url: "https://cloudagi.com",
     siteName: "CloudAGI",
     images: [
@@ -23,7 +23,7 @@ export const metadata = {
         url: "/og-image.png", // Need to add this image
         width: 1200,
         height: 630,
-        alt: "CloudAGI – Practical AI & Digital Execution",
+        alt: "CloudAGI – Strategic AI Consultancy for SMBs",
       },
     ],
     locale: "en_US",
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CloudAGI – Practical AI & Digital Execution",
-    description: "Practical AI. Real Systems. Execution before hype.",
+    title: "CloudAGI – Strategic AI Consultancy for SMBs",
+    description: "Strategic AI consultancy bridging business needs and AI complexities for SMBs.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -82,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system">
+        <ThemeProvider attribute="class" defaultTheme="light">
           <Header />
           {children}
           <Footer />

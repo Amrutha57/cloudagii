@@ -3,9 +3,6 @@
 import Section from "@/components/Section";
 import { Button } from "@/components/button";
 import { useState } from "react";
-import type { Metadata } from "next";
-
-// Note: Metadata can't be exported from client component, but since it's contact, perhaps keep simple or move to server.
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -34,8 +31,7 @@ export default function Contact() {
       <Section>
         <h1 className="text-3xl font-semibold">Contact</h1>
         <p className="mt-4 opacity-80 max-w-2xl">
-          Interested in working with CloudAGI or learning more about how we
-          approach AI and digital systems?
+          Ready to implement your first high-impact AI agentic solution? Interested in working with CloudAGI to solve your business problems with intelligent AI workflows?
         </p>
         <p className="mt-4 opacity-80">
           Reach out to start a conversation.
@@ -47,7 +43,7 @@ export default function Contact() {
           {submitted ? (
             <div className="text-center py-12">
               <h2 className="text-2xl font-semibold mb-4">Thank you!</h2>
-              <p className="opacity-80">We'll get back to you soon.</p>
+              <p className="opacity-80">We&apos;ll get back to you soon.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">

@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "dev": "npm run dev --prefix cloudagi",
+    "build": "npm run build --prefix cloudagi",
+    "start": "npm run start --prefix cloudagi",
+    "lint": "npm run lint --prefix cloudagi"
+  },
   "dependencies": {
     "framer-motion": "^12.26.2",
     "lucide-react": "^0.562.0",
