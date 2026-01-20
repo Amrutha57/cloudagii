@@ -2,20 +2,25 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Services – CloudAGI | AI Agentic Solutions for SMBs",
-  description: "Discover CloudAGI's AI consultancy services: Agentic Workflow Design, Custom Tool Development, Secure Agent Sandbox, and Team Upskilling for SMBs.",
-  keywords: ["CloudAGI services", "AI agentic solutions", "agent workflows", "custom AI tools", "secure AI sandbox", "team AI training"],
+  title: "Services – CloudAGI | AI Agent Solutions, Agentic Workflow Design & Implementation",
+  description:
+    "CloudAGI offers AI agent consultancy, custom agentic workflow design, secure agent deployment, and team training. Get intelligent automation solutions with proven ROI for your business.",
+  keywords: [
+    "AI agent services",
+    "agentic workflow design",
+    "AI implementation services",
+    "AI consultancy",
+    "custom AI solutions",
+    "intelligent automation",
+    "AI strategy",
+    "agent-based systems",
+  ],
   openGraph: {
-    title: "Services – CloudAGI | AI Agentic Solutions for SMBs",
-    description: "Targeted AI agent workflows and tools designed to solve business problems and drive growth.",
+    title: "Services – CloudAGI | AI Agent & Agentic Solutions",
+    description:
+      "Comprehensive AI agent services including strategy, design, development, and implementation. Custom solutions for business automation and measurable results.",
     url: "https://cloudagi.com/services",
-    siteName: "CloudAGI",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Services – CloudAGI | AI Agentic Solutions for SMBs",
-    description: "Practical AI agent solutions for SMBs to increase efficiency and ROI.",
   },
 };
 
@@ -123,7 +128,7 @@ export default function Services() {
                 {/* Right: Details */}
                 <div className="md:col-span-2 glass p-8 rounded-lg border border-dark-border relative overflow-hidden group hover:border-accent-blue transition-all duration-300">
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
                   <div className="relative z-10">
                     <h3 className="text-3xl font-bold text-white mb-4">{service.title}</h3>
                     <p className="text-lg text-gray-300 mb-6">{service.overview}</p>

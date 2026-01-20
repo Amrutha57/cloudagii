@@ -1,6 +1,21 @@
 "use client";
 
+import type { Metadata } from "next";
 import { useState } from "react";
+
+// Note: This is a client component so metadata export is not used
+// Metadata is configured at the parent route level instead
+const contactMetadata: Metadata = {
+  title: "Contact CloudAGI – AI Agent Solutions & Consultation",
+  description: "Get in touch with CloudAGI to discuss your AI agent implementation, agentic workflows, and custom automation solutions. Schedule your free consultation today.",
+  keywords: ["contact cloudagi", "AI consultation", "agentic solutions inquiry", "business automation contact", "AI agent services"],
+  openGraph: {
+    title: "Contact CloudAGI – AI Agent Solutions",
+    description: "Let's discuss how AI agents can transform your business. Contact our team today.",
+    url: "https://cloudagi.com/contact",
+    type: "website",
+  },
+};
 
 export default function Contact() {
   const [formData, setFormData] = useState({

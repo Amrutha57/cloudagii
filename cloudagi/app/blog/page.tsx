@@ -2,6 +2,26 @@
 
 import Link from "next/link";
 
+const blogMetadata = {
+  title: "CloudAGI Blog – AI Agents, Agentic Systems, Business Automation Insights",
+  description:
+    "Read expert insights on AI agents, agentic workflows, business automation, and AI ROI. Learn how to implement intelligent systems for your SMB.",
+  keywords: [
+    "AI agents blog",
+    "agentic systems",
+    "AI implementation guide",
+    "business automation",
+    "AI ROI",
+    "AI strategy",
+  ],
+  openGraph: {
+    title: "CloudAGI Blog – AI Agent Solutions & Business Automation",
+    description:
+      "Expert content on AI agents, agentic workflows, and proven implementation strategies for business automation and measurable ROI.",
+    type: "website",
+  },
+};
+
 export default function BlogPage() {
   const blogs = [
     {
@@ -88,7 +108,7 @@ export default function BlogPage() {
                 className="group glass p-6 rounded-lg border border-dark-border relative overflow-hidden hover:border-accent-blue transition-all duration-300"
               >
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
                     <span className="inline-block px-3 py-1 text-xs font-medium text-accent-blue bg-accent-blue/10 rounded-full">

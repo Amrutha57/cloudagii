@@ -22,9 +22,45 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Designing Query Intelligence – CloudAGI Blog",
+    "description": "How CloudAGI turns raw human intent into execution-ready AI systems. Learn about practical AI implementation.",
+    "image": "https://cloudagi.com/blog1-image.png",
+    "datePublished": "2024-01-01T00:00:00Z",
+    "dateModified": "2024-01-01T00:00:00Z",
+    "author": {
+      "@type": "Organization",
+      "name": "CloudAGI Team",
+      "url": "https://cloudagi.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CloudAGI",
+      "url": "https://cloudagi.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cloudagi.com/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://cloudagi.com/blog1"
+    },
+    "keywords": ["query intelligence", "AI systems", "human intent", "execution-ready AI", "AI agents"]
+  };
+
   return (
     <main className="bg-dark-bg text-white min-h-screen">
       <div className="max-w-7xl mx-auto px-6 py-20">
+        {/* ================= STRUCTURED DATA ================= */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(articleSchema),
+          }}
+        />
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-16">
 
           {/* ================= CONTENTS (LEFT) ================= */}
@@ -75,6 +111,16 @@ export default function BlogPage() {
           <p className="text-lg text-muted-foreground mb-2">
                 How CloudAGI turns raw intent into execution-ready AI systems
                 </p>
+<section className="mb-16">
+  <h2 className="text-2xl font-semibold mb-4">
+    What is this article about?
+  </h2>
+  <p className="text-lg text-muted-foreground leading-relaxed">
+    This article explains why AI systems often fail in real-world production
+    environments and how execution-first system design — not better models —
+    is the key to reliable AI.
+  </p>
+</section>
 
             {/* INTRO */}
             <section  className="mb-24">
@@ -226,6 +272,30 @@ export default function BlogPage() {
           </article>
         </div>
       </div>
+      <section className="mt-24 border-t border-border pt-12">
+  <h3 className="text-xl font-semibold mb-6">
+    Related CloudAGI Articles
+  </h3>
+
+  <ul className="space-y-4 text-muted-foreground">
+    <li>
+      <a href="/blog/designing-query-intelligence" className="hover:underline">
+        Designing Query Intelligence →
+      </a>
+    </li>
+    <li>
+      <a href="/blog/tool-chaos-to-systems" className="hover:underline">
+        From Tool Chaos to Integrated AI Systems →
+      </a>
+    </li>
+    <li>
+      <a href="/blog/ai-unreliable-in-production" className="hover:underline">
+        The Real Reason AI Feels Unreliable in Production →
+      </a>
+    </li>
+  </ul>
+</section>
+
     </main>
   );
 }

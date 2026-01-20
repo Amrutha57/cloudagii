@@ -1,6 +1,24 @@
-"use client";
-
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Production Reliability in AI Agent Systems – CloudAGI Blog",
+  description: "Best practices for building reliable, production-ready AI agent systems that your business can depend on.",
+  keywords: ["AI reliability", "production systems", "AI agents", "system design", "fault tolerance", "agentic automation"],
+  openGraph: {
+    title: "Production Reliability in AI Agent Systems – CloudAGI",
+    description: "Building AI agents you can trust in production environments.",
+    url: "https://cloudagi.com/blog5",
+    type: "article",
+    publishedTime: "2024-01-01T00:00:00.000Z",
+    authors: ["CloudAGI Team"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Production Reliability in AI Agents – CloudAGI Blog",
+    description: "Best practices for reliable, enterprise-grade AI agent systems.",
+  },
+};
 
 export default function BlogProductionReliabilityPage() {
   return (

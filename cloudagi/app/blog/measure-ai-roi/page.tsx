@@ -4,7 +4,20 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How to Measure AI Agent ROI – CloudAGI Blog",
   description: "A practical framework for calculating true ROI on AI agent implementations and proving business value.",
-  keywords: ["ROI calculation", "AI metrics", "business metrics", "measurement framework", "AI value"],
+  keywords: ["ROI calculation", "AI metrics", "business metrics", "measurement framework", "AI value", "agentic AI"],
+  openGraph: {
+    title: "How to Measure AI Agent ROI – CloudAGI",
+    description: "Practical ROI framework for measuring AI agent business value.",
+    url: "https://cloudagi.com/blog/measure-ai-roi",
+    type: "article",
+    publishedTime: "2024-01-01T00:00:00.000Z",
+    authors: ["CloudAGI Team"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Measure AI Agent ROI – CloudAGI Blog",
+    description: "Calculate and prove the business value of AI agents.",
+  },
 };
 
 export default function BlogPage() {
@@ -40,7 +53,7 @@ export default function BlogPage() {
           <article className="max-w-3xl">
             {/* HERO IMAGE */}
             <div className="mb-12">
-              <div className="rounded-xl border border-border bg-gradient-to-br from-slate-900 to-slate-950 h-96 flex items-center justify-center">
+              <div className="rounded-xl border border-border bg-linear-to-br from-slate-900 to-slate-950 h-96 flex items-center justify-center">
                 <span className="text-6xl">📊</span>
               </div>
             </div>

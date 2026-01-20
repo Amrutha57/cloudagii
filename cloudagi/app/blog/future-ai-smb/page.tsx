@@ -4,7 +4,20 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "The Future of AI in SMB Operations – CloudAGI Blog",
   description: "Where AI is headed and what it means for small and medium-sized businesses over the next 3-5 years.",
-  keywords: ["AI future", "SMB trends", "business automation", "AI adoption", "competitive advantage"],
+  keywords: ["AI future", "SMB trends", "business automation", "AI adoption", "competitive advantage", "agentic AI"],
+  openGraph: {
+    title: "The Future of AI in SMB Operations – CloudAGI",
+    description: "Strategic insights on AI adoption and competitive advantages for SMBs.",
+    url: "https://cloudagi.com/blog/future-ai-smb",
+    type: "article",
+    publishedTime: "2024-01-01T00:00:00.000Z",
+    authors: ["CloudAGI Team"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Future of AI in SMB Operations – CloudAGI Blog",
+    description: "AI trends and competitive advantages for small to medium businesses.",
+  },
 };
 
 export default function BlogPage() {
@@ -43,7 +56,7 @@ export default function BlogPage() {
           <article className="max-w-3xl">
             {/* HERO IMAGE */}
             <div className="mb-12">
-              <div className="rounded-xl border border-border bg-gradient-to-br from-slate-900 to-slate-950 h-96 flex items-center justify-center">
+              <div className="rounded-xl border border-border bg-linear-to-br from-slate-900 to-slate-950 h-96 flex items-center justify-center">
                 <span className="text-6xl">🚀</span>
               </div>
             </div>

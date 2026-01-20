@@ -2,12 +2,49 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Metadata } from "next";
 
 const dots = Array.from({ length: 25 });
 
+// Note: This is a client component, so metadata export cannot be used here
+// Metadata is configured at parent route level instead
+const pageMetadata: Metadata = {
+  title: "CloudAGI – AI Agents for Business Automation | SMB Solutions",
+  description:
+    "CloudAGI provides custom AI agent solutions for SMBs. Get intelligent automation, agentic workflows, and AI consultancy. Transform business processes with proven ROI.",
+  keywords: [
+    "AI agents",
+    "business automation",
+    "AI consultancy",
+    "agentic solutions",
+    "SMB AI",
+    "intelligent automation",
+    "AI implementation",
+  ],
+  openGraph: {
+    title: "CloudAGI – AI Agents & Agentic Solutions for SMBs",
+    description:
+      "Custom AI agent solutions that solve real business problems. Agentic workflows, AI consultancy, and proven implementation for measurable ROI.",
+    type: "website",
+  },
+};
+
 export default function Home() {
   return (
+ 
+
+
     <main className="relative bg-dark-bg text-white overflow-hidden">
+       <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="msvalidate.01" content="C84846955C8B8D3CA681FFEDD7F922FA" />
+      
+      </head>
+      <body>
+      
+      </body>
+    </html>
+
       {/* ================= HERO ================= */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-dark">
         {/* Gradient Background Orbs */}
@@ -167,7 +204,7 @@ export default function Home() {
                 className="glass p-8 rounded-lg border border-dark-border relative overflow-hidden group hover:border-accent-blue transition-all duration-300"
               >
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
                 <div className="relative z-10">
                   <h3 className="text-lg font-semibold text-white mb-3">{item.problem}</h3>
                   <div className="space-y-3">
@@ -235,8 +272,8 @@ export default function Home() {
                 className="relative glass p-8 rounded-lg border border-dark-border group hover:border-accent-blue transition-all duration-300 overflow-hidden"
               >
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
-                <div className="absolute -top-6 left-8 relative z-10">
+                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                <div className="absolute -top-6 left-8 z-10">
                   <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg shadow-lg">
                     {item.step}
                   </span>

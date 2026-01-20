@@ -1,6 +1,24 @@
-"use client";
-
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Why Enterprise AI ROI Fails – CloudAGI Blog",
+  description: "Uncover the 5 root causes of failed AI ROI initiatives and learn proven strategies to ensure your AI investment succeeds.",
+  keywords: ["AI ROI", "enterprise AI", "implementation failure", "AI agents", "business value", "return on investment"],
+  openGraph: {
+    title: "Why Enterprise AI ROI Fails – CloudAGI",
+    description: "5 root causes of failed AI ROI and how to avoid them.",
+    url: "https://cloudagi.com/blog3",
+    type: "article",
+    publishedTime: "2024-01-01T00:00:00.000Z",
+    authors: ["CloudAGI Team"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Why Enterprise AI ROI Fails – CloudAGI Blog",
+    description: "Understanding the 5 patterns that cause AI initiatives to fail.",
+  },
+};
 
 export default function BlogPage() {
   return (

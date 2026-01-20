@@ -4,7 +4,20 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "The Hidden Costs of Not Automating – CloudAGI Blog",
   description: "What's your business losing every day by not automating repetitive processes? Let's do the math.",
-  keywords: ["automation costs", "business efficiency", "productivity loss", "ROI calculation", "process automation"],
+  keywords: ["automation costs", "business efficiency", "productivity loss", "ROI calculation", "process automation", "agentic AI"],
+  openGraph: {
+    title: "The Hidden Costs of Not Automating – CloudAGI",
+    description: "Calculate your daily productivity and revenue loss from manual processes.",
+    url: "https://cloudagi.com/blog/hidden-costs-automation",
+    type: "article",
+    publishedTime: "2024-01-01T00:00:00.000Z",
+    authors: ["CloudAGI Team"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Hidden Costs of Not Automating – CloudAGI Blog",
+    description: "Discover the true cost of manual processes and automation benefits.",
+  },
 };
 
 export default function BlogPage() {
@@ -40,7 +53,7 @@ export default function BlogPage() {
           <article className="max-w-3xl">
             {/* HERO IMAGE */}
             <div className="mb-12">
-              <div className="rounded-xl border border-border bg-gradient-to-br from-slate-900 to-slate-950 h-96 flex items-center justify-center">
+              <div className="rounded-xl border border-border bg-linear-to-br from-slate-900 to-slate-950 h-96 flex items-center justify-center">
                 <span className="text-6xl">💰</span>
               </div>
             </div>

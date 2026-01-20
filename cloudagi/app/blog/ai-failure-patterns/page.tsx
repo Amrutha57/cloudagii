@@ -4,7 +4,20 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Common AI Agent Failure Patterns – CloudAGI Blog",
   description: "The 5 patterns that cause AI agents to fail, and how to design systems to prevent them.",
-  keywords: ["AI failures", "agent design", "failure patterns", "risk mitigation", "system design"],
+  keywords: ["AI failures", "agent design", "failure patterns", "risk mitigation", "system design", "agentic systems"],
+  openGraph: {
+    title: "Common AI Agent Failure Patterns – CloudAGI",
+    description: "Avoid the 5 critical failure patterns in AI agent design.",
+    url: "https://cloudagi.com/blog/ai-failure-patterns",
+    type: "article",
+    publishedTime: "2024-01-01T00:00:00.000Z",
+    authors: ["CloudAGI Team"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Agent Failure Patterns – CloudAGI Blog",
+    description: "5 critical patterns that cause AI agent systems to fail.",
+  },
 };
 
 export default function BlogPage() {
@@ -43,7 +56,7 @@ export default function BlogPage() {
           <article className="max-w-3xl">
             {/* HERO IMAGE */}
             <div className="mb-12">
-              <div className="rounded-xl border border-border bg-gradient-to-br from-slate-900 to-slate-950 h-96 flex items-center justify-center">
+              <div className="rounded-xl border border-border bg-linear-to-br from-slate-900 to-slate-950 h-96 flex items-center justify-center">
                 <span className="text-6xl">⚠️</span>
               </div>
             </div>

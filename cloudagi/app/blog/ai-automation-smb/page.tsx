@@ -4,7 +4,20 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Why SMBs Fail at AI Implementation – CloudAGI Blog",
   description: "Understanding the common pitfalls and how to avoid them when implementing AI agents in your business.",
-  keywords: ["SMB AI implementation", "AI adoption", "business challenges", "AI agents", "implementation strategy"],
+  keywords: ["SMB AI implementation", "AI adoption", "business challenges", "AI agents", "implementation strategy", "agentic AI"],
+  openGraph: {
+    title: "Why SMBs Fail at AI Implementation – CloudAGI",
+    description: "Common pitfalls in AI agent implementation and proven solutions.",
+    url: "https://cloudagi.com/blog/ai-automation-smb",
+    type: "article",
+    publishedTime: "2024-01-01T00:00:00.000Z",
+    authors: ["CloudAGI Team"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Why SMBs Fail at AI Implementation – CloudAGI Blog",
+    description: "Avoid common AI adoption pitfalls with proven strategies.",
+  },
 };
 
 export default function BlogPage() {

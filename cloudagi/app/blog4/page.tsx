@@ -1,6 +1,24 @@
-"use client";
-
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "The AI ROI Illusion – CloudAGI Blog",
+  description: "Why traditional ROI metrics fail for AI agents and how to measure real business impact from agentic automation.",
+  keywords: ["AI ROI measurement", "agentic AI", "business metrics", "AI value", "automation ROI", "implementation metrics"],
+  openGraph: {
+    title: "The AI ROI Illusion – CloudAGI",
+    description: "How to properly measure AI agent value beyond traditional ROI metrics.",
+    url: "https://cloudagi.com/blog4",
+    type: "article",
+    publishedTime: "2024-01-01T00:00:00.000Z",
+    authors: ["CloudAGI Team"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The AI ROI Illusion – CloudAGI Blog",
+    description: "Rethinking how to measure AI agent success and business impact.",
+  },
+};
 
 export default function BlogAIROPage() {
   return (

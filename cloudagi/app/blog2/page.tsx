@@ -1,6 +1,24 @@
-"use client";
-
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "From Tool Chaos to Integrated Systems – CloudAGI Blog",
+  description: "Learn how agentic AI systems eliminate tool fragmentation and create unified, intelligent automation workflows.",
+  keywords: ["tool integration", "AI automation", "agentic systems", "workflow automation", "business integration", "AI agents"],
+  openGraph: {
+    title: "From Tool Chaos to Integrated Systems – CloudAGI",
+    description: "How AI agents transform disconnected tools into cohesive automation systems.",
+    url: "https://cloudagi.com/blog2",
+    type: "article",
+    publishedTime: "2024-01-01T00:00:00.000Z",
+    authors: ["CloudAGI Team"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tool Chaos to Integrated Systems – AI Automation Blog",
+    description: "How AI agents eliminate tool fragmentation and create unified workflows.",
+  },
+};
 
 export default function BlogToolChaosPage() {
   return (

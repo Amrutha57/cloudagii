@@ -4,7 +4,20 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Building Trust in AI Systems – CloudAGI Blog",
   description: "How to design AI systems that your team trusts, understands, and uses consistently.",
-  keywords: ["AI trust", "team adoption", "AI transparency", "change management", "user adoption"],
+  keywords: ["AI trust", "team adoption", "AI transparency", "change management", "user adoption", "AI agents"],
+  openGraph: {
+    title: "Building Trust in AI Systems – CloudAGI",
+    description: "Design AI systems your team will embrace and trust.",
+    url: "https://cloudagi.com/blog/building-trust-ai",
+    type: "article",
+    publishedTime: "2024-01-01T00:00:00.000Z",
+    authors: ["CloudAGI Team"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Building Trust in AI Systems – CloudAGI Blog",
+    description: "Create AI systems your team trusts and adopts.",
+  },
 };
 
 export default function BlogPage() {
@@ -40,7 +53,7 @@ export default function BlogPage() {
           <article className="max-w-3xl">
             {/* HERO IMAGE */}
             <div className="mb-12">
-              <div className="rounded-xl border border-border bg-gradient-to-br from-slate-900 to-slate-950 h-96 flex items-center justify-center">
+              <div className="rounded-xl border border-border bg-linear-to-br from-slate-900 to-slate-950 h-96 flex items-center justify-center">
                 <span className="text-6xl">🤝</span>
               </div>
             </div>

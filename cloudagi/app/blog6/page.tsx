@@ -1,6 +1,24 @@
-"use client";
-
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Scaling AI Tools and Agents – CloudAGI Blog",
+  description: "Strategies for scaling AI agent systems to handle growing business demands without sacrificing quality or reliability.",
+  keywords: ["scaling AI", "agentic systems", "growth automation", "AI agents", "enterprise scale", "system architecture"],
+  openGraph: {
+    title: "Scaling AI Tools and Agents – CloudAGI",
+    description: "How to scale AI agent systems for enterprise growth.",
+    url: "https://cloudagi.com/blog6",
+    type: "article",
+    publishedTime: "2024-01-01T00:00:00.000Z",
+    authors: ["CloudAGI Team"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Scaling AI Tools and Agents – CloudAGI Blog",
+    description: "Enterprise strategies for scaling agentic AI systems.",
+  },
+};
 
 export default function BlogScalingAIToolsPage() {
   return (
