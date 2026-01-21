@@ -65,7 +65,7 @@ export default function Contact() {
             {/* Form */}
             <div className="glass p-8 rounded-lg">
               <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
-              
+
               {submitted ? (
                 <div className="p-4 bg-accent-blue/20 border border-accent-blue rounded-lg text-accent-blue">
                   <p className="font-medium">Thank you! We&apos;ll get back to you soon.</p>
@@ -189,16 +189,22 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">Prefer a Quick Chat?</h2>
           <p className="text-xl text-gray-400 mb-8">
-            We can also schedule a 20-minute discovery call to discuss your needs
+            Schedule a free 20-minute discovery call to discuss your AI automation needs
           </p>
           <a
-            href="https://cal.com/"
+            href="https://calendly.com/cloudagi"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex px-8 py-4 bg-gradient-blue text-white font-medium rounded-lg hover:shadow-glow-blue transition-all duration-300 hover:scale-105 transform"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-indigo-700 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105 transform"
           >
-            Schedule a Call →
+            Schedule a Free Call
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </a>
+          <p className="mt-4 text-sm text-gray-500">
+            No commitment • 20 minutes • Free consultation
+          </p>
         </div>
       </section>
     </main>

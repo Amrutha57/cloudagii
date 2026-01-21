@@ -1,0 +1,100 @@
+# CloudAGI - AI Agent Development & Consultation
+
+> Custom AI solutions that automate repetitive work and let teams focus on growth
+
+## About CloudAGI
+
+CloudAGI builds custom AI agents and provides expert AI consultation for small and medium-sized businesses. We specialize in agentic workflow design, custom AI engines, secure enterprise deployments, and team upskilling.
+
+### Our Services
+
+- **Agentic Workflow Design**: Deconstruct complex business processes and rebuild them using autonomous AI agents
+- **Custom AI Engines & Memory**: Build dedicated AI engines with persistent memory of business context
+- **Secure Enterprise Sandboxes**: Deploy isolated, secure AI environments for data-sensitive organizations
+- **Team AI Upskilling**: Train teams to effectively collaborate with AI agents
+
+### Key Differentiators
+
+- Business-first approach with MBA-informed strategy
+- Production-ready systems, not demos or prototypes
+- ROI-driven with measurable results (10+ hours saved per week average)
+- 2-4 weeks deployment timeline
+- 100% data privacy and security
+
+### Founder
+
+Arya Teja Rudraraju - Founder & AI Systems Architect
+- 15+ AI systems built
+- MBA in Business Strategy
+- 5+ years in AI development
+- Expert in Python, FastAPI, LangChain, vector databases
+
+### Contact
+
+- Website: https://cloudagi.com
+- Email: contact@cloudagi.com
+- Schedule: https://calendly.com/cloudagi
+
+## Key Pages
+
+- Home: https://cloudagi.com/
+- Services: https://cloudagi.com/services
+- About: https://cloudagi.com/about
+- Blog: https://cloudagi.com/blog
+- Contact: https://cloudagi.com/contact
+
+## Featured Blog Posts
+
+### Designing Query Intelligence
+How CloudAGI turns raw human intent into execution-ready AI systems through Query Intelligence - the missing layer in most AI systems.
+URL: https://cloudagi.com/blog1
+
+### From Tool Chaos to Integrated AI Systems
+Why most AI stacks fail and how to design execution-first systems that scale.
+URL: https://cloudagi.com/blog2
+
+### The Future of Business AI: From Tools to Systems
+How the shift from point solutions to integrated AI infrastructure changes competitive advantage.
+URL: https://cloudagi.com/blog3
+
+### Why Most Businesses Don't Get ROI from AI
+The real reasons AI projects fail and how to build systems that pay off.
+URL: https://cloudagi.com/blog4
+
+### Building Production-Ready AI Agents
+A technical deep-dive into engineering reliable AI agents that work in production environments.
+URL: https://cloudagi.com/blog5
+
+### The Economics of AI Automation
+Understanding the true cost and ROI of implementing AI agents in your business.
+URL: https://cloudagi.com/blog6
+
+## Core Philosophy
+
+"Execution beats prompts. Systems beat tools."
+
+We don't believe in AI magic. We believe in engineering discipline, measurable results, and systems that work on Monday morning. Our approach is pragmatic, action-oriented, and focused on delivering real business value.
+
+## Target Audience
+
+Small and medium-sized businesses (SMBs) looking to:
+- Automate repetitive tasks
+- Integrate AI into existing workflows
+- Save 10+ hours per week through automation
+- Build custom AI solutions without hiring expensive specialists
+- Maintain data privacy and security
+
+## Expertise
+
+- AI Agent Development (LangChain, AutoGen, CrewAI)
+- Agentic Workflows & Multi-Agent Systems
+- Vector Databases & RAG Systems
+- Custom LLM Integration
+- Python, FastAPI, Streamlit
+- Business Process Automation
+- AI Strategy & Implementation
+
+---
+
+Last Updated: January 2025
+Format: llms.txt v0.1.0

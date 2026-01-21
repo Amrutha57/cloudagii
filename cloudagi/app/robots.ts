@@ -6,17 +6,39 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/private/', '/.next/'],
+        disallow: ['/api/', '/.next/', '/admin/'],
       },
+      // OpenAI GPT Crawler
       {
         userAgent: 'GPTBot',
         allow: '/',
       },
+      // Anthropic Claude Crawler
+      {
+        userAgent: 'anthropic-ai',
+        allow: '/',
+      },
+      // Common Crawl (used by many AI models)
       {
         userAgent: 'CCBot',
         allow: '/',
       },
+      // Google Bard/Gemini
+      {
+        userAgent: 'Google-Extended',
+        allow: '/',
+      },
+      // Perplexity AI
+      {
+        userAgent: 'PerplexityBot',
+        allow: '/',
+      },
+      // Cohere AI
+      {
+        userAgent: 'cohere-ai',
+        allow: '/',
+      },
     ],
-    sitemap: 'https://cloudagi-liart.vercel.app/sitemap.xml',
+    sitemap: 'https://cloudagi.com/sitemap.xml',
   }
 }

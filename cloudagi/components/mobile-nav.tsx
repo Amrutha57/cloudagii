@@ -80,11 +80,11 @@ export function MobileNav() {
 							</div>
 
 							<div className="mt-auto mb-8">
-								<Link href="/contact" onClick={() => setOpen(false)}>
+								<a href="https://calendly.com/cloudagi" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
 									<Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/30 font-bold h-12 rounded-lg">
 										Book Strategy Call
 									</Button>
-								</Link>
+								</a>
 							</div>
 						</div>
 					</div>,

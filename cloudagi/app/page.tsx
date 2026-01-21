@@ -376,9 +376,9 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-white mb-4">Led by Technical Experts</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Led by Experienced AI Engineers</h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Not consultants who learned AI last month. Engineers who build production systems.
+              Years of hands-on experience building production-grade AI systems that deliver real business value.
             </p>
           </motion.div>
 
@@ -504,8 +504,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="/contact"
+              <a
+                href="https://calendly.com/cloudagi"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative px-12 py-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-xl rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105"
               >
                 <span className="flex items-center gap-2">
@@ -514,7 +516,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </span>
-              </Link>
+              </a>
             </div>
 
             <p className="mt-8 text-sm text-gray-500">

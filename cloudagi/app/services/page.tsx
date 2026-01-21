@@ -197,12 +197,14 @@ export default function Services() {
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
           <p className="text-xl text-gray-300 mb-8">Let&apos;s discuss which service is right for your business</p>
-          <Link
-            href="/contact"
+          <a
+            href="https://calendly.com/cloudagi"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex px-8 py-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 hover:shadow-lg transition-all duration-300 hover:scale-105 transform"
           >
             Schedule a Consultation
-          </Link>
+          </a>
         </div>
       </section>
     </main>

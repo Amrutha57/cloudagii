@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 import { Providers } from "@/components/Providers";
 
 export const metadata = {
-  metadataBase: new URL('https://cloudagi-liart.vercel.app'),
+  metadataBase: new URL('https://cloudagi.com'),
   title: "CloudAGI – AI Agent Consultancy for SMBs | Agentic Workflow Solutions",
   description:
     "CloudAGI delivers custom AI agent solutions and agentic workflows for small and medium businesses. Get measurable ROI through intelligent automation, AI consultancy, and agent-based systems. Expert implementation for sales, operations, and business automation.",
@@ -40,7 +40,7 @@ export const metadata = {
   openGraph: {
     title: "CloudAGI – AI Agent Solutions for SMBs",
     description: "Transform your business with intelligent AI agents. Custom agentic solutions delivering measurable ROI. AI consultancy, workflow design, and implementation for SMBs.",
-    url: "https://cloudagi-liart.vercel.app",
+    url: "https://cloudagi.com",
     siteName: "CloudAGI",
     images: [
       {
@@ -75,7 +75,7 @@ export const metadata = {
     google: "google-site-verification=MQVJM9bDiVqazcztLFi5uMm_TOiz4Yl9yslYYGFHzG8",
   },
   alternates: {
-    canonical: 'https://cloudagi-liart.vercel.app',
+    canonical: 'https://cloudagi.com',
   },
 };
 

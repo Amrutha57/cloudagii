@@ -58,15 +58,17 @@ export function Header() {
             );
           })}
 
-          <Link
-            href="/contact"
+          <a
+            href="https://calendly.com/cloudagi"
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
               buttonVariants({ variant: "default" }),
               "bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 font-semibold rounded-full px-6 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300"
             )}
           >
             Book Strategy Call
-          </Link>
+          </a>
         </div>
 
         <MobileNav />
