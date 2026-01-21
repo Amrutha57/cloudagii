@@ -2,159 +2,120 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Metadata } from "next";
-
-const dots = Array.from({ length: 25 });
-
-// Note: This is a client component, so metadata export cannot be used here
-// Metadata is configured at parent route level instead
-const pageMetadata: Metadata = {
-  title: "CloudAGI – AI Agents for Business Automation | SMB Solutions",
-  description:
-    "CloudAGI provides custom AI agent solutions for SMBs. Get intelligent automation, agentic workflows, and AI consultancy. Transform business processes with proven ROI.",
-  keywords: [
-    "AI agents",
-    "business automation",
-    "AI consultancy",
-    "agentic solutions",
-    "SMB AI",
-    "intelligent automation",
-    "AI implementation",
-  ],
-  openGraph: {
-    title: "CloudAGI – AI Agents & Agentic Solutions for SMBs",
-    description:
-      "Custom AI agent solutions that solve real business problems. Agentic workflows, AI consultancy, and proven implementation for measurable ROI.",
-    type: "website",
-  },
-};
 
 export default function Home() {
   return (
- 
-
-
-    <main className="relative bg-dark-bg text-white overflow-hidden">
-       <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta name="msvalidate.01" content="C84846955C8B8D3CA681FFEDD7F922FA" />
-      
-      </head>
-      <body>
-      
-      </body>
-    </html>
+    <main className="relative bg-dark-bg text-white overflow-hidden font-sans selection:bg-accent-blue selection:text-white">
 
       {/* ================= HERO ================= */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-dark">
-        {/* Gradient Background Orbs */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
-          <div className="absolute top-40 right-10 w-80 h-80 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: "1s" }}></div>
-          <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-accent-cyan rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: "2s" }}></div>
-        </div>
-
-        {/* Falling Stars Animation */}
-        <div className="absolute inset-0 pointer-events-none">
-          {Array.from({ length: 30 }).map((_, i) => (
-            <div
-              key={i}
-              className="star fall absolute"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `-10px`,
-                animationDuration: `${3 + Math.random() * 3}s`,
-                animationDelay: `${Math.random() * 2}s`,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Floating particles */}
-        <div className="absolute inset-0 pointer-events-none">
-          {dots.map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-0.5 h-0.5 rounded-full bg-accent-blue"
-              style={{
-                left: `${(i * 17) % 100}%`,
-                top: `${(i * 23) % 100}%`,
-                opacity: 0.3
-              }}
-              animate={{
-                y: [0, -30, 0],
-                opacity: [0.2, 0.6, 0.2]
-              }}
-              transition={{
-                duration: 8 + (i % 5),
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          ))}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-dark-bg/80 z-10" /> {/* Overlay for contrast */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-60"
+          >
+            <source src="/hero.mp4" type="video/mp4" />
+          </video>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-20 max-w-5xl mx-auto px-6 text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-5xl md:text-7xl font-bold tracking-tight text-white"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8"
           >
-            Stop wondering about AI.
+            We Build AI Agents &
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+              Provide Expert Consultation
+            </span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="mt-6 text-2xl font-medium text-gray-200"
+            className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12"
           >
-            Start using it to solve your biggest business problems.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="mt-6 text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
-          >
-           
+            Custom AI solutions that automate your repetitive work and let your team focus on growth.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="mt-12 flex flex-col sm:flex-row gap-4 justify-center"
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="flex flex-col sm:flex-row gap-5 justify-center"
           >
             <Link
               href="/contact"
-              className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 transform hover:shadow-lg"
+              className="px-10 py-5 bg-white text-black font-bold text-lg rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105"
             >
               Get Started
             </Link>
             <Link
               href="/services"
-              className="px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg"
+              className="px-10 py-5 bg-transparent border-2 border-white/30 text-white font-semibold text-lg rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300"
             >
-              Explore
+              See What We Build
             </Link>
           </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="mt-8 text-sm text-gray-500"
-          >
-            Start with a low-risk, fixed-price discovery package
-          </motion.p>
         </div>
       </section>
 
-      {/* ================= THE SMB AI GAP ================= */}
+      {/* ================= METRICS ================= */}
+      <section className="relative py-20 bg-dark-bg/50 border-b border-white/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-12 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-3">10+</div>
+              <h3 className="text-xl font-semibold text-white mb-2">Hours Saved Per Week</h3>
+              <p className="text-gray-400 text-sm">
+                Average time saved by our clients through AI automation
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-3">2-4</div>
+              <h3 className="text-xl font-semibold text-white mb-2">Weeks to Deploy</h3>
+              <p className="text-gray-400 text-sm">
+                From consultation to fully operational AI system
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-3">100%</div>
+              <h3 className="text-xl font-semibold text-white mb-2">Data Privacy</h3>
+              <p className="text-gray-400 text-sm">
+                Your data stays secure and under your control
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ================= HOW WE HELP ================= */}
       <section className="relative py-24 bg-dark-bg">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -162,60 +123,52 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              The SMB AI Implementation Gap
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Common Challenges We Solve
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              You want to leverage AI, but something is holding you back. Here&apos;s what we hear most often.
+              If any of these sound familiar, we can help.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                problem: "Uncertain ROI & High Costs",
-                pain: "AI is perceived as prohibitively expensive. You can't justify a $50k+ investment without knowing the return.",
-                solution: "We start with a low-risk, fixed-price discovery package. Prove the value before committing to a larger project."
+                problem: "Too Expensive to Get Started",
+                solution: "Start small with a fixed-price project. See results before investing more.",
+                icon: "💰"
               },
               {
-                problem: "The AI Talent Gap",
-                pain: "Specialized AI talent is scarce and expensive. You can't compete with big tech companies for top engineers.",
-                solution: "We are your outsourced AI team. Access expert knowledge without the cost of a full-time hire."
+                problem: "Don't Have AI Experts on Staff",
+                solution: "We become your AI team. No need to hire expensive specialists.",
+                icon: "🎯"
               },
               {
-                problem: "Data Security & Privacy Concerns",
-                pain: "You have valuable data but worry about security, compliance, and how to safely use it with AI.",
-                solution: "We design secure, private AI environments where your data stays protected while delivering insights."
+                problem: "Worried About Data Security",
+                solution: "Your data stays private and secure. We build systems you control.",
+                icon: "🔒"
               },
               {
-                problem: "Integration & Complexity Headaches",
-                pain: "Your existing tools (CRM, ERP, etc.) are complex. You assume AI won&apos;t work with them.",
-                solution: "We specialize in integrating AI with your current systems, acting as the glue between your tools."
+                problem: "AI Won't Work with Our Tools",
+                solution: "We specialize in connecting AI to your existing software.",
+                icon: "🔧"
               },
             ].map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="glass p-8 rounded-lg border border-dark-border relative overflow-hidden group hover:border-accent-blue transition-all duration-300"
+                className="glass p-8 rounded-xl border border-white/10 hover:border-blue-500/50 hover:shadow-glow-blue hover:-translate-y-1 transition-all duration-300 group"
               >
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
-                <div className="relative z-10">
-                  <h3 className="text-lg font-semibold text-white mb-3">{item.problem}</h3>
-                  <div className="space-y-3">
-                    <div>
-                      <p className="text-sm font-medium text-gray-400 uppercase tracking-wide">The Problem</p>
-                      <p className="text-gray-300 text-sm leading-relaxed">{item.pain}</p>
-                    </div>
-                    <div className="pt-3 border-t border-dark-border">
-                      <p className="text-sm font-medium text-gray-200 uppercase tracking-wide">Our Solution</p>
-                      <p className="text-gray-200 text-sm leading-relaxed font-medium">{item.solution}</p>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <div className="text-4xl group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-white mb-3">{item.problem}</h3>
+                    <p className="text-gray-300 leading-relaxed">{item.solution}</p>
                   </div>
                 </div>
               </motion.div>
@@ -224,340 +177,348 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= OUR PROCESS ================= */}
-      <section className="relative py-24 bg-dark-bg">
+      {/* ================= SERVICES / SOLUTIONS ================= */}
+      <section className="relative py-24 bg-dark-card border-y border-white/5">
         <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Your Blueprint to AI Success
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              A strategic framework that turns business challenges into AI-powered solutions
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                step: "1",
-                title: "Discovery & Analysis",
-                desc: "We dive deep into your business needs, explore your biggest pain points, and define a clear strategy for long-term success.",
-                icon: "🔍"
-              },
-              {
-                step: "2",
-                title: "Design & Development",
-                desc: "We craft a tailored AI agent solution for your specific challenge, rigorously test it, and build it to integrate seamlessly with your tools.",
-                icon: "⚙️"
-              },
-              {
-                step: "3",
-                title: "Launch & Optimize",
-                desc: "We deploy your solution and ensure it delivers measurable results. Ongoing support keeps it performing at peak efficiency.",
-                icon: "🚀"
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="relative glass p-8 rounded-lg border border-dark-border group hover:border-accent-blue transition-all duration-300 overflow-hidden"
-              >
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
-                <div className="absolute -top-6 left-8 z-10">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg shadow-lg">
-                    {item.step}
-                  </span>
-                </div>
-                <div className="mt-2 relative z-10">
-                  <div className="text-3xl mb-4">{item.icon}</div>
-                  <h3 className="text-lg font-semibold text-white mb-3">{item.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="relative py-24 bg-dark-card">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Services</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Practical solutions designed to solve real business problems with measurable ROI
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Agentic Workflow Design & Strategy",
-                desc: "A strategic engagement where we analyze your business processes and design a custom AI agent workflow to automate a key task. You get a comprehensive blueprint, proof-of-concept, and clear ROI projections.",
-                icon: "⚡",
-                best: "Best for: Leaders who know they need AI but don't know where to start"
-              },
-              {
-                title: "Custom Tool & Memory Development",
-                desc: "We build bespoke AI tools that integrate seamlessly with your existing software (CRM, ERP, etc.). This includes secure, private 'memories' so the agent learns from your company's data without exposing it.",
-                icon: "🔧",
-                best: "Best for: Teams with specific automation tasks and complex tool ecosystems"
-              },
-              {
-                title: "Secure Agent Sandbox Consulting",
-                desc: "We advise on and help implement secure environments where you can safely test and deploy AI agents. Guidance on data privacy, security, compliance, and best practices for handling proprietary information.",
-                icon: "🛡️",
-                best: "Best for: Sensitive industries (healthcare, finance) or organizations with strict data requirements"
-              },
-              {
-                title: "Prompt Engineering & Team Upskilling",
-                desc: "We train your team on how to think in prompts. We develop a library of high-performance, reusable prompts tailored to your business functions (sales, marketing, operations) to maximize AI effectiveness.",
-                icon: "📚",
-                best: "Best for: Teams already using AI tools like ChatGPT but getting mediocre results"
-              },
-            ].map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="group glass p-8 rounded-lg hover:border-accent-blue hover:shadow-glow-blue transition-all duration-300"
-              >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-accent-blue transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400 leading-relaxed mb-4">{service.desc}</p>
-                <p className="text-sm font-medium text-gray-300 italic">{service.best}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">How We Help Your Business</h2>
+              <p className="text-xl text-gray-400 max-w-2xl">
+                We build intelligent AI systems that automate your most time-consuming tasks. Here's what we can do for you:
+              </p>
+            </div>
             <Link
               href="/services"
-              className="inline-flex items-center px-6 py-3 border border-accent-blue text-accent-blue font-medium rounded-lg hover:bg-accent-blue hover:bg-opacity-10 hover:shadow-glow-blue transition-all duration-300"
+              className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2"
             >
-              Explore All Services →
+              See full solution details
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </Link>
-          </motion.div>
-        </div>
-      </section>
+          </div>
 
-      {/* ================= WHY CHOOSE CLOUDAGI ================= */}
-      <section className="relative py-24 bg-dark-bg">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why Business Owners Choose CloudAGI
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              The proven advantages that make AI implementation your smartest business investment
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "Reclaim Your Time",
-                desc: "Automate repetitive, time-consuming tasks across your team so you can focus on strategy and growth. Free up hours every week.",
-                icon: "⏱️"
+                title: "Strategy & Audit",
+                tag: "Strategic Foundation",
+                desc: "We analyze your workflows to identify where AI agents can drive the most impact, ensuring you solve the right problems first.",
+                features: ["Workflow Analysis", "Data Readiness Check", "Impact Projection"]
               },
               {
-                title: "Measurable ROI",
-                desc: "We structure every engagement around delivering clear business results. You know exactly what you're getting before you invest.",
-                icon: "📊"
+                title: "Agent Development",
+                tag: "Custom Implementation",
+                desc: "We engineer custom AI agents tailored to your unique data and requirements. From intelligent assistants to autonomous process handlers.",
+                features: ["Custom LLM Integration", "Agentic Workflow Build", "Secure Deployment"]
               },
               {
-                title: "Scalable Growth",
-                desc: "Increase capacity and output without adding headcount or overhead. Do more with your existing team through intelligent automation.",
-                icon: "📈"
-              },
-              {
-                title: "Expert Partnership",
-                desc: "Access world-class AI expertise without the cost of a full-time hire. We're your fractional AI team, handling all the complexity.",
-                icon: "🤝"
-              },
-              {
-                title: "Future-Proof Your Business",
-                desc: "Stay ahead of competitors who are exploring AI. Be the one implementing solutions that create a real competitive advantage.",
-                icon: "🚀"
-              },
-              {
-                title: "De-Risked Implementation",
-                desc: "We start small with low-cost proof-of-concepts. Prove the value first, then scale. No massive upfront investments required.",
-                icon: "🛡️"
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                viewport={{ once: true }}
-                className="glass p-8 rounded-lg hover:border-accent-blue hover:shadow-glow-blue transition-all duration-300"
-              >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-lg font-semibold text-white mb-3">{item.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ================= FOUNDER / EXPERT PARTNER ================= */}
-      <section className="relative py-24 bg-dark-card">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Your Expert Partner
-            </h2>
-            <p className="text-lg text-gray-400">
-              Led by someone who understands both the technology and your business
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="glass p-8 md:p-12 rounded-lg hover:border-accent-blue hover:shadow-glow-blue transition-all duration-300"
-          >
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-2">Arya Teja Rudraraju</h3>
-                <p className="text-lg text-gray-300 font-medium">Founder & AI Strategist</p>
-              </div>
-
-              <div className="space-y-4">
-                <div>
-                  <h4 className="text-sm font-bold text-gray-200 uppercase tracking-wide mb-2">Why This Matters</h4>
-                  <p className="text-gray-400 leading-relaxed">
-                    You get a partner who not only understands the underlying AI technology but is relentlessly focused on how it can be applied to solve your real business problems.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="text-sm font-bold text-gray-200 uppercase tracking-wide mb-2">Proven Technical Execution</h4>
-                  <ul className="text-gray-400 space-y-2 text-sm">
-                    <li>• <span className="font-medium">A Builder, Not Just a Theorist:</span> Shipped numerous AI products and proof-of-concepts with proven track records of turning ideas into working solutions</li>
-                    <li>• <span className="font-medium">Full-Stack AI Expertise:</span> From backend development (Python, FastAPI) to UI (Streamlit) and architecting end-to-end AI systems</li>
-                    <li>• <span className="font-medium">Hands-On with Modern Tools:</span> Constantly testing and implementing with the latest, most effective agentic AI tools</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="text-sm font-bold text-gray-200 uppercase tracking-wide mb-2">Strategic Business Acumen</h4>
-                  <ul className="text-gray-400 space-y-2 text-sm">
-                    <li>• <span className="font-medium">MBA-Informed Approach:</span> Background in business analysis, project management, and entrepreneurship</li>
-                    <li>• <span className="font-medium">Product Mindset:</span> Doesn&apos;t just deliver code—helps you design solutions your team can actually use</li>
-                    <li>• <span className="font-medium">Thought Leadership:</span> Actively shaping conversations about AI&apos;s practical application</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ================= INTERNAL R&D ================= */}
-      <section className="relative z-10 py-24 bg-dark-bg">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold text-center mb-12 text-white">
-            Internal R&amp;D
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {["LeCoder", "MConnect"].map((name, i) => (
+                title: "Fractional AI Team",
+                tag: "Continuous Evolution",
+                desc: "AI moves fast. We act as your dedicated R&D partner, continuously optimizing your agents and keeping your business ahead.",
+                features: ["Continuous Optimization", "Team Upskilling", "Priority Support"]
+              }
+            ].map((service, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="glass rounded-xl p-6 hover:border-accent-blue hover:shadow-glow-blue transition-all duration-300"
+                className="glass p-8 rounded-xl hover:border-blue-500/50 hover:shadow-glow-blue hover:-translate-y-2 transition-all duration-300 flex flex-col cursor-default"
               >
-                <h3 className="text-lg font-medium text-white">{name}</h3>
-                <p className="mt-2 text-sm text-gray-400">
-                  Open-source thinking. Execution-first.
-                </p>
+                <div className="mb-4">
+                  <span className="text-xs font-semibold text-blue-400 uppercase tracking-wider">{service.tag}</span>
+                  <h3 className="text-2xl font-semibold text-white mt-2">{service.title}</h3>
+                </div>
+                <p className="text-gray-400 leading-relaxed mb-8 flex-grow">{service.desc}</p>
+                <ul className="space-y-3 pt-6 border-t border-white/5">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-sm text-gray-300">
+                      <svg className="w-4 h-4 text-blue-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ================= CALL TO ACTION ================= */}
-      <section className="relative py-24 bg-gradient-dark">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+      {/* ================= WHAT WE DO + FAQ ================= */}
+      <section className="relative py-24 bg-dark-bg border-y border-white/5">
+        <div className="max-w-5xl mx-auto px-6">
+          {/* What We Do */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">What We Do</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-4">
+              CloudAGI builds custom AI agents and provides expert AI consultation for small and medium businesses.
+            </p>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-12">
+              We automate your repetitive tasks, integrate AI into your existing workflows, and train your team—without requiring any technical expertise from you.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="glass p-8 rounded-xl border border-white/10 hover:border-blue-500/50 hover:shadow-glow-blue transition-all duration-300"
+              >
+                <div className="text-5xl mb-4">🤖</div>
+                <h3 className="text-2xl font-bold text-white mb-3">AI Agent Development</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Custom AI assistants that handle tasks like customer support, data entry, scheduling, and more.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="glass p-8 rounded-xl border border-white/10 hover:border-blue-500/50 hover:shadow-glow-blue transition-all duration-300"
+              >
+                <div className="text-5xl mb-4">💡</div>
+                <h3 className="text-2xl font-bold text-white mb-3">AI Strategy Consultation</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Expert guidance on where AI can save you time and money in your specific business.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="glass p-8 rounded-xl border border-white/10 hover:border-blue-500/50 hover:shadow-glow-blue transition-all duration-300"
+              >
+                <div className="text-5xl mb-4">🎓</div>
+                <h3 className="text-2xl font-bold text-white mb-3">Team Training & Implementation</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  We set everything up and train your team so AI actually gets used.
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* FAQ */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16 mt-24 pt-24 border-t border-white/5"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-400">Everything you need to know about working with CloudAGI</p>
+          </motion.div>
+
+          <div className="space-y-6">
+            {[
+              {
+                q: "What is an AI agent?",
+                a: "An AI agent is a smart software assistant that can handle tasks automatically—like responding to customer emails, scheduling meetings, or processing data. Think of it as a virtual team member that works 24/7 without breaks."
+              },
+              {
+                q: "Do I need technical knowledge to work with CloudAGI?",
+                a: "No. We handle all the technical complexity. You just tell us what tasks take up your team's time, and we build and implement the solution. We also train your team on how to use the AI systems we create."
+              },
+              {
+                q: "What makes AI agents different from traditional automation?",
+                a: "Traditional automation follows rigid rules and breaks when it encounters something unexpected. AI agents can understand context, handle variations, and make intelligent decisions. They adapt to new situations without needing to be reprogrammed for every edge case."
+              },
+              {
+                q: "How long does implementation take?",
+                a: "Most projects are completed in 2-6 weeks. We start with a pilot to prove ROI before scaling. You'll see results within the first month."
+              },
+              {
+                q: "What if my team doesn't adopt the AI tools?",
+                a: "We include hands-on training and ongoing support. Our goal is adoption, not just delivery—we don't succeed unless your team actually uses the system. We work closely with you to ensure smooth integration into your workflows."
+              },
+              {
+                q: "Is my data secure?",
+                a: "Absolutely. We build AI systems that you own and control. Your data stays on your infrastructure or in secure, private environments. We never share your data with third parties or use it to train public models."
+              }
+            ].map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="glass p-8 rounded-xl border border-white/10 hover:border-blue-500/30 transition-all duration-300"
+              >
+                <h3 className="text-xl font-bold text-white mb-4">{faq.q}</h3>
+                <p className="text-gray-400 leading-relaxed">{faq.a}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= EXPERT LEADERSHIP ================= */}
+      <section className="relative py-24 bg-dark-card">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Led by Technical Experts</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Not consultants who learned AI last month. Engineers who build production systems.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Meet Your Strategic Partner
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Business strategy meets AI execution. No theory. Just results.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="glass p-8 md:p-12 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-500 group relative overflow-hidden"
+          >
+            {/* Gradient overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div className="relative z-10">
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                {/* Avatar */}
+                <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl md:text-4xl shadow-2xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                  AT
+                </div>
+
+                {/* Content */}
+                <div className="flex-1">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Arya Teja Rudraraju</h3>
+                  <p className="text-blue-400 font-semibold mb-6 text-lg">Founder & AI Systems Architect</p>
+
+                  {/* Stats Grid */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div className="bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                      <div className="text-2xl font-bold text-blue-400 mb-1">15+</div>
+                      <div className="text-xs text-gray-400">AI Systems Built</div>
+                    </div>
+                    <div className="bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                      <div className="text-2xl font-bold text-blue-400 mb-1">MBA</div>
+                      <div className="text-xs text-gray-400">Business Strategy</div>
+                    </div>
+                    <div className="bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                      <div className="text-2xl font-bold text-blue-400 mb-1">5+</div>
+                      <div className="text-xs text-gray-400">Years in AI</div>
+                    </div>
+                    <div className="bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                      <div className="text-2xl font-bold text-blue-400 mb-1">100%</div>
+                      <div className="text-xs text-gray-400">ROI Focused</div>
+                    </div>
+                  </div>
+
+                  {/* Key Differentiators */}
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-300 text-sm"><span className="font-semibold text-white">Business-First Approach:</span> MBA + Technical expertise means AI solutions aligned with your bottom line</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-300 text-sm"><span className="font-semibold text-white">Production-Ready Systems:</span> Not demos or prototypes—real systems that work reliably in production</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-300 text-sm"><span className="font-semibold text-white">Hands-On Builder:</span> Python, FastAPI, LangChain, vector databases—I build what I design</p>
+                    </div>
+                  </div>
+
+                  {/* Quote */}
+                  <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-500/5 rounded-r">
+                    <p className="text-gray-300 italic leading-relaxed">
+                      "I don't believe in AI magic. I believe in engineering discipline, measurable results, and systems that work on Monday morning."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <section className="relative py-32 bg-gradient-to-br from-dark-bg via-blue-950/20 to-dark-bg overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[120px]" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Turn AI Into a Competitive Advantage?
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Ready to Save Time?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-              We&apos;ll identify your biggest automation opportunities and show you the exact impact you can expect. No obligation, no pressure—just practical insights.
+
+            <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+              Let's talk about your biggest time-waster and how AI can fix it.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 href="/contact"
-                className="px-8 py-4 bg-gradient-blue text-white font-medium rounded-lg hover:shadow-glow-blue transition-all duration-300 hover:scale-105 transform"
+                className="group relative px-12 py-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-xl rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105"
               >
-                Get Your AI Roadmap
-              </Link>
-              <Link
-                href="/services"
-                className="px-8 py-4 border-2 border-accent-blue text-accent-blue font-medium rounded-lg hover:bg-accent-blue hover:bg-opacity-10 transition-all duration-300 hover:shadow-glow-blue"
-              >
-                Learn About Services
+                <span className="flex items-center gap-2">
+                  Book a Free Call
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
               </Link>
             </div>
-            <p className="mt-8 text-sm text-gray-400">
-              Our $1k AI Roadmap gives you a clear plan with a simple proof-of-concept. Low risk. High insight.
+
+            <p className="mt-8 text-sm text-gray-500">
+              30-minute call · No commitment · Free consultation
             </p>
           </motion.div>
         </div>

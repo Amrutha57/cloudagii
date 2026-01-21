@@ -62,17 +62,14 @@ export function MobileNav() {
 						<div
 							className={cn(
 								"data-[slot=open]:zoom-in-97 ease-out data-[slot=open]:animate-in",
-								"size-full p-4"
+								"size-full p-6 flex flex-col h-full"
 							)}
 							data-slot={open ? "open" : "closed"}
 						>
-							<div className="grid gap-y-2">
+							<div className="flex flex-col gap-6">
 								{navLinks.map((link) => (
 									<Link
-										className={buttonVariants({
-											variant: "ghost",
-											className: "justify-start",
-										})}
+										className="text-lg font-medium text-gray-300"
 										href={link.href}
 										key={link.label}
 										onClick={() => setOpen(false)}
@@ -80,20 +77,14 @@ export function MobileNav() {
 										{link.label}
 									</Link>
 								))}
-								{/* Theme Toggle for Mobile */}
-								<button
-									type="button"
-									onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-									className="flex items-center justify-start px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors duration-200"
-								>
-									{mounted ? (theme === "dark" ? "🌙 Dark Mode" : "☀️ Light Mode") : "☀️ Light Mode"}
-								</button>
 							</div>
-							<div className="mt-12 flex flex-col gap-2">
-								<Button className="w-full" variant="outline">
-									Sign In
-								</Button>
-								<Button className="w-full">Get Started</Button>
+
+							<div className="mt-auto mb-8">
+								<Link href="/contact" onClick={() => setOpen(false)}>
+									<Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/30 font-bold h-12 rounded-lg">
+										Book Strategy Call
+									</Button>
+								</Link>
 							</div>
 						</div>
 					</div>,

@@ -26,35 +26,13 @@ module.exports = {
       },
       animation: {
         "gradient-shift": "gradient-shift 6s ease infinite",
-        "float": "float 3s ease-in-out infinite",
-        "twinkle": "twinkle 2s ease-in-out infinite",
-        "fall": "fall linear forwards",
-        "sparkle-pulse": "sparkle-pulse 1.5s ease-in-out infinite",
       },
-      keyframes: {
-        "gradient-shift": {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
-        },
-        "float": {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        "twinkle": {
-          "0%, 100%": { opacity: "0.2", transform: "scale(1)" },
-          "50%": { opacity: "1", transform: "scale(1.2)" },
-        },
-        "fall": {
-          "0%": { transform: "translateY(-100vh) translateX(0)", opacity: "1" },
-          "90%": { opacity: "1" },
-          "100%": { transform: "translateY(100vh) translateX(100px)", opacity: "0" },
-        },
-        "sparkle-pulse": {
-          "0%, 100%": { opacity: "0", transform: "scale(0)" },
-          "50%": { opacity: "1", transform: "scale(1)" },
-        },
+      "gradient-shift": {
+        "0%, 100%": { backgroundPosition: "0% 50%" },
+        "50%": { backgroundPosition: "100% 50%" },
       },
     },
   },
+},
   plugins: [],
 };

@@ -139,26 +139,50 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       },
       {
         "@type": "Question",
-        "name": "What is agentic AI?",
+        "name": "What is an AI agent?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Agentic AI refers to autonomous AI systems that can take actions independently to accomplish goals. Unlike traditional AI, agentic systems can plan, execute, and adapt their behavior based on feedback and results."
+          "text": "An AI agent is a smart software assistant that can handle tasks automatically—like responding to customer emails, scheduling meetings, or processing data. Think of it as a virtual team member that works 24/7 without breaks."
         }
       },
       {
         "@type": "Question",
-        "name": "How long does it take to implement AI agents?",
+        "name": "Do I need technical knowledge to work with CloudAGI?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Implementation timelines vary based on complexity. Simple integrations can be completed in weeks, while comprehensive agentic workflow solutions typically take 4-8 weeks depending on requirements and customization needs."
+          "text": "No. We handle all the technical complexity. You just tell us what tasks take up your team's time, and we build and implement the solution. We also train your team on how to use the AI systems we create."
         }
       },
       {
         "@type": "Question",
-        "name": "What ROI can I expect from AI agents?",
+        "name": "What makes AI agents different from traditional automation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ROI varies by use case, but businesses typically see 200-400% returns within the first year through improved efficiency, reduced labor costs, faster operations, and better decision-making. We provide custom ROI projections for your specific scenarios."
+          "text": "Traditional automation follows rigid rules and breaks when it encounters something unexpected. AI agents can understand context, handle variations, and make intelligent decisions. They adapt to new situations without needing to be reprogrammed for every edge case."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does implementation take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most projects are completed in 2-6 weeks. We start with a pilot to prove ROI before scaling. You'll see results within the first month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my team doesn't adopt the AI tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We include hands-on training and ongoing support. Our goal is adoption, not just delivery—we don't succeed unless your team actually uses the system. We work closely with you to ensure smooth integration into your workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. We build AI systems that you own and control. Your data stays on your infrastructure or in secure, private environments. We never share your data with third parties or use it to train public models."
         }
       }
     ]

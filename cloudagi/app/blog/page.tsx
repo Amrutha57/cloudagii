@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const blogMetadata = {
   title: "CloudAGI Blog – AI Agents, Agentic Systems, Business Automation Insights",
@@ -14,12 +15,6 @@ const blogMetadata = {
     "AI ROI",
     "AI strategy",
   ],
-  openGraph: {
-    title: "CloudAGI Blog – AI Agent Solutions & Business Automation",
-    description:
-      "Expert content on AI agents, agentic workflows, and proven implementation strategies for business automation and measurable ROI.",
-    type: "website",
-  },
 };
 
 export default function BlogPage() {
@@ -30,7 +25,8 @@ export default function BlogPage() {
       excerpt: "How CloudAGI turns raw human intent into execution-ready AI systems",
       date: "Jan 15, 2025",
       category: "AI Systems",
-      readTime: "8 min read"
+      readTime: "8 min read",
+      image: "/blog11.png"
     },
     {
       slug: "tool-chaos",
@@ -38,7 +34,8 @@ export default function BlogPage() {
       excerpt: "Why most AI stacks fail — and how CloudAGI designs execution-first systems that scale",
       date: "Jan 12, 2025",
       category: "Architecture",
-      readTime: "10 min read"
+      readTime: "10 min read",
+      image: "/blog22.png"
     },
     {
       slug: "ai-roi",
@@ -46,7 +43,8 @@ export default function BlogPage() {
       excerpt: "And how CloudAGI designs AI systems that actually pay off",
       date: "Jan 8, 2025",
       category: "Business ROI",
-      readTime: "9 min read"
+      readTime: "9 min read",
+      image: "/blog44.png"
     },
     {
       slug: "production-reliability",
@@ -54,7 +52,8 @@ export default function BlogPage() {
       excerpt: "It's not the models. It's the missing system layer.",
       date: "Jan 5, 2025",
       category: "Production",
-      readTime: "11 min read"
+      readTime: "11 min read",
+      image: "/blog55.png"
     },
     {
       slug: "scaling-ai-tools",
@@ -62,15 +61,17 @@ export default function BlogPage() {
       excerpt: "Scaling AI requires systems, not more software",
       date: "Dec 30, 2024",
       category: "Scaling",
-      readTime: "10 min read"
+      readTime: "10 min read",
+      image: "/blog66.png"
     },
     {
-      slug: "blog6",
+      slug: "future-ai-systems",
       title: "The Future of Business AI: From Tools to Systems",
       excerpt: "How the shift from point solutions to integrated AI infrastructure changes competitive advantage",
       date: "Dec 25, 2024",
       category: "Future Trends",
-      readTime: "12 min read"
+      readTime: "12 min read",
+      image: "/blog33.png"
     }
   ];
 
@@ -84,7 +85,7 @@ export default function BlogPage() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center w-full">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            CloudAGI Blog
+            CloudAGI Insights
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Practical insights on building AI systems that work, implementing agents that deliver ROI, and navigating the AI revolution for SMBs.
@@ -99,31 +100,44 @@ export default function BlogPage() {
             {blogs.map((blog) => (
               <Link
                 key={blog.slug}
-                href={blog.slug === "query-intelligence" ? "/blog1" : 
-                      blog.slug === "tool-chaos" ? "/blog2" :
-                      blog.slug === "ai-roi" ? "/blog4" :
+                href={blog.slug === "query-intelligence" ? "/blog1" :
+                  blog.slug === "tool-chaos" ? "/blog2" :
+                    blog.slug === "ai-roi" ? "/blog4" :
                       blog.slug === "production-reliability" ? "/blog5" :
-                      blog.slug === "scaling-ai-tools" ? "/blog6" :
-                      `/blog/${blog.slug}`}
-                className="group glass p-6 rounded-lg border border-dark-border relative overflow-hidden hover:border-accent-blue transition-all duration-300"
+                        blog.slug === "scaling-ai-tools" ? "/blog6" :
+                          blog.slug === "future-ai-systems" ? "/blog3" :
+                            `/blog/${blog.slug}`}
+                className="group glass p-6 rounded-lg border border-dark-border relative overflow-hidden hover:border-accent-blue hover:shadow-glow-blue hover:-translate-y-1 transition-all duration-300 h-full flex flex-col"
               >
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+
                 <div className="relative z-10">
+                  {/* Blog Image */}
+                  <div className="mb-4 rounded-lg overflow-hidden aspect-video">
+                    <Image
+                      src={blog.image}
+                      alt={blog.title}
+                      width={600}
+                      height={338}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+
                   <div className="mb-4">
                     <span className="inline-block px-3 py-1 text-xs font-medium text-accent-blue bg-accent-blue/10 rounded-full">
                       {blog.category}
                     </span>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-3 group-hover:text-accent-blue transition-colors line-clamp-2">
                     {blog.title}
                   </h3>
-                  
+
                   <p className="text-gray-400 text-sm mb-4 line-clamp-2">
                     {blog.excerpt}
                   </p>
-                  
+
                   <div className="flex items-center justify-between pt-4 border-t border-dark-border">
                     <span className="text-xs text-gray-500">{blog.date}</span>
                     <span className="text-xs text-gray-500">{blog.readTime}</span>

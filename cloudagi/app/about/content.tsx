@@ -68,20 +68,21 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="glass p-8 rounded-lg border border-dark-border group overflow-hidden hover:border-accent-blue transition-all duration-300"
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="glass p-8 rounded-lg border border-dark-border group relative overflow-hidden hover:border-accent-blue hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 cursor-pointer"
               >
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
                 <div className="relative z-10">
                   <motion.div
                     animate={{ y: [0, -5, 0] }}
                     transition={{ duration: 3, repeat: Infinity }}
-                    className="text-4xl mb-4"
+                    className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
                   >
                     {item.icon}
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{item.content}</p>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">{item.title}</h3>
+                  <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">{item.content}</p>
                 </div>
               </motion.div>
             ))}
@@ -136,10 +137,14 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 border border-slate-800 rounded-lg hover:border-slate-700 hover:shadow-slate-900/50 transition-all duration-300"
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="p-8 border border-slate-800 rounded-lg hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300 cursor-pointer group relative overflow-hidden"
               >
-                <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{value.desc}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">{value.title}</h3>
+                  <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">{value.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -250,10 +255,14 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 border border-slate-800 rounded-lg hover:border-gray-300 dark:hover:border-slate-700 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300"
+                whileHover={{ y: -8, scale: 1.03 }}
+                className="p-8 border border-slate-800 rounded-lg hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 cursor-pointer group relative overflow-hidden"
               >
-                <h3 className="text-xl font-bold text-white mb-3">{comparison.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{comparison.desc}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">{comparison.title}</h3>
+                  <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">{comparison.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>

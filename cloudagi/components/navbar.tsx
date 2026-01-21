@@ -6,54 +6,67 @@ import { Button, buttonVariants } from "@/components/button";
 import { cn } from "@/components/lib/utils";
 import { MobileNav } from "@/components/mobile-nav";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const navLinks = [
-  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Insights", href: "/blog" },
   { label: "About", href: "/about" },
-  { label: "Blogs", href: "/blog" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export function Header() {
   const scrolled = useScroll(10);
+  const pathname = usePathname();
 
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 mx-auto w-full max-w-4xl border-transparent border-b md:rounded-md md:border md:transition-all md:ease-out bg-dark-bg/80 backdrop-blur-sm",
+        "sticky top-0 z-50 mx-auto w-full max-w-full transition-all duration-300",
         {
-          "border-dark-border bg-dark-bg/95 backdrop-blur-md md:top-2 md:max-w-3xl md:shadow-glow-blue":
-            scrolled,
+          "bg-dark-bg/90 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-blue-500/10": scrolled,
+          "bg-dark-bg/50 backdrop-blur-sm border-b border-white/5": !scrolled
         }
       )}
     >
-      <nav
-        className={cn(
-          "flex h-14 w-full items-center justify-between px-4 md:h-12 md:transition-all md:ease-out",
-          {
-            "md:px-2": scrolled,
-          }
-        )}
-      >
+      <nav className="flex items-center justify-between px-6 h-16 max-w-6xl mx-auto">
         {/* Logo */}
-        <Link className="rounded-md p-2 hover:bg-accent" href="/">
-          <Logo className="h-4.5" />
+        <Link className="flex items-center gap-2 group" href="/">
+          <Logo className="h-6 transition-transform duration-300 group-hover:scale-110" />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden items-center gap-2 md:flex">
-          {navLinks.map((link, i) => (
-            <Link
-              key={i}
-              href={link.href}
-              className={buttonVariants({ variant: "ghost" })}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link, i) => {
+            const isActive = pathname === link.href || pathname.startsWith(link.href + '/');
+            return (
+              <Link
+                key={i}
+                href={link.href}
+                className={cn(
+                  "text-sm font-medium transition-all duration-300 relative group",
+                  isActive
+                    ? "text-white"
+                    : "text-gray-400 hover:text-white"
+                )}
+              >
+                {link.label}
+                <span className={cn(
+                  "absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300",
+                  isActive ? "w-full" : "w-0 group-hover:w-full"
+                )}></span>
+              </Link>
+            );
+          })}
 
-          <Button variant="outline">Sign In</Button>
-          <Button>Get Started</Button>
+          <Link
+            href="/contact"
+            className={cn(
+              buttonVariants({ variant: "default" }),
+              "bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 font-semibold rounded-full px-6 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300"
+            )}
+          >
+            Book Strategy Call
+          </Link>
         </div>
 
         <MobileNav />
