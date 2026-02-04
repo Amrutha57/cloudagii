@@ -32,12 +32,12 @@ export default function Home() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-20 max-w-5xl mx-auto px-6 text-center">
+        <div className="relative z-20 max-w-5xl mx-auto px-6 text-center py-20 md:py-0">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8"
+            className="text-3xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 md:mb-8"
           >
             We Build AI Agents &
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
@@ -49,7 +49,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12"
+            className="hidden md:block text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10 md:mb-12"
           >
             Custom AI solutions that automate your repetitive work and let your team focus on growth.
           </motion.p>
@@ -58,19 +58,19 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-5 justify-center"
+            className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center"
           >
             <button
               onClick={openQuiz}
-              className="px-10 py-5 bg-white text-black font-bold text-lg rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105 border-none cursor-pointer"
+              className="px-8 py-4 md:px-10 md:py-5 bg-white text-black font-bold text-base md:text-lg rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105 border-none cursor-pointer"
             >
               Get Started
             </button>
             <Link
               href="/services"
-              className="px-10 py-5 bg-transparent border-2 border-white/30 text-white font-semibold text-lg rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+              className="px-8 py-4 md:px-10 md:py-5 bg-transparent border-2 border-white/30 text-white font-semibold text-base md:text-lg rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300 text-center"
             >
-              See What We Build
+              Explore Solutions
             </Link>
           </motion.div>
         </div>
@@ -102,9 +102,9 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-3">
-                <Counter end={4} suffix="w" />
+                <Counter end={21} suffix=" Days" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Avg. Time to Deploy</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">Execution Speed</h3>
               <p className="text-gray-400 text-sm">
                 Our team gets your first agent up and running in weeks, not months
               </p>
@@ -332,10 +332,10 @@ export default function Home() {
             </p>
             <button
               onClick={openQuiz}
-              className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-xl rounded-xl hover:from-blue-700 hover:to-indigo-700 hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105 transform border-none cursor-pointer"
+              className="inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg md:text-xl rounded-xl hover:from-blue-700 hover:to-indigo-700 hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105 transform border-none cursor-pointer"
             >
               Book My Strategic Consultation
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             </button>

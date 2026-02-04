@@ -86,10 +86,10 @@ export default function BlogPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter">
+            <h1 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter">
               Insights <span className="text-blue-500 italic">& Architecture</span>
             </h1>
-            <p className="text-xl text-gray-400 max-w-2xl leading-relaxed italic">
+            <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed italic">
               Strategic thoughts on building the next generation of business intelligence.
             </p>
           </motion.div>
@@ -146,8 +146,8 @@ export default function BlogPage() {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all border ${activeCategory === cat
-                  ? "bg-white text-black border-white"
-                  : "bg-transparent text-gray-500 border-white/10 hover:border-white/30 hover:text-white"
+                ? "bg-white text-black border-white"
+                : "bg-transparent text-gray-500 border-white/10 hover:border-white/30 hover:text-white"
                 }`}
             >
               {cat}

@@ -112,24 +112,24 @@ function ROICalculator() {
         teamSize
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "relative py-24 bg-dark-bg/50",
+        className: "relative py-12 md:py-24 bg-dark-bg/50",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "max-w-6xl mx-auto px-6",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "text-center mb-16",
+                    className: "text-center mb-8 md:mb-16",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "text-4xl md:text-5xl font-bold text-white mb-6",
+                            className: "text-2xl md:text-5xl font-bold text-white mb-3 md:mb-6 uppercase tracking-tighter italic",
                             children: [
-                                "Calculate Your ",
+                                "ROI ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400",
-                                    children: "Potential Savings"
+                                    children: "Projection"
                                 }, void 0, false, {
                                     fileName: "[project]/components/roi-calculator.tsx",
                                     lineNumber: 30,
-                                    columnNumber: 40
+                                    columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
@@ -138,7 +138,7 @@ function ROICalculator() {
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-xl text-gray-400 max-w-2xl mx-auto",
+                            className: "text-base md:text-xl text-gray-400 max-w-2xl mx-auto hidden md:block",
                             children: "See how much time and money your organization is losing to manual processes that AI agents could handle today."
                         }, void 0, false, {
                             fileName: "[project]/components/roi-calculator.tsx",
@@ -152,40 +152,224 @@ function ROICalculator() {
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid lg:grid-cols-2 gap-12 items-start",
+                    className: "flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-12 items-start",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "glass p-8 md:p-10 rounded-2xl border border-white/10 space-y-10",
+                            className: "relative w-full order-1 lg:order-2",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "space-y-4",
+                                    className: "absolute inset-0 bg-blue-600/10 blur-[80px] rounded-full"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/roi-calculator.tsx",
+                                    lineNumber: 41,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative glass p-5 md:p-10 rounded-2xl border border-blue-500/30 shadow-2xl overflow-hidden",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex flex-row lg:flex-col justify-between items-center lg:items-start gap-4 lg:gap-8",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                                                mode: "wait",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                                                    initial: {
+                                                        opacity: 0,
+                                                        scale: 0.95
+                                                    },
+                                                    animate: {
+                                                        opacity: 1,
+                                                        scale: 1
+                                                    },
+                                                    className: "space-y-0 lg:space-y-1 text-left",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-[10px] md:text-sm font-black text-blue-400 uppercase tracking-[0.2em]",
+                                                            children: "Yearly Value Locked"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/roi-calculator.tsx",
+                                                            lineNumber: 51,
+                                                            columnNumber: 41
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "text-4xl xs:text-5xl md:text-7xl font-black text-white tracking-widest italic uppercase",
+                                                            children: [
+                                                                "$",
+                                                                metrics.yearly.toLocaleString()
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/components/roi-calculator.tsx",
+                                                            lineNumber: 52,
+                                                            columnNumber: 41
+                                                        }, this)
+                                                    ]
+                                                }, metrics.yearly, true, {
+                                                    fileName: "[project]/components/roi-calculator.tsx",
+                                                    lineNumber: 45,
+                                                    columnNumber: 37
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/roi-calculator.tsx",
+                                                lineNumber: 44,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "hidden md:grid grid-cols-2 gap-4 w-full",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "bg-white/5 p-4 rounded-xl border border-white/5",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "text-[10px] font-bold text-gray-500 uppercase mb-1",
+                                                                children: "Monthly"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/roi-calculator.tsx",
+                                                                lineNumber: 60,
+                                                                columnNumber: 41
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "text-xl font-bold text-white",
+                                                                children: [
+                                                                    "$",
+                                                                    metrics.monthly.toLocaleString()
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/components/roi-calculator.tsx",
+                                                                lineNumber: 61,
+                                                                columnNumber: 41
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/roi-calculator.tsx",
+                                                        lineNumber: 59,
+                                                        columnNumber: 37
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "bg-white/5 p-4 rounded-xl border border-white/5",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "text-[10px] font-bold text-gray-500 uppercase mb-1",
+                                                                children: "Weekly"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/roi-calculator.tsx",
+                                                                lineNumber: 64,
+                                                                columnNumber: 41
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "text-xl font-bold text-white",
+                                                                children: [
+                                                                    "$",
+                                                                    metrics.weekly.toLocaleString()
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/components/roi-calculator.tsx",
+                                                                lineNumber: 65,
+                                                                columnNumber: 41
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/roi-calculator.tsx",
+                                                        lineNumber: 63,
+                                                        columnNumber: 37
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/roi-calculator.tsx",
+                                                lineNumber: 58,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "bg-blue-500/10 p-4 rounded-xl border border-blue-500/20 flex-1 lg:w-full",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                        className: "text-blue-200 font-bold mb-1 flex items-center gap-2 text-[10px] md:text-sm uppercase tracking-widest",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/roi-calculator.tsx",
+                                                                lineNumber: 71,
+                                                                columnNumber: 41
+                                                            }, this),
+                                                            "Hours Reclaimed"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/roi-calculator.tsx",
+                                                        lineNumber: 70,
+                                                        columnNumber: 37
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-white text-sm md:text-lg font-medium italic",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "font-black text-blue-400",
+                                                                children: metrics.hours.toLocaleString()
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/roi-calculator.tsx",
+                                                                lineNumber: 75,
+                                                                columnNumber: 41
+                                                            }, this),
+                                                            " hrs/year"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/roi-calculator.tsx",
+                                                        lineNumber: 74,
+                                                        columnNumber: 37
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/roi-calculator.tsx",
+                                                lineNumber: 69,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/roi-calculator.tsx",
+                                        lineNumber: 43,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/roi-calculator.tsx",
+                                    lineNumber: 42,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/roi-calculator.tsx",
+                            lineNumber: 40,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "glass p-5 md:p-10 rounded-2xl border border-white/10 space-y-5 md:space-y-10 w-full order-2 lg:order-1",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "space-y-2 md:space-y-4",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex justify-between items-end",
+                                            className: "flex justify-between items-center",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    className: "text-sm font-bold text-gray-300 uppercase tracking-widest",
+                                                    className: "text-[10px] md:text-sm font-black text-gray-500 uppercase tracking-widest",
                                                     children: "Manual Hours / Week"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/roi-calculator.tsx",
-                                                    lineNumber: 43,
+                                                    lineNumber: 87,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-2xl font-bold text-blue-400",
+                                                    className: "text-lg md:text-2xl font-black text-blue-400 italic",
                                                     children: [
                                                         hoursPerWeek,
-                                                        " hrs"
+                                                        "h"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/roi-calculator.tsx",
-                                                    lineNumber: 46,
+                                                    lineNumber: 90,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/roi-calculator.tsx",
-                                            lineNumber: 42,
+                                            lineNumber: 86,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -194,55 +378,47 @@ function ROICalculator() {
                                             max: "40",
                                             value: hoursPerWeek,
                                             onChange: (e)=>setHoursPerWeek(Number(e.target.value)),
-                                            className: "w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-blue-500 hover:accent-blue-400 transition-all"
+                                            className: "w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-blue-500 transition-all"
                                         }, void 0, false, {
                                             fileName: "[project]/components/roi-calculator.tsx",
-                                            lineNumber: 48,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-xs text-gray-500 italic",
-                                            children: "Per employee on repetitive tasks (data entry, scheduling, etc.)"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/roi-calculator.tsx",
-                                            lineNumber: 56,
+                                            lineNumber: 92,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/roi-calculator.tsx",
-                                    lineNumber: 41,
+                                    lineNumber: 85,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "space-y-4",
+                                    className: "space-y-2 md:space-y-4",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex justify-between items-end",
+                                            className: "flex justify-between items-center",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    className: "text-sm font-bold text-gray-300 uppercase tracking-widest",
+                                                    className: "text-[10px] md:text-sm font-black text-gray-500 uppercase tracking-widest",
                                                     children: "Team Size"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/roi-calculator.tsx",
-                                                    lineNumber: 62,
+                                                    lineNumber: 105,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-2xl font-bold text-blue-400",
+                                                    className: "text-lg md:text-2xl font-black text-blue-400 italic",
                                                     children: [
                                                         teamSize,
-                                                        " people"
+                                                        "p"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/roi-calculator.tsx",
-                                                    lineNumber: 65,
+                                                    lineNumber: 108,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/roi-calculator.tsx",
-                                            lineNumber: 61,
+                                            lineNumber: 104,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -251,56 +427,47 @@ function ROICalculator() {
                                             max: "100",
                                             value: teamSize,
                                             onChange: (e)=>setTeamSize(Number(e.target.value)),
-                                            className: "w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-blue-500 hover:accent-blue-400 transition-all"
+                                            className: "w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-blue-500 transition-all"
                                         }, void 0, false, {
                                             fileName: "[project]/components/roi-calculator.tsx",
-                                            lineNumber: 67,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-xs text-gray-500 italic",
-                                            children: "Number of people performing these tasks"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/roi-calculator.tsx",
-                                            lineNumber: 75,
+                                            lineNumber: 110,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/roi-calculator.tsx",
-                                    lineNumber: 60,
+                                    lineNumber: 103,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "space-y-4",
+                                    className: "space-y-2 md:space-y-4",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex justify-between items-end",
+                                            className: "flex justify-between items-center",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    className: "text-sm font-bold text-gray-300 uppercase tracking-widest",
+                                                    className: "text-[10px] md:text-sm font-black text-gray-500 uppercase tracking-widest",
                                                     children: "Hourly Cost"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/roi-calculator.tsx",
-                                                    lineNumber: 81,
+                                                    lineNumber: 123,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-2xl font-bold text-blue-400",
+                                                    className: "text-lg md:text-2xl font-black text-blue-400 italic",
                                                     children: [
                                                         "$",
-                                                        hourlyRate,
-                                                        "/hr"
+                                                        hourlyRate
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/roi-calculator.tsx",
-                                                    lineNumber: 84,
+                                                    lineNumber: 126,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/roi-calculator.tsx",
-                                            lineNumber: 80,
+                                            lineNumber: 122,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -310,284 +477,31 @@ function ROICalculator() {
                                             step: "5",
                                             value: hourlyRate,
                                             onChange: (e)=>setHourlyRate(Number(e.target.value)),
-                                            className: "w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-blue-500 hover:accent-blue-400 transition-all"
+                                            className: "w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-blue-500 transition-all"
                                         }, void 0, false, {
                                             fileName: "[project]/components/roi-calculator.tsx",
-                                            lineNumber: 86,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-xs text-gray-500 italic",
-                                            children: "Average hourly wage + overhead costs"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/roi-calculator.tsx",
-                                            lineNumber: 95,
+                                            lineNumber: 128,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/roi-calculator.tsx",
-                                    lineNumber: 79,
-                                    columnNumber: 25
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/components/roi-calculator.tsx",
-                            lineNumber: 39,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "relative",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "absolute inset-0 bg-blue-600/10 blur-[100px] rounded-full"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/roi-calculator.tsx",
-                                    lineNumber: 101,
+                                    lineNumber: 121,
                                     columnNumber: 25
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "relative glass p-10 rounded-2xl border border-blue-500/30 shadow-2xl overflow-hidden",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-xl font-bold text-white mb-8 border-b border-white/10 pb-4",
-                                            children: "Estimated Total Savings"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/roi-calculator.tsx",
-                                            lineNumber: 104,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "space-y-8",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
-                                                    mode: "wait",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                                        initial: {
-                                                            opacity: 0,
-                                                            y: 10
-                                                        },
-                                                        animate: {
-                                                            opacity: 1,
-                                                            y: 0
-                                                        },
-                                                        className: "space-y-1",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-sm font-semibold text-blue-400 uppercase tracking-widest",
-                                                                children: "Yearly Value Locked"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/components/roi-calculator.tsx",
-                                                                lineNumber: 114,
-                                                                columnNumber: 41
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-6xl md:text-7xl font-bold text-white tracking-tighter",
-                                                                children: [
-                                                                    "$",
-                                                                    metrics.yearly.toLocaleString()
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/components/roi-calculator.tsx",
-                                                                lineNumber: 115,
-                                                                columnNumber: 41
-                                                            }, this)
-                                                        ]
-                                                    }, metrics.yearly, true, {
-                                                        fileName: "[project]/components/roi-calculator.tsx",
-                                                        lineNumber: 108,
-                                                        columnNumber: 37
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/roi-calculator.tsx",
-                                                    lineNumber: 107,
-                                                    columnNumber: 33
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "grid grid-cols-2 gap-6",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "bg-white/5 p-5 rounded-xl border border-white/5",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-xs font-bold text-gray-400 uppercase mb-2",
-                                                                    children: "Monthly"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/roi-calculator.tsx",
-                                                                    lineNumber: 123,
-                                                                    columnNumber: 41
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-2xl font-bold text-white",
-                                                                    children: [
-                                                                        "$",
-                                                                        metrics.monthly.toLocaleString()
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/components/roi-calculator.tsx",
-                                                                    lineNumber: 124,
-                                                                    columnNumber: 41
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/components/roi-calculator.tsx",
-                                                            lineNumber: 122,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "bg-white/5 p-5 rounded-xl border border-white/5",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-xs font-bold text-gray-400 uppercase mb-2",
-                                                                    children: "Weekly"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/roi-calculator.tsx",
-                                                                    lineNumber: 127,
-                                                                    columnNumber: 41
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-2xl font-bold text-white",
-                                                                    children: [
-                                                                        "$",
-                                                                        metrics.weekly.toLocaleString()
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/components/roi-calculator.tsx",
-                                                                    lineNumber: 128,
-                                                                    columnNumber: 41
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/components/roi-calculator.tsx",
-                                                            lineNumber: 126,
-                                                            columnNumber: 37
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/components/roi-calculator.tsx",
-                                                    lineNumber: 121,
-                                                    columnNumber: 33
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "bg-gradient-to-br from-blue-600/20 to-indigo-600/20 p-6 rounded-xl border border-blue-500/20",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                            className: "text-blue-200 font-bold mb-3 flex items-center gap-2",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                                    className: "w-5 h-5",
-                                                                    fill: "none",
-                                                                    viewBox: "0 0 24 24",
-                                                                    stroke: "currentColor",
-                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                                        strokeLinecap: "round",
-                                                                        strokeLinejoin: "round",
-                                                                        strokeWidth: 2,
-                                                                        d: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/components/roi-calculator.tsx",
-                                                                        lineNumber: 135,
-                                                                        columnNumber: 45
-                                                                    }, this)
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/roi-calculator.tsx",
-                                                                    lineNumber: 134,
-                                                                    columnNumber: 41
-                                                                }, this),
-                                                                "Time Reclaimed"
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/components/roi-calculator.tsx",
-                                                            lineNumber: 133,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-white text-lg",
-                                                            children: [
-                                                                "This is equivalent to ",
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "font-bold text-blue-400",
-                                                                    children: [
-                                                                        metrics.hours.toLocaleString(),
-                                                                        " hours"
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/components/roi-calculator.tsx",
-                                                                    lineNumber: 140,
-                                                                    columnNumber: 63
-                                                                }, this),
-                                                                " of human productivity returned to your team every year."
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/components/roi-calculator.tsx",
-                                                            lineNumber: 139,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-sm text-gray-400 mt-2 italic",
-                                                            children: [
-                                                                "Nearly ",
-                                                                (metrics.hours / 2000).toFixed(1),
-                                                                " full-time employee equivalents."
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/components/roi-calculator.tsx",
-                                                            lineNumber: 142,
-                                                            columnNumber: 37
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/components/roi-calculator.tsx",
-                                                    lineNumber: 132,
-                                                    columnNumber: 33
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/components/roi-calculator.tsx",
-                                            lineNumber: 106,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "mt-10",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].button, {
-                                                    whileHover: {
-                                                        scale: 1.02
-                                                    },
-                                                    whileTap: {
-                                                        scale: 0.98
-                                                    },
-                                                    className: "w-full py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg rounded-xl shadow-xl shadow-blue-500/20 hover:shadow-blue-500/40 transition-all",
-                                                    children: "Get a Detailed ROI Plan"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/roi-calculator.tsx",
-                                                    lineNumber: 147,
-                                                    columnNumber: 33
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-center text-xs text-gray-500 mt-4",
-                                                    children: "*These estimates represent total operational cost of manual labor, not implementation cost."
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/roi-calculator.tsx",
-                                                    lineNumber: 154,
-                                                    columnNumber: 33
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/components/roi-calculator.tsx",
-                                            lineNumber: 146,
-                                            columnNumber: 29
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>window.location.href = '#',
+                                    className: "w-full py-4 md:py-5 bg-white text-black font-black uppercase tracking-widest text-xs rounded-xl shadow-xl hover:bg-gray-200 transition-all mt-4",
+                                    children: "Get Strategy Plan"
+                                }, void 0, false, {
                                     fileName: "[project]/components/roi-calculator.tsx",
-                                    lineNumber: 103,
+                                    lineNumber: 139,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/roi-calculator.tsx",
-                            lineNumber: 100,
+                            lineNumber: 83,
                             columnNumber: 21
                         }, this)
                     ]
@@ -1258,7 +1172,7 @@ function Home() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "relative z-20 max-w-5xl mx-auto px-6 text-center",
+                        className: "relative z-20 max-w-5xl mx-auto px-6 text-center py-20 md:py-0",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].h1, {
                                 initial: {
@@ -1273,7 +1187,7 @@ function Home() {
                                     duration: 0.8,
                                     ease: "easeOut"
                                 },
-                                className: "text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8",
+                                className: "text-3xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 md:mb-8",
                                 children: [
                                     "We Build AI Agents &",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1303,7 +1217,7 @@ function Home() {
                                     delay: 0.2,
                                     duration: 0.6
                                 },
-                                className: "text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12",
+                                className: "hidden md:block text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10 md:mb-12",
                                 children: "Custom AI solutions that automate your repetitive work and let your team focus on growth."
                             }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
@@ -1323,11 +1237,11 @@ function Home() {
                                     delay: 0.4,
                                     duration: 0.6
                                 },
-                                className: "flex flex-col sm:flex-row gap-5 justify-center",
+                                className: "flex flex-col sm:flex-row gap-4 md:gap-5 justify-center",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: openQuiz,
-                                        className: "px-10 py-5 bg-white text-black font-bold text-lg rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105 border-none cursor-pointer",
+                                        className: "px-8 py-4 md:px-10 md:py-5 bg-white text-black font-bold text-base md:text-lg rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105 border-none cursor-pointer",
                                         children: "Get Started"
                                     }, void 0, false, {
                                         fileName: "[project]/app/page.tsx",
@@ -1336,8 +1250,8 @@ function Home() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/services",
-                                        className: "px-10 py-5 bg-transparent border-2 border-white/30 text-white font-semibold text-lg rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300",
-                                        children: "See What We Build"
+                                        className: "px-8 py-4 md:px-10 md:py-5 bg-transparent border-2 border-white/30 text-white font-semibold text-base md:text-lg rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300 text-center",
+                                        children: "Explore Solutions"
                                     }, void 0, false, {
                                         fileName: "[project]/app/page.tsx",
                                         lineNumber: 69,
@@ -1441,8 +1355,8 @@ function Home() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-3",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$counter$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Counter"], {
-                                            end: 4,
-                                            suffix: "w"
+                                            end: 21,
+                                            suffix: " Days"
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 105,
@@ -1455,7 +1369,7 @@ function Home() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "text-xl font-semibold text-white mb-2",
-                                        children: "Avg. Time to Deploy"
+                                        children: "Execution Speed"
                                     }, void 0, false, {
                                         fileName: "[project]/app/page.tsx",
                                         lineNumber: 107,
@@ -2114,11 +2028,11 @@ function Home() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: openQuiz,
-                                    className: "inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-xl rounded-xl hover:from-blue-700 hover:to-indigo-700 hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105 transform border-none cursor-pointer",
+                                    className: "inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg md:text-xl rounded-xl hover:from-blue-700 hover:to-indigo-700 hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105 transform border-none cursor-pointer",
                                     children: [
                                         "Book My Strategic Consultation",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                            className: "w-6 h-6",
+                                            className: "w-5 h-5 md:w-6 md:h-6",
                                             fill: "none",
                                             viewBox: "0 0 24 24",
                                             stroke: "currentColor",

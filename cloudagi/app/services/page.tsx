@@ -15,14 +15,14 @@ export default function Services() {
           <div className="absolute top-20 right-10 w-96 h-96 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
           <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center w-full">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center w-full py-12 md:py-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="inline-block mb-6"
           >
-            <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium">
+            <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-xs md:text-sm font-medium">
               AI Solutions That Work
             </span>
           </motion.div>
@@ -30,7 +30,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold text-white mb-6"
+            className="text-4xl md:text-7xl font-bold text-white mb-6"
           >
             How We <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Solve Problems</span>
           </motion.h1>
@@ -38,7 +38,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             We don&apos;t sell AI tools. We engineer custom autonomous agents that integrate with your systems and deliver measurable business results.
           </motion.p>
@@ -165,8 +165,8 @@ export default function Services() {
             <p className="text-gray-400 max-w-2xl mx-auto">Why businesses are moving from traditional automation to decentralized agentic systems.</p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/50 backdrop-blur-xl">
-            <table className="w-full text-left">
+          <div className="overflow-x-auto rounded-2xl border border-white/10 bg-slate-950/50 backdrop-blur-xl">
+            <table className="w-full text-left min-w-[600px]">
               <thead>
                 <tr className="bg-white/5 border-b border-white/10">
                   <th className="p-6 text-sm font-bold text-gray-500 uppercase tracking-widest">Capabilities</th>

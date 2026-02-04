@@ -13,14 +13,14 @@ export default function AboutContent() {
           <div className="absolute top-20 left-10 w-72 h-72 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
           <div className="absolute top-40 right-10 w-80 h-80 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 w-full">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 w-full py-12 md:py-0">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="mb-8"
+            className="mb-6 md:mb-8"
           >
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter">
+            <h1 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter">
               About <span className="text-blue-500 italic">CloudAGI</span>
             </h1>
             <div className="h-1.5 w-24 bg-blue-500 mx-auto rounded-full" />
@@ -29,7 +29,7 @@ export default function AboutContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light italic"
+            className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light italic"
           >
             &quot;Bridging the gap between frontier AI and everyday business reality.&quot;
           </motion.p>
@@ -40,12 +40,12 @@ export default function AboutContent() {
       <section className="relative py-24 bg-black overflow-hidden border-y border-white/5">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-16">
-            <div className="md:w-1/2">
-              <h2 className="text-4xl font-bold text-white mb-8">The <span className="text-blue-500 italic">SMB Gap</span></h2>
-              <p className="text-xl text-gray-400 leading-relaxed mb-6">
+            <div className="md:w-1/2 text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8 text-center md:text-left">The <span className="text-blue-500 italic">SMB Gap</span></h2>
+              <p className="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
                 Most AI solutions today are built for either giant enterprises with $1M+ budgets or hobbyists playing with API keys.
               </p>
-              <p className="text-xl text-gray-300 leading-relaxed font-semibold italic">
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-semibold italic">
                 Small and medium businesses are left in the middle—confused, underserved, and losing ground.
               </p>
             </div>
@@ -169,7 +169,7 @@ export default function AboutContent() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="p-12 md:p-20 border border-white/10 rounded-[3rem] bg-slate-950 shadow-2xl relative overflow-hidden"
+            className="p-8 md:p-20 border border-white/10 rounded-[2.5rem] md:rounded-[3rem] bg-slate-950 shadow-2xl relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 blur-[100px] rounded-full" />
 
@@ -184,22 +184,22 @@ export default function AboutContent() {
                 </div>
               </div>
 
-              <div className="w-full md:w-2/3 space-y-10">
-                <div className="space-y-6">
+              <div className="w-full md:w-2/3 space-y-8 md:space-y-10">
+                <div className="space-y-4 md:space-y-6">
                   <div className="inline-flex px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest rounded-full">Background</div>
-                  <p className="text-xl text-gray-300 leading-relaxed italic">
+                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed italic">
                     &quot;I founded CloudAGI because I saw too many business owners being sold &apos;magic&apos; that didn&apos;t work. I wanted to build a consultancy that prioritizes engineering rigor and business logic over hype.&quot;
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                   <div>
-                    <h4 className="text-xs font-black text-gray-500 uppercase tracking-widest mb-4">Core Focus</h4>
-                    <p className="text-gray-400 leading-relaxed">System architecture, business strategy, and high-performance LLM orchestration.</p>
+                    <h4 className="text-xs font-black text-gray-500 uppercase tracking-widest mb-3 md:mb-4">Core Focus</h4>
+                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">System architecture, business strategy, and high-performance LLM orchestration.</p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-black text-gray-500 uppercase tracking-widest mb-4">Philosphy</h4>
-                    <p className="text-gray-400 leading-relaxed">Start small, build robustly, scale only once value is proven with data.</p>
+                    <h4 className="text-xs font-black text-gray-500 uppercase tracking-widest mb-3 md:mb-4">Philosophy</h4>
+                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">Start small, build robustly, scale only once value is proven with data.</p>
                   </div>
                 </div>
 
