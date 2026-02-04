@@ -1,21 +1,8 @@
 "use client";
 
-import type { Metadata } from "next";
 import { useState } from "react";
-
-// Note: This is a client component so metadata export is not used
-// Metadata is configured at the parent route level instead
-const contactMetadata: Metadata = {
-  title: "Contact CloudAGI – AI Agent Solutions & Consultation",
-  description: "Get in touch with CloudAGI to discuss your AI agent implementation, agentic workflows, and custom automation solutions. Schedule your free consultation today.",
-  keywords: ["contact cloudagi", "AI consultation", "agentic solutions inquiry", "business automation contact", "AI agent services"],
-  openGraph: {
-    title: "Contact CloudAGI – AI Agent Solutions",
-    description: "Let's discuss how AI agents can transform your business. Contact our team today.",
-    url: "https://cloudagi.com/contact",
-    type: "website",
-  },
-};
+import { motion } from "framer-motion";
+import { SpotlightCard } from "@/components/spotlight-card";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -41,170 +28,218 @@ export default function Contact() {
   };
 
   return (
-    <main className="relative bg-dark-bg text-white overflow-hidden">
+    <main className="relative bg-dark-bg text-white overflow-hidden selection:bg-accent-blue selection:text-white">
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[60vh] flex items-center bg-gradient-dark py-24">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <section className="relative min-h-[50vh] flex items-center bg-gradient-dark py-24">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl" />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center w-full">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Let&apos;s Work Together
-          </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Ready to implement your first high-impact AI agentic solution? Let&apos;s start a conversation about your business needs.
-          </p>
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center w-full">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter"
+          >
+            Execute <span className="text-blue-500 italic">Your Vision</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed italic font-light"
+          >
+            Ready to deploy your first high-impact AI engine? Let&apos;s talk architecture.
+          </motion.p>
         </div>
       </section>
 
       {/* ================= CONTACT FORM & INFO ================= */}
       <section className="relative py-24 bg-dark-bg">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-16">
             {/* Form */}
-            <div className="glass p-8 rounded-lg">
-              <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="p-8 md:p-12 rounded-[2.5rem] bg-slate-950 border border-white/10 shadow-2xl relative overflow-hidden group">
+                <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <h2 className="text-3xl font-black text-white mb-10 relative z-10 uppercase tracking-tight">Initiate Inquiry</h2>
 
-              {submitted ? (
-                <div className="p-4 bg-accent-blue/20 border border-accent-blue rounded-lg text-accent-blue">
-                  <p className="font-medium">Thank you! We&apos;ll get back to you soon.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-200 mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-dark-border rounded-lg bg-dark-card text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-accent-blue transition-all duration-200"
-                      placeholder="Your name"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-200 mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-dark-border rounded-lg bg-dark-card text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-accent-blue transition-all duration-200"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-200 mb-2">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-dark-border rounded-lg bg-dark-card text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-accent-blue transition-all duration-200"
-                      placeholder="Your company"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-200 mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={5}
-                      className="w-full px-4 py-2 border border-dark-border rounded-lg bg-dark-card text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-accent-blue transition-all duration-200 resize-none"
-                      placeholder="Tell us about your business challenge..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full px-6 py-3 bg-gradient-blue text-white font-medium rounded-lg hover:shadow-glow-blue transition-all duration-200"
+                {submitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="p-10 bg-blue-500/10 border border-blue-500/30 rounded-2xl text-blue-400 text-center"
                   >
-                    Send Message
-                  </button>
-                </form>
-              )}
-            </div>
+                    <p className="font-black text-2xl mb-2 uppercase tracking-widest italic">Transmission Received</p>
+                    <p className="text-sm font-medium">Validation complete. An agent architect will reach out within 24 hours.</p>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div className="space-y-3">
+                        <label className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] ml-1">
+                          Full Name
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-6 py-4 border border-white/5 rounded-xl bg-black/50 text-white placeholder-gray-800 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all font-medium"
+                          placeholder="John Doe"
+                        />
+                      </div>
+                      <div className="space-y-3">
+                        <label className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] ml-1">
+                          Network Address (Email)
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-6 py-4 border border-white/5 rounded-xl bg-black/50 text-white placeholder-gray-800 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all font-medium"
+                          placeholder="john@future.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] ml-1">
+                        Organization
+                      </label>
+                      <input
+                        type="text"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                        className="w-full px-6 py-4 border border-white/5 rounded-xl bg-black/50 text-white placeholder-gray-800 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all font-medium"
+                        placeholder="Inc. / Startup"
+                      />
+                    </div>
+
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] ml-1">
+                        System Requirements (Message)
+                      </label>
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={5}
+                        className="w-full px-6 py-4 border border-white/5 rounded-xl bg-black/50 text-white placeholder-gray-800 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all resize-none font-medium text-sm leading-relaxed"
+                        placeholder="Define your friction points..."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full px-8 py-5 bg-white text-black font-black text-lg rounded-2xl hover:bg-blue-50 transition-all duration-300 hover:scale-[1.02] uppercase tracking-tighter"
+                    >
+                      Analyze & Process Inquiry
+                    </button>
+                  </form>
+                )}
+              </div>
+            </motion.div>
 
             {/* Contact Info */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-lg font-bold text-white mb-4">Quick Info</h3>
-                <div className="space-y-6">
-                  <div>
-                    <p className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-2">Email</p>
-                    <p className="text-lg text-white font-medium">contact@cloudagi.com</p>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-10"
+            >
+              <div className="space-y-6">
+                <h3 className="text-5xl font-black text-white uppercase tracking-tighter italic">Direct <span className="text-blue-500">Node</span></h3>
+                <p className="text-xl text-gray-400 font-light leading-relaxed">Skip the queue. Connect with us directly if you require immediate architectural consultation.</p>
+              </div>
+
+              <div className="space-y-8">
+                <div className="flex items-center gap-6 group cursor-pointer">
+                  <div className="w-16 h-16 rounded-[1.5rem] bg-white/5 border border-white/10 flex items-center justify-center text-blue-500 group-hover:bg-white group-hover:text-black transition-all">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-2">Response Time</p>
-                    <p className="text-gray-300">Usually within 24 hours</p>
+                    <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Inquiry Gateway</p>
+                    <p className="text-2xl font-bold text-white tracking-tight italic">contact@cloudagi.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-6 group cursor-pointer">
+                  <div className="w-16 h-16 rounded-[1.5rem] bg-white/5 border border-white/10 flex items-center justify-center text-blue-500 group-hover:bg-white group-hover:text-black transition-all">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Processing Clock</p>
+                    <p className="text-2xl font-bold text-white tracking-tight italic">&lt; 12 Hours</p>
                   </div>
                 </div>
               </div>
 
-              <div className="border-t border-dark-border pt-8">
-                <h3 className="text-lg font-bold text-white mb-4">What to Include</h3>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  <li>✓ What business problem you&apos;re trying to solve</li>
-                  <li>✓ Your current team size and relevant departments</li>
-                  <li>✓ Budget range (even approximate is helpful)</li>
-                  <li>✓ Timeline/urgency</li>
-                  <li>✓ Any specific tools you use (CRM, ERP, etc.)</li>
-                </ul>
+              <div className="grid sm:grid-cols-2 gap-6 pt-10">
+                <SpotlightCard className="p-8">
+                  <h4 className="text-xs font-black text-white mb-6 uppercase tracking-widest border-b border-white/10 pb-4">Required Context</h4>
+                  <ul className="space-y-4 text-gray-500 text-sm font-bold">
+                    <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full" /> Business Goals</li>
+                    <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full" /> Current Stack</li>
+                    <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full" /> Volume Metric</li>
+                  </ul>
+                </SpotlightCard>
+                <SpotlightCard className="p-8">
+                  <h4 className="text-xs font-black text-white mb-6 uppercase tracking-widest border-b border-white/10 pb-4">Expert Pipeline</h4>
+                  <ol className="space-y-4 text-gray-500 text-sm font-bold">
+                    <li className="flex gap-3"><span className="text-blue-500 italic">01.</span> Discovery Call</li>
+                    <li className="flex gap-3"><span className="text-blue-500 italic">02.</span> Gap Analysis</li>
+                    <li className="flex gap-3"><span className="text-blue-500 italic">03.</span> Blueprint Map</li>
+                  </ol>
+                </SpotlightCard>
               </div>
-
-              <div className="border-t border-dark-border pt-8">
-                <h3 className="text-lg font-bold text-white mb-4">Next Steps</h3>
-                <p className="text-gray-300 text-sm mb-4">
-                  We&apos;ll review your message and reach out within 24 hours with a brief proposal for next steps, which typically includes:
-                </p>
-                <ol className="space-y-2 text-gray-300 text-sm list-decimal list-inside">
-                  <li>Initial discovery call (30 mins)</li>
-                  <li>Problem analysis</li>
-                  <li>Custom quote for your situation</li>
-                </ol>
-              </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="relative py-24 bg-dark-card">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Prefer a Quick Chat?</h2>
-          <p className="text-xl text-gray-400 mb-8">
-            Schedule a free 20-minute discovery call to discuss your AI automation needs
-          </p>
-          <a
-            href="https://calendly.com/cloudagi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-indigo-700 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105 transform"
+      <section className="relative py-24 bg-black border-t border-white/5 overflow-hidden">
+        <div className="absolute inset-0 bg-blue-500/5 blur-[120px] rounded-full translate-y-1/2" />
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            Schedule a Free Call
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-          <p className="mt-4 text-sm text-gray-500">
-            No commitment • 20 minutes • Free consultation
-          </p>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-10 uppercase tracking-tighter">Skip the <span className="text-blue-500 italic">Static</span></h2>
+            <p className="text-2xl text-gray-400 mb-12 font-light italic leading-relaxed">
+              Prefer a direct consultation? Jump straight into the architectural deep-dive.
+            </p>
+            <a
+              href="https://calendly.com/cloudagi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-4 px-12 py-6 bg-white text-black font-black text-xl rounded-2xl hover:bg-gray-100 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all duration-300 hover:scale-105 uppercase tracking-tighter"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Execute Protocol Call
+            </a>
+          </motion.div>
         </div>
       </section>
     </main>

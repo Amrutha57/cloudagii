@@ -3,6 +3,8 @@ import "./globals.css";
 import { Header } from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Providers } from "@/components/Providers";
+import { StickyCallButton } from "@/components/sticky-cta";
+import { BlueprintModalContainer } from "@/components/blueprint-modal-container";
 
 export const metadata = {
   metadataBase: new URL('https://cloudagi.com'),
@@ -35,7 +37,7 @@ export const metadata = {
     address: true,
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/icon.png',
   },
   openGraph: {
     title: "CloudAGI – AI Agent Solutions for SMBs",
@@ -210,6 +212,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <Header />
           {children}
+          <StickyCallButton />
+          <BlueprintModalContainer />
           <Footer />
         </Providers>
       </body>

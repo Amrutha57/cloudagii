@@ -1,50 +1,25 @@
-import type React from "react";
+import Image from "next/image";
+import { cn } from "@/components/lib/utils";
 
-
-export const Logo = (props: React.ComponentProps<"svg">) => (
-  <svg
-    viewBox="0 0 180 28"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    role="img"
-    aria-label="CloudAGI"
-    {...props}
-  >
-    <defs>
-      {/* Gradient */}
-      <linearGradient id="cloudagi-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="20%" stopColor="#60A5FA" />
-        <stop offset="30%" stopColor="#818CF8" />
-        <stop offset="80%" stopColor="#A78BFA" />
-      </linearGradient>
-
-      {/* Soft glow */}
-      <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="1.5" result="blur" />
-        <feMerge>
-          <feMergeNode in="blur" />
-          <feMergeNode in="SourceGraphic" />
-        </feMerge>
-      </filter>
-    </defs>
-
-    {/* Icon */}
-    <g transform="translate(0,2)">
-      
-    </g>
-
-    {/* Text */}
-    <text
-      x="34"
-      y="20"
-      fontSize="26"
-      fontWeight="600"
-      letterSpacing="0.6px"
-      fill="url(#cloudagi-gradient)"
-      filter="url(#soft-glow)"
-      fontFamily="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    >
+export const Logo = ({ className, variant = "light" }: { className?: string; variant?: "light" | "dark" }) => (
+  <div className={cn("flex items-center gap-1.5", className)}>
+    <div className="relative w-12 h-12 md:w-16 md:h-16">
+      <Image
+        src={variant === "light" ? "/logo.png" : "/logob.png"}
+        alt="CloudAGI Dolphin Logo"
+        fill
+        priority
+        unoptimized
+        className={cn(
+          "object-contain",
+          variant === "light"
+            ? "drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]"
+            : "drop-shadow-[0_0_8px_rgba(30,58,138,0.2)]"
+        )}
+      />
+    </div>
+    <span className="text-2xl md:text-3xl font-extrabold tracking-tight font-sans drop-shadow-sm text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500">
       CloudAGI
-    </text>
-  </svg>
+    </span>
+  </div>
 );

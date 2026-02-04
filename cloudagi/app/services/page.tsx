@@ -1,32 +1,14 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Services – CloudAGI | AI Agent Solutions, Agentic Workflow Design & Implementation",
-  description:
-    "CloudAGI offers AI agent consultancy, custom agentic workflow design, secure agent deployment, and team training. Get intelligent automation solutions with proven ROI for your business.",
-  keywords: [
-    "AI agent services",
-    "agentic workflow design",
-    "AI implementation services",
-    "AI consultancy",
-    "custom AI solutions",
-    "intelligent automation",
-    "AI strategy",
-    "agent-based systems",
-  ],
-  openGraph: {
-    title: "Services – CloudAGI | AI Agent & Agentic Solutions",
-    description:
-      "Comprehensive AI agent services including strategy, design, development, and implementation. Custom solutions for business automation and measurable results.",
-    url: "https://cloudagi.com/services",
-    type: "website",
-  },
-};
+import { motion } from "framer-motion";
+import { SpotlightCard } from "@/components/spotlight-card";
+import { useQuiz } from "@/context/quiz-context";
 
 export default function Services() {
+  const { openQuiz } = useQuiz();
+
   return (
-    <main className="relative bg-dark-bg text-white overflow-hidden">
+    <main className="relative bg-dark-bg text-white overflow-hidden selection:bg-accent-blue selection:text-white">
       {/* ================= HERO ================= */}
       <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-dark-bg via-blue-950/10 to-dark-bg py-24">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -34,17 +16,32 @@ export default function Services() {
           <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center w-full">
-          <div className="inline-block mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-block mb-6"
+          >
             <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium">
               AI Solutions That Work
             </span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-5xl md:text-7xl font-bold text-white mb-6"
+          >
             How We <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Solve Problems</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            We don't sell AI tools. We engineer custom autonomous agents that integrate with your systems and deliver measurable business results.
-          </p>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+          >
+            We don&apos;t sell AI tools. We engineer custom autonomous agents that integrate with your systems and deliver measurable business results.
+          </motion.p>
         </div>
       </section>
 
@@ -70,7 +67,7 @@ export default function Services() {
               {
                 num: "02",
                 title: "Custom AI Engines & Memory",
-                icon: "🔧",
+                icon: "⚙️",
                 overview: "We build dedicated AI engines that connect to your internal tools and possess a persistent memory of your business context.",
                 includes: [
                   "Custom API agent integrations",
@@ -99,7 +96,7 @@ export default function Services() {
                 num: "04",
                 title: "Team AI Upskilling",
                 icon: "📚",
-                overview: "We don't just build the tools; we teach your team how to wield them. Master the art of collaborating with AI agents.",
+                overview: "We don&apos;t just build the tools; we teach your team how to wield them. Master the art of collaborating with AI agents.",
                 includes: [
                   "Interactive prompting workshops",
                   "Department-specific playbooks",
@@ -110,101 +107,184 @@ export default function Services() {
                 best: "Teams wanting to internalize AI capabilities"
               },
             ].map((service, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="glass p-8 rounded-xl border border-dark-border relative overflow-hidden group hover:border-accent-blue transition-all duration-300 flex flex-col h-full hover:shadow-glow-blue"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group"
               >
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="text-4xl">{service.icon}</div>
-                    <div className="text-3xl font-bold text-gray-700 dark:text-white/20">{service.num}</div>
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                  <p className="text-gray-300 mb-6 flex-grow">{service.overview}</p>
-
-                  <div className="border-t border-white/10 pt-6 mt-auto">
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-3">Includes:</h4>
-                    <ul className="mb-6 space-y-2">
-                      {service.includes.slice(0, 3).map((item, j) => (
-                        <li key={j} className="text-gray-400 text-sm flex items-start">
-                          <span className="text-accent-blue mr-2 font-bold">•</span>
-                          {item}
-                        </li>
-                      ))}
-                      {service.includes.length > 3 && (
-                        <li className="text-gray-500 text-xs italic pl-4">+ {service.includes.length - 3} more</li>
-                      )}
-                    </ul>
-
-                    <div className="text-sm text-gray-400 bg-white/5 p-3 rounded-lg">
-                      <span className="font-semibold text-gray-300">Best for:</span> {service.best}
+                <SpotlightCard className="h-full">
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="flex justify-between items-start mb-6">
+                      <div className="text-4xl group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
+                      <div className="text-3xl font-bold text-white/10 group-hover:text-white/20 transition-colors uppercase tracking-widest">{service.num}</div>
                     </div>
 
-                    <div className="mt-6">
-                      <Link
-                        href="/contact"
-                        className="block w-full text-center py-3 bg-white/10 hover:bg-accent-blue hover:text-white text-white font-medium rounded-lg transition-all duration-300"
-                      >
-                        Book This Service
-                      </Link>
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">{service.title}</h3>
+                    <p className="text-gray-300 mb-6 flex-grow leading-relaxed">{service.overview}</p>
+
+                    <div className="border-t border-white/10 pt-6 mt-auto">
+                      <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Core Deliverables:</h4>
+                      <ul className="mb-8 space-y-3">
+                        {service.includes.slice(0, 4).map((item, j) => (
+                          <li key={j} className="text-sm text-gray-400 flex items-start gap-3">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="text-sm text-gray-400 bg-white/5 p-4 rounded-xl border border-white/5 group-hover:border-blue-500/20 transition-colors italic">
+                        <span className="font-bold text-blue-400 not-italic uppercase text-[10px] tracking-[0.2em] block mb-1">Business Fit</span> {service.best}
+                      </div>
+
+                      <div className="mt-6">
+                        <button
+                          onClick={openQuiz}
+                          className="block w-full text-center py-4 bg-white/5 hover:bg-white text-white hover:text-black font-bold rounded-xl transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] border border-white/10 hover:border-white"
+                        >
+                          Configure This Agent
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </SpotlightCard>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* ================= CAPABILITIES COMPARISON (NEW) ================= */}
+      <section className="relative py-24 bg-dark-bg border-t border-white/5">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 italic">The Agent Advantage</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">Why businesses are moving from traditional automation to decentralized agentic systems.</p>
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/50 backdrop-blur-xl">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="bg-white/5 border-b border-white/10">
+                  <th className="p-6 text-sm font-bold text-gray-500 uppercase tracking-widest">Capabilities</th>
+                  <th className="p-6 text-sm font-bold text-gray-500 uppercase tracking-widest">Manual/Legacy</th>
+                  <th className="p-6 text-sm font-bold text-blue-400 uppercase tracking-widest">CloudAGI Agent</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5">
+                {[
+                  { cap: "Task Handling", manual: "Rigid, rule-based", agent: "Reasoning & Logic based" },
+                  { cap: "Edge Cases", manual: "Requires human fix", agent: "Autonomous resolution" },
+                  { cap: "Available Hours", manual: "8 hrs / day", agent: "24 / 7 / 365" },
+                  { cap: "Learning Speed", manual: "Months for new skill", agent: "Instant via prompting" },
+                  { cap: "Scalability", manual: "Hire more people", agent: "Spin up more instances" }
+                ].map((row, i) => (
+                  <tr key={i} className="hover:bg-white/5 transition-colors">
+                    <td className="p-6 font-semibold text-white">{row.cap}</td>
+                    <td className="p-6 text-gray-400">{row.manual}</td>
+                    <td className="p-6 text-blue-300 font-bold">{row.agent}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= STACK & INTEGRATIONS (NEW) ================= */}
+      <section className="relative py-24 bg-black overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="md:w-1/2">
+              <h2 className="text-4xl font-bold text-white mb-6">Built on a Modern <span className="text-blue-500 italic">Foundation</span></h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                We don&apos;t build in a vacuum. Your agents are designed to play nice with your current tech stack while leveraging the absolute frontier of AI research.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                {["LLM Orchestration", "Vector Memory", "Native Integrations", "Auto-Optimization"].map(t => (
+                  <div key={t} className="flex items-center gap-3 text-sm font-semibold text-gray-300">
+                    <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
+                    {t}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="md:w-1/2 grid grid-cols-3 gap-4">
+              {[
+                "OpenAI", "Anthropic", "LangChain", "Zapier", "Pinecone", "Vercel"
+              ].map((tech, i) => (
+                <div key={tech} className="p-6 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-xs font-black text-gray-500 uppercase tracking-widest hover:text-white hover:border-blue-500/50 transition-all cursor-default">
+                  {tech}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ================= PROCESS ================= */}
-      <section className="relative py-24 bg-dark-card">
+      <section className="relative py-24 bg-dark-card border-y border-white/5">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Our Process</h2>
-            <p className="text-xl text-gray-400">No matter which service, we follow a proven methodology</p>
+            <h2 className="text-4xl font-bold text-white mb-4 italic">The Road to ROI</h2>
+            <p className="text-xl text-gray-400">Our 4-step methodology for turning ideas into agentic systems.</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { title: "Discovery", desc: "Understand your problem" },
-              { title: "Analysis", desc: "Identify the opportunity" },
-              { title: "Design", desc: "Create the solution" },
-              { title: "Delivery", desc: "Implement & optimize" },
+              { title: "Discovery", desc: "Mapping the friction" },
+              { title: "Analysis", desc: "ROI validation & design" },
+              { title: "Design", desc: "Custom core development" },
+              { title: "Delivery", desc: "Production rollout" },
             ].map((step, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="glass p-6 rounded-lg text-center hover:border-accent-blue hover:shadow-glow-blue transition-all duration-300 group cursor-pointer hover:scale-105 hover:bg-white/5"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="group relative"
               >
-                <div className="text-4xl font-bold text-accent-blue mb-3 group-hover:scale-110 transition-transform duration-300">{i + 1}</div>
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-accent-blue transition-colors">{step.title}</h3>
-                <p className="text-sm text-gray-400">{step.desc}</p>
-              </div>
+                {i < 3 && (
+                  <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-px bg-white/10 z-0" />
+                )}
+                <div
+                  className="glass p-8 rounded-2xl text-center hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500 group cursor-pointer hover:-translate-y-2 relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="relative z-10">
+                    <div className="text-5xl font-black text-white/5 mb-4 group-hover:text-blue-500/20 transition-colors">{i + 1}</div>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors uppercase tracking-widest">{step.title}</h3>
+                    <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="relative py-24 bg-gradient-dark">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-        </div>
+      <section className="relative py-24 bg-gradient-dark overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0 bg-blue-600/5 blur-[120px] rounded-full translate-y-1/2" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-gray-300 mb-8">Let&apos;s discuss which service is right for your business</p>
-          <a
-            href="https://calendly.com/cloudagi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex px-8 py-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 hover:shadow-lg transition-all duration-300 hover:scale-105 transform"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
           >
-            Schedule a Consultation
-          </a>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-8 italic">Ready to Architect?</h2>
+            <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed italic">Let&apos;s build the future of your workflow together. No tech jargon, just results.</p>
+            <button
+              onClick={openQuiz}
+              className="inline-flex px-12 py-6 bg-white text-black font-black text-xl rounded-2xl hover:bg-blue-50 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all duration-300 hover:scale-105 border-none cursor-pointer uppercase tracking-tighter"
+            >
+              Start My Blueprint
+            </button>
+          </motion.div>
         </div>
       </section>
     </main>

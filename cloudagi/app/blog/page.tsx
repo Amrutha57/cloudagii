@@ -1,37 +1,31 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-const blogMetadata = {
-  title: "CloudAGI Blog – AI Agents, Agentic Systems, Business Automation Insights",
-  description:
-    "Read expert insights on AI agents, agentic workflows, business automation, and AI ROI. Learn how to implement intelligent systems for your SMB.",
-  keywords: [
-    "AI agents blog",
-    "agentic systems",
-    "AI implementation guide",
-    "business automation",
-    "AI ROI",
-    "AI strategy",
-  ],
-};
+import { motion, AnimatePresence } from "framer-motion";
+import { SpotlightCard } from "@/components/spotlight-card";
 
 export default function BlogPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const categories = ["All", "AI Systems", "Architecture", "Business ROI", "Production", "Scaling"];
+
   const blogs = [
     {
       slug: "query-intelligence",
       title: "Designing Query Intelligence",
-      excerpt: "How CloudAGI turns raw human intent into execution-ready AI systems",
+      excerpt: "How CloudAGI turns raw human intent into execution-ready AI systems that think before they act.",
       date: "Jan 15, 2025",
       category: "AI Systems",
       readTime: "8 min read",
-      image: "/blog11.png"
+      image: "/blog11.png",
+      featured: true
     },
     {
       slug: "tool-chaos",
       title: "From Tool Chaos to Integrated AI Systems",
-      excerpt: "Why most AI stacks fail — and how CloudAGI designs execution-first systems that scale",
+      excerpt: "Why most AI stacks fail — and how CloudAGI designs execution-first systems that scale.",
       date: "Jan 12, 2025",
       category: "Architecture",
       readTime: "10 min read",
@@ -40,7 +34,7 @@ export default function BlogPage() {
     {
       slug: "ai-roi",
       title: "Why Most Businesses Don't Get ROI from AI",
-      excerpt: "And how CloudAGI designs AI systems that actually pay off",
+      excerpt: "And how CloudAGI designs AI systems that actually pay off for the long term.",
       date: "Jan 8, 2025",
       category: "Business ROI",
       readTime: "9 min read",
@@ -49,7 +43,7 @@ export default function BlogPage() {
     {
       slug: "production-reliability",
       title: "Why AI Feels Unreliable in Production",
-      excerpt: "It's not the models. It's the missing system layer.",
+      excerpt: "It's not the models. It's the missing system layer that ensures consistency and logic.",
       date: "Jan 5, 2025",
       category: "Production",
       readTime: "11 min read",
@@ -58,7 +52,7 @@ export default function BlogPage() {
     {
       slug: "scaling-ai-tools",
       title: "Why 'Just Using AI Tools' Breaks at Scale",
-      excerpt: "Scaling AI requires systems, not more software",
+      excerpt: "Scaling AI requires systems and architecture, not just more software and licenses.",
       date: "Dec 30, 2024",
       category: "Scaling",
       readTime: "10 min read",
@@ -67,7 +61,7 @@ export default function BlogPage() {
     {
       slug: "future-ai-systems",
       title: "The Future of Business AI: From Tools to Systems",
-      excerpt: "How the shift from point solutions to integrated AI infrastructure changes competitive advantage",
+      excerpt: "How the shift from point solutions to integrated AI infrastructure changes competitive advantage.",
       date: "Dec 25, 2024",
       category: "Future Trends",
       readTime: "12 min read",
@@ -75,101 +69,178 @@ export default function BlogPage() {
     }
   ];
 
+  const featuredPost = blogs.find(b => b.featured) || blogs[0];
+  const filteredBlogs = activeCategory === "All" ? blogs : blogs.filter(b => b.category === activeCategory);
+
   return (
-    <main className="relative bg-dark-bg text-white overflow-hidden">
+    <main className="relative bg-dark-bg text-white overflow-hidden selection:bg-accent-blue selection:text-white pb-24">
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[50vh] flex items-center bg-gradient-dark py-24">
+      <section className="relative min-h-[40vh] flex items-center bg-gradient-dark py-20">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-20 right-10 w-80 h-80 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-15"></div>
           <div className="absolute top-40 left-10 w-72 h-72 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-15"></div>
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center w-full">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            CloudAGI Insights
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Practical insights on building AI systems that work, implementing agents that deliver ROI, and navigating the AI revolution for SMBs.
-          </p>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter">
+              Insights <span className="text-blue-500 italic">& Architecture</span>
+            </h1>
+            <p className="text-xl text-gray-400 max-w-2xl leading-relaxed italic">
+              Strategic thoughts on building the next generation of business intelligence.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ================= FEATURED POST (NEW) ================= */}
+      <section className="relative max-w-6xl mx-auto px-6 mb-24">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Link
+            href="/blog1"
+            className="group block relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-slate-950/50 backdrop-blur-xl shadow-2xl"
+          >
+            <div className="flex flex-col lg:flex-row items-stretch">
+              <div className="lg:w-1/2 overflow-hidden aspect-video lg:aspect-auto">
+                <Image
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  width={1200}
+                  height={800}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="lg:w-1/2 p-8 lg:p-16 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="px-3 py-1 bg-blue-500 text-white text-[10px] font-black uppercase tracking-widest rounded-full">Featured</span>
+                  <span className="text-gray-500 text-xs font-bold uppercase tracking-widest">{featuredPost.category}</span>
+                </div>
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 group-hover:text-blue-400 transition-colors leading-tight italic">
+                  {featuredPost.title}
+                </h2>
+                <p className="text-xl text-gray-400 leading-relaxed mb-8 font-light line-clamp-3">
+                  {featuredPost.excerpt}
+                </p>
+                <div className="flex items-center justify-between text-xs font-bold text-gray-500 uppercase tracking-widest pt-8 border-t border-white/5 mt-auto">
+                  <span>{featuredPost.date}</span>
+                  <span>{featuredPost.readTime}</span>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </motion.div>
+      </section>
+
+      {/* ================= CATEGORY FILTER (NEW) ================= */}
+      <section className="max-w-6xl mx-auto px-6 mb-12">
+        <div className="flex flex-wrap gap-2">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all border ${activeCategory === cat
+                  ? "bg-white text-black border-white"
+                  : "bg-transparent text-gray-500 border-white/10 hover:border-white/30 hover:text-white"
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
       </section>
 
       {/* ================= BLOG GRID ================= */}
-      <section className="relative py-24 bg-dark-bg">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogs.map((blog) => (
-              <Link
+      <section className="relative max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatePresence mode="popLayout">
+            {filteredBlogs.map((blog, i) => (
+              <motion.div
                 key={blog.slug}
-                href={blog.slug === "query-intelligence" ? "/blog1" :
-                  blog.slug === "tool-chaos" ? "/blog2" :
-                    blog.slug === "ai-roi" ? "/blog4" :
-                      blog.slug === "production-reliability" ? "/blog5" :
-                        blog.slug === "scaling-ai-tools" ? "/blog6" :
-                          blog.slug === "future-ai-systems" ? "/blog3" :
-                            `/blog/${blog.slug}`}
-                className="group glass p-6 rounded-lg border border-dark-border relative overflow-hidden hover:border-accent-blue hover:shadow-glow-blue hover:-translate-y-1 transition-all duration-300 h-full flex flex-col"
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4 }}
               >
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                <Link
+                  href={blog.slug === "query-intelligence" ? "/blog1" :
+                    blog.slug === "tool-chaos" ? "/blog2" :
+                      blog.slug === "ai-roi" ? "/blog4" :
+                        blog.slug === "production-reliability" ? "/blog5" :
+                          blog.slug === "scaling-ai-tools" ? "/blog6" :
+                            blog.slug === "future-ai-systems" ? "/blog3" :
+                              `/blog/${blog.slug}`}
+                  className="group block h-full focus:outline-none"
+                >
+                  <SpotlightCard className="h-full flex flex-col p-6 group-focus:ring-2 group-focus:ring-blue-500">
+                    <div className="relative z-10 flex flex-col h-full">
+                      <div className="mb-6 rounded-2xl overflow-hidden aspect-video border border-white/5 group-hover:border-blue-500/20 transition-all">
+                        <Image
+                          src={blog.image}
+                          alt={blog.title}
+                          width={600}
+                          height={338}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                        />
+                      </div>
 
-                <div className="relative z-10">
-                  {/* Blog Image */}
-                  <div className="mb-4 rounded-lg overflow-hidden aspect-video">
-                    <Image
-                      src={blog.image}
-                      alt={blog.title}
-                      width={600}
-                      height={338}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
+                      <div className="mb-4">
+                        <span className="text-[10px] font-black text-blue-400 uppercase tracking-[0.2em]">
+                          {blog.category}
+                        </span>
+                      </div>
 
-                  <div className="mb-4">
-                    <span className="inline-block px-3 py-1 text-xs font-medium text-accent-blue bg-accent-blue/10 rounded-full">
-                      {blog.category}
-                    </span>
-                  </div>
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors line-clamp-2 leading-tight uppercase tracking-tighter">
+                        {blog.title}
+                      </h3>
 
-                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-accent-blue transition-colors line-clamp-2">
-                    {blog.title}
-                  </h3>
+                      <p className="text-gray-400 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow font-light">
+                        {blog.excerpt}
+                      </p>
 
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-                    {blog.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-dark-border">
-                    <span className="text-xs text-gray-500">{blog.date}</span>
-                    <span className="text-xs text-gray-500">{blog.readTime}</span>
-                  </div>
-                </div>
-              </Link>
+                      <div className="flex items-center justify-between pt-5 border-t border-white/5 mt-auto">
+                        <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{blog.date}</span>
+                        <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">{blog.readTime}</span>
+                      </div>
+                    </div>
+                  </SpotlightCard>
+                </Link>
+              </motion.div>
             ))}
-          </div>
+          </AnimatePresence>
         </div>
       </section>
 
-      {/* ================= CTA ================= */}
-      <section className="relative py-24 bg-dark-card">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Subscribe to Our Newsletter</h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Get the latest insights on AI implementation, business automation, and practical strategies delivered to your inbox.
-          </p>
-          <form className="max-w-md mx-auto flex gap-2">
-            <input
-              type="email"
-              placeholder="Your email"
-              className="flex-1 px-4 py-3 border border-dark-border rounded-lg bg-dark-bg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-blue"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
+      {/* ================= NEWSLETTER ================= */}
+      <section className="relative mt-24 max-w-6xl mx-auto px-6">
+        <SpotlightCard className="p-10 lg:p-20 text-center">
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-widest italic">Join the Vanguard</h2>
+            <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed italic">
+              Monthly deep dives into AI architecture, ROI models, and agentic workflows. No fluff. Just systems.
+            </p>
+            <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                placeholder="architect@domain.com"
+                className="flex-1 px-6 py-4 border border-white/10 rounded-xl bg-black/50 text-white placeholder-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all"
+              />
+              <button
+                type="submit"
+                className="px-8 py-4 bg-white text-black font-black uppercase tracking-widest text-xs rounded-xl hover:bg-gray-200 transition-all"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </SpotlightCard>
       </section>
     </main>
   );

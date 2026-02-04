@@ -10,9 +10,12 @@ import { navLinks } from "@/components/navbar";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 
-export function MobileNav() {
+import { useQuiz } from "@/context/quiz-context";
+
+export function MobileNav({ isDarkTheme = true }: { isDarkTheme?: boolean }) {
 	const [open, setOpen] = React.useState(false);
 	const { isMobile } = useMediaQuery();
+	const { openQuiz } = useQuiz();
 	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = React.useState(false);
 
@@ -33,13 +36,23 @@ export function MobileNav() {
 		};
 	}, [open, isMobile]);
 
+	const handleQuizClick = () => {
+		setOpen(false);
+		openQuiz();
+	};
+
 	return (
 		<>
 			<Button
 				aria-controls="mobile-menu"
 				aria-expanded={open}
 				aria-label="Toggle menu"
-				className="md:hidden"
+				className={cn(
+					"md:hidden",
+					isDarkTheme
+						? "border-white/10 text-white"
+						: "border-gray-200 text-gray-900 shadow-sm"
+				)}
 				onClick={() => setOpen(!open)}
 				size="icon"
 				variant="outline"
@@ -54,8 +67,10 @@ export function MobileNav() {
 				createPortal(
 					<div
 						className={cn(
-							"bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50",
-							"fixed top-14 right-0 bottom-0 left-0 z-40 flex flex-col overflow-hidden border-t md:hidden"
+							isDarkTheme
+								? "bg-dark-bg/95 backdrop-blur-xl border-b border-white/10"
+								: "bg-white/95 backdrop-blur-xl border-b border-gray-200",
+							"fixed top-14 right-0 bottom-0 left-0 z-[60] flex flex-col overflow-hidden md:hidden"
 						)}
 						id="mobile-menu"
 					>
@@ -69,7 +84,12 @@ export function MobileNav() {
 							<div className="flex flex-col gap-6">
 								{navLinks.map((link) => (
 									<Link
-										className="text-lg font-medium text-gray-300"
+										className={cn(
+											"text-lg font-medium transition-colors",
+											isDarkTheme
+												? "text-gray-400 hover:text-white"
+												: "text-gray-600 hover:text-blue-600"
+										)}
 										href={link.href}
 										key={link.label}
 										onClick={() => setOpen(false)}
@@ -79,12 +99,13 @@ export function MobileNav() {
 								))}
 							</div>
 
-							<div className="mt-auto mb-8">
-								<a href="https://calendly.com/cloudagi" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
-									<Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/30 font-bold h-12 rounded-lg">
-										Book Strategy Call
-									</Button>
-								</a>
+							<div className="mt-auto mb-12">
+								<Button
+									onClick={handleQuizClick}
+									className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/30 font-bold h-14 rounded-xl text-lg"
+								>
+									See My Potential Savings
+								</Button>
 							</div>
 						</div>
 					</div>,

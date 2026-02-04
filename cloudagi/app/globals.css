@@ -68,6 +68,7 @@ html {
   transition-duration: 200ms;
 }
 
-button, a {
+button,
+a {
   transition-duration: 300ms;
 }
