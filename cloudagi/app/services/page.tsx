@@ -2,15 +2,19 @@
 
 import { motion } from "framer-motion";
 import { SpotlightCard } from "@/components/spotlight-card";
+import { useChat } from "@/context/chat-context";
 import { useQuiz } from "@/context/quiz-context";
+import { usePlaybook } from "@/context/playbook-context";
 
 export default function Services() {
+  const { openChat } = useChat();
   const { openQuiz } = useQuiz();
+  const { openPlaybook } = usePlaybook();
 
   return (
     <main className="relative bg-dark-bg text-white overflow-hidden selection:bg-accent-blue selection:text-white">
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-dark-bg via-blue-950/10 to-dark-bg py-24">
+      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-dark-bg via-blue-950/10 to-dark-bg section-gap">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-20 right-10 w-96 h-96 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
           <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
@@ -30,9 +34,9 @@ export default function Services() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl md:text-7xl font-bold text-white mb-6"
+            className="text-4xl md:text-8xl font-black text-white mb-6 italic uppercase tracking-tighter font-outfit"
           >
-            How We <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Solve Problems</span>
+            How We <span className="heading-gradient">Solve Problems</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -46,7 +50,7 @@ export default function Services() {
       </section>
 
       {/* ================= SERVICE DETAILS ================= */}
-      <section className="relative py-24 bg-dark-bg">
+      <section className="relative section-gap bg-dark-bg">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8">
             {[
@@ -119,14 +123,14 @@ export default function Services() {
                   <div className="relative z-10 flex flex-col h-full">
                     <div className="flex justify-between items-start mb-6">
                       <div className="text-4xl group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
-                      <div className="text-3xl font-bold text-white/10 group-hover:text-white/20 transition-colors uppercase tracking-widest">{service.num}</div>
+                      <div className="text-3xl font-black text-white/5 group-hover:text-blue-500/10 transition-colors uppercase tracking-widest font-outfit">{service.num}</div>
                     </div>
 
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">{service.title}</h3>
-                    <p className="text-gray-300 mb-6 flex-grow leading-relaxed">{service.overview}</p>
+                    <h3 className="text-2xl font-black text-white mb-4 group-hover:text-blue-400 transition-colors uppercase tracking-tighter italic font-outfit">{service.title}</h3>
+                    <p className="text-gray-400 mb-6 flex-grow leading-relaxed italic">{service.overview}</p>
 
-                    <div className="border-t border-white/10 pt-6 mt-auto">
-                      <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Core Deliverables:</h4>
+                    <div className="border-t border-white/5 pt-6 mt-auto">
+                      <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-architect mb-4">Core Deliverables:</h4>
                       <ul className="mb-8 space-y-3">
                         {service.includes.slice(0, 4).map((item, j) => (
                           <li key={j} className="text-sm text-gray-400 flex items-start gap-3">
@@ -136,16 +140,16 @@ export default function Services() {
                         ))}
                       </ul>
 
-                      <div className="text-sm text-gray-400 bg-white/5 p-4 rounded-xl border border-white/5 group-hover:border-blue-500/20 transition-colors italic">
-                        <span className="font-bold text-blue-400 not-italic uppercase text-[10px] tracking-[0.2em] block mb-1">Business Fit</span> {service.best}
+                      <div className="text-sm text-gray-400 bg-white/5 p-4 rounded-xl border border-white/5 group-hover:border-blue-500/10 transition-colors italic">
+                        <span className="font-black text-blue-400 not-italic uppercase text-[10px] tracking-architect block mb-1">Business Fit</span> {service.best}
                       </div>
 
                       <div className="mt-6">
                         <button
                           onClick={openQuiz}
-                          className="block w-full text-center py-4 bg-white/5 hover:bg-white text-white hover:text-black font-bold rounded-xl transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] border border-white/10 hover:border-white"
+                          className="block w-full text-center py-3.5 bg-white/5 hover:bg-white text-white hover:text-black font-black text-[10px] uppercase tracking-widest rounded-xl transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.1)] border border-white/5 hover:border-white active-scale"
                         >
-                          Configure This Agent
+                          Get Free Audit
                         </button>
                       </div>
                     </div>
@@ -158,20 +162,22 @@ export default function Services() {
       </section>
 
       {/* ================= CAPABILITIES COMPARISON (NEW) ================= */}
-      <section className="relative py-24 bg-dark-bg border-t border-white/5">
+      <section className="relative section-gap bg-dark-bg border-t border-white/5">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 italic">The Agent Advantage</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">Why businesses are moving from traditional automation to decentralized agentic systems.</p>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6 italic uppercase tracking-tighter font-outfit">
+              The Agent <span className="heading-gradient">Advantage</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto italic">Why businesses are migrating from legacy automations to decentralized agentic systems.</p>
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-white/10 bg-slate-950/50 backdrop-blur-xl">
             <table className="w-full text-left min-w-[600px]">
               <thead>
                 <tr className="bg-white/5 border-b border-white/10">
-                  <th className="p-6 text-sm font-bold text-gray-500 uppercase tracking-widest">Capabilities</th>
-                  <th className="p-6 text-sm font-bold text-gray-500 uppercase tracking-widest">Manual/Legacy</th>
-                  <th className="p-6 text-sm font-bold text-blue-400 uppercase tracking-widest">CloudAGI Agent</th>
+                  <th className="p-6 text-[10px] font-black text-gray-500 uppercase tracking-architect">Capabilities</th>
+                  <th className="p-6 text-[10px] font-black text-gray-500 uppercase tracking-architect">Manual/Legacy</th>
+                  <th className="p-6 text-[10px] font-black text-blue-400 uppercase tracking-architect">CloudAGI Agent</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
@@ -195,18 +201,20 @@ export default function Services() {
       </section>
 
       {/* ================= STACK & INTEGRATIONS (NEW) ================= */}
-      <section className="relative py-24 bg-black overflow-hidden">
+      <section className="relative section-gap bg-black overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
-              <h2 className="text-4xl font-bold text-white mb-6">Built on a Modern <span className="text-blue-500 italic">Foundation</span></h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                We don&apos;t build in a vacuum. Your agents are designed to play nice with your current tech stack while leveraging the absolute frontier of AI research.
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6 italic uppercase tracking-tighter font-outfit">
+                Modern <span className="heading-gradient">Infrastructure</span>
+              </h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-8 italic">
+                We don&apos;t build in silos. Your agents are engineered to integrate with your current tech stack while leveraging the frontier of AI research.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {["LLM Orchestration", "Vector Memory", "Native Integrations", "Auto-Optimization"].map(t => (
-                  <div key={t} className="flex items-center gap-3 text-sm font-semibold text-gray-300">
-                    <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
+                  <div key={t} className="flex items-center gap-3 text-[10px] font-black text-gray-400 uppercase tracking-architect">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
                     {t}
                   </div>
                 ))}
@@ -226,11 +234,13 @@ export default function Services() {
       </section>
 
       {/* ================= PROCESS ================= */}
-      <section className="relative py-24 bg-dark-card border-y border-white/5">
+      <section className="relative section-gap bg-dark-card border-y border-white/5">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4 italic">The Road to ROI</h2>
-            <p className="text-xl text-gray-400">Our 4-step methodology for turning ideas into agentic systems.</p>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-4 italic uppercase tracking-tighter font-outfit">
+              The Road <span className="heading-gradient">to ROI</span>
+            </h2>
+            <p className="text-lg text-gray-400 italic">Our 4-step methodology for engineered agentic systems.</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
@@ -256,9 +266,9 @@ export default function Services() {
                 >
                   <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="relative z-10">
-                    <div className="text-5xl font-black text-white/5 mb-4 group-hover:text-blue-500/20 transition-colors">{i + 1}</div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors uppercase tracking-widest">{step.title}</h3>
-                    <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed">{step.desc}</p>
+                    <div className="text-6xl font-black text-white/5 mb-4 group-hover:text-blue-500/10 transition-colors font-outfit">{i + 1}</div>
+                    <h3 className="text-sm font-black text-white mb-2 group-hover:text-blue-400 transition-colors uppercase tracking-architect">{step.title}</h3>
+                    <p className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors leading-relaxed italic">{step.desc}</p>
                   </div>
                 </div>
               </motion.div>
@@ -268,7 +278,7 @@ export default function Services() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="relative py-24 bg-gradient-dark overflow-hidden border-t border-white/5">
+      <section className="relative section-gap bg-gradient-dark overflow-hidden border-t border-white/5">
         <div className="absolute inset-0 bg-blue-600/5 blur-[120px] rounded-full translate-y-1/2" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <motion.div
@@ -276,13 +286,15 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-8 italic">Ready to Architect?</h2>
-            <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed italic">Let&apos;s build the future of your workflow together. No tech jargon, just results.</p>
+            <h2 className="text-5xl md:text-8xl font-black text-white mb-8 italic uppercase tracking-tighter font-outfit">
+              Ready to <span className="heading-gradient">Architect?</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed italic">Let&apos;s build the future of your workflow together. No fluff. Just architecture.</p>
             <button
-              onClick={openQuiz}
-              className="inline-flex px-12 py-6 bg-white text-black font-black text-xl rounded-2xl hover:bg-blue-50 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all duration-300 hover:scale-105 border-none cursor-pointer uppercase tracking-tighter"
+              onClick={openPlaybook}
+              className="inline-flex px-8 py-4 md:px-12 md:py-6 bg-white text-black font-black text-xs md:text-sm rounded-2xl hover:bg-blue-50 hover:shadow-[0_0_50px_rgba(255,255,255,0.2)] transition-all duration-300 hover:scale-105 border-none cursor-pointer uppercase tracking-widest active-scale"
             >
-              Start My Blueprint
+              Start Your Playbook Discovery
             </button>
           </motion.div>
         </div>

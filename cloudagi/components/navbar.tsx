@@ -7,6 +7,7 @@ import { cn } from "@/components/lib/utils";
 import { MobileNav } from "@/components/mobile-nav";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useChat } from "@/context/chat-context";
 import { useQuiz } from "@/context/quiz-context";
 
 export const navLinks = [
@@ -18,6 +19,7 @@ export const navLinks = [
 export function Header() {
   const scrolled = useScroll(10);
   const pathname = usePathname();
+  const { openChat } = useChat();
   const { openQuiz } = useQuiz();
 
   // Detect pages with white background (individual blog posts)
@@ -75,7 +77,7 @@ export function Header() {
               "bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 font-semibold rounded-full px-6 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 border-none cursor-pointer"
             )}
           >
-            Book Strategy Call
+            Book Your Session
           </button>
         </div>
 

@@ -8,7 +8,7 @@ export default function AboutContent() {
   return (
     <main className="relative bg-dark-bg text-white overflow-hidden selection:bg-accent-blue selection:text-white">
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[60vh] flex items-center bg-gradient-dark py-24 text-center">
+      <section className="relative min-h-[60vh] flex items-center bg-gradient-dark section-gap text-center">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
           <div className="absolute top-40 right-10 w-80 h-80 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
@@ -20,8 +20,8 @@ export default function AboutContent() {
             transition={{ duration: 0.5 }}
             className="mb-6 md:mb-8"
           >
-            <h1 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter">
-              About <span className="text-blue-500 italic">CloudAGI</span>
+            <h1 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter italic">
+              About <span className="heading-gradient">CloudAGI</span>
             </h1>
             <div className="h-1.5 w-24 bg-blue-500 mx-auto rounded-full" />
           </motion.div>
@@ -37,11 +37,13 @@ export default function AboutContent() {
       </section>
 
       {/* ================= THE PROBLEM WE SOLVE (NEW) ================= */}
-      <section className="relative py-24 bg-black overflow-hidden border-y border-white/5">
+      <section className="relative section-gap bg-black overflow-hidden border-y border-white/5">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="md:w-1/2 text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8 text-center md:text-left">The <span className="text-blue-500 italic">SMB Gap</span></h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8 text-center md:text-left uppercase tracking-tighter italic">
+                The <span className="heading-gradient">SMB Gap</span>
+              </h2>
               <p className="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
                 Most AI solutions today are built for either giant enterprises with $1M+ budgets or hobbyists playing with API keys.
               </p>
@@ -69,7 +71,7 @@ export default function AboutContent() {
       </section>
 
       {/* ================= MISSION, VISION, VALUES ================= */}
-      <section className="relative py-24 bg-dark-bg">
+      <section className="relative section-gap bg-dark-bg">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +80,7 @@ export default function AboutContent() {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <h2 className="text-4xl font-bold text-white uppercase tracking-tight italic">Our Foundation</h2>
+            <h2 className="text-4xl font-bold text-white uppercase tracking-tighter italic">Our <span className="heading-gradient">Foundation</span></h2>
             <div className="w-12 h-1 bg-blue-500 mx-auto mt-4" />
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8 text-left">
@@ -117,52 +119,86 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ================= VALUES ================= */}
-      <section className="relative py-24 bg-dark-card border-y border-white/5">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4 uppercase tracking-widest">Operating Principles</h2>
-            <p className="text-xl text-gray-400 italic">How we think about your business</p>
-          </motion.div>
+      {/* ================= VALUES (MINIMAL & CLEAN) ================= */}
+      <section className="relative section-gap bg-dark-bg border-y border-white/5 overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
 
-          <div className="grid md:grid-cols-2 gap-8 text-left">
-            {[
-              {
-                title: "Business-First, Tech-Second",
-                desc: "We start with your business problem, then find the right AI solution—not the other way around."
-              },
-              {
-                title: "Pragmatic & Actionable",
-                desc: "We prioritize practical, working solutions that deliver value quickly. No theoretical science projects here."
-              },
-              {
-                title: "Transparent Empowerment",
-                desc: "We educate you throughout the process. You'll understand why we build what we build, enabling you to own the future."
-              },
-              {
-                title: "ROI as a Compass",
-                desc: "Every project is designed to either make you money, save you money, or create a clear strategic advantage."
-              }
-            ].map((value, i) => (
-              <SpotlightCard key={i}>
-                <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors uppercase tracking-tighter">{value.title}</h3>
-                  <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">{value.desc}</p>
-                </div>
-              </SpotlightCard>
-            ))}
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+            {/* Sticky Header Column */}
+            <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                <span className="px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-[10px] font-black uppercase tracking-widest inline-block">Methodology</span>
+                <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter italic leading-none">
+                  Operating <span className="heading-gradient">Principles</span>
+                </h2>
+                <div className="w-12 h-1.5 bg-blue-600 rounded-full" />
+                <p className="text-xl text-gray-500 italic max-w-xs">
+                  How we think about your business objectives and AI implementation.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* List Column */}
+            <div className="lg:col-span-8">
+              <div className="grid gap-12 md:gap-16">
+                {[
+                  {
+                    num: "01",
+                    title: "Business-First, Tech-Second",
+                    desc: "We start with your business problem, then find the right AI solution—not the other way around."
+                  },
+                  {
+                    num: "02",
+                    title: "Pragmatic & Actionable",
+                    desc: "We prioritize practical, working solutions that deliver value quickly. No theoretical science projects here."
+                  },
+                  {
+                    num: "03",
+                    title: "Transparent Empowerment",
+                    desc: "We educate you throughout the process. You'll understand why we build what we build, enabling you to own the technology."
+                  },
+                  {
+                    num: "04",
+                    title: "ROI as a Compass",
+                    desc: "Every project is designed to either make you money, save you money, or create a clear strategic advantage."
+                  }
+                ].map((value, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex gap-8 group"
+                  >
+                    <div className="text-blue-600 font-black text-xs md:text-sm tracking-tighter group-hover:translate-y-[-4px] transition-transform duration-500">
+                      {value.num} —
+                    </div>
+                    <div className="space-y-4">
+                      <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter italic group-hover:text-blue-400 transition-colors duration-500">
+                        {value.title}
+                      </h3>
+                      <p className="text-lg text-gray-400 leading-relaxed font-light max-w-2xl">
+                        {value.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ================= FOUNDER ================= */}
-      <section className="relative py-24 bg-black border-t border-white/5">
+      <section className="relative section-gap bg-black border-t border-white/5">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -218,7 +254,7 @@ export default function AboutContent() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="relative py-24 bg-dark-bg text-center">
+      <section className="relative section-gap bg-dark-bg text-center">
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -226,7 +262,7 @@ export default function AboutContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl font-black text-white mb-8 uppercase tracking-tighter italic">Ready to Work Together?</h2>
+            <h2 className="text-5xl font-black text-white mb-8 uppercase tracking-tighter italic">Ready to <span className="heading-gradient">Work Together?</span></h2>
             <p className="text-2xl text-gray-400 mb-12 font-light">Let&apos;s turn your business objectives into agentic reality.</p>
             <Link
               href="/contact"

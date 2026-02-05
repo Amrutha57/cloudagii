@@ -18,7 +18,7 @@ export const Logo = ({ className, variant = "light" }: { className?: string; var
         )}
       />
     </div>
-    <span className="text-2xl md:text-3xl font-extrabold tracking-tight font-sans drop-shadow-sm text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500">
+    <span className="text-2xl md:text-3xl font-black tracking-tighter font-outfit heading-gradient">
       CloudAGI
     </span>
   </div>

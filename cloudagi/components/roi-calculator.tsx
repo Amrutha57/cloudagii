@@ -48,7 +48,7 @@ export function ROICalculator() {
                                         animate={{ opacity: 1, scale: 1 }}
                                         className="space-y-0 lg:space-y-1 text-left"
                                     >
-                                        <p className="text-[10px] md:text-sm font-black text-blue-400 uppercase tracking-[0.2em]">Yearly Value Locked</p>
+                                        <p className="text-[10px] md:text-sm font-black text-blue-400 uppercase tracking-widest">Yearly Value Locked</p>
                                         <div className="text-4xl xs:text-5xl md:text-7xl font-black text-white tracking-widest italic uppercase">
                                             ${metrics.yearly.toLocaleString()}
                                         </div>

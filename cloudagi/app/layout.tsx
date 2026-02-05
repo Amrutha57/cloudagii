@@ -3,8 +3,22 @@ import "./globals.css";
 import { Header } from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Providers } from "@/components/Providers";
-import { StickyCallButton } from "@/components/sticky-cta";
+import { ChatBot } from "@/components/chatbot";
 import { BlueprintModalContainer } from "@/components/blueprint-modal-container";
+import { PlaybookModalContainer } from "@/components/playbook-modal-container";
+import { Outfit, Inter } from "next/font/google";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata = {
   metadataBase: new URL('https://cloudagi.com'),
@@ -191,7 +205,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${inter.variable}`}>
       <head>
         <meta name="google-site-verification" content="MQVJM9bDiVqazcztLFi5uMm_TOiz4Yl9yslYYGFHzG8" />
         <meta name="msvalidate.01" content="C84846955C8B8D3CA681FFEDD7F922FA" />
@@ -208,13 +222,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body>
+      <body className="font-inter">
         <Providers>
           <Header />
           {children}
-          <StickyCallButton />
           <BlueprintModalContainer />
+          <PlaybookModalContainer />
           <Footer />
+          <ChatBot />
         </Providers>
       </body>
     </html>

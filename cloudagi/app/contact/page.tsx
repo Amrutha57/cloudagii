@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { SpotlightCard } from "@/components/spotlight-card";
+import { useChat } from "@/context/chat-context";
 
 export default function Contact() {
+  const { openChat } = useChat();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,7 +32,7 @@ export default function Contact() {
   return (
     <main className="relative bg-dark-bg text-white overflow-hidden selection:bg-accent-blue selection:text-white">
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[50vh] flex items-center bg-gradient-dark py-24">
+      <section className="relative min-h-[50vh] flex items-center bg-gradient-dark section-gap">
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
           <div className="absolute top-0 right-0 w-96 h-96 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl" />
@@ -40,9 +42,9 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter"
+            className="text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter italic"
           >
-            Execute <span className="text-blue-500 italic">Your Vision</span>
+            Execute <span className="heading-gradient">Your Vision</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -56,7 +58,7 @@ export default function Contact() {
       </section>
 
       {/* ================= CONTACT FORM & INFO ================= */}
-      <section className="relative py-24 bg-dark-bg">
+      <section className="relative section-gap bg-dark-bg">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Form */}
@@ -68,7 +70,7 @@ export default function Contact() {
             >
               <div className="p-8 md:p-12 rounded-[2.5rem] bg-slate-950 border border-white/10 shadow-2xl relative overflow-hidden group">
                 <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <h2 className="text-3xl font-black text-white mb-10 relative z-10 uppercase tracking-tight">Initiate Inquiry</h2>
+                <h2 className="text-3xl font-black text-white mb-10 relative z-10 uppercase tracking-tighter italic">Initiate <span className="heading-gradient">Inquiry</span></h2>
 
                 {submitted ? (
                   <motion.div
@@ -143,7 +145,7 @@ export default function Contact() {
 
                     <button
                       type="submit"
-                      className="w-full px-8 py-5 bg-white text-black font-black text-lg rounded-2xl hover:bg-blue-50 transition-all duration-300 hover:scale-[1.02] uppercase tracking-tighter"
+                      className="w-full px-6 py-4 md:px-8 md:py-5 bg-white text-black font-black text-base md:text-lg rounded-2xl hover:bg-blue-50 transition-all duration-300 hover:scale-[1.02] uppercase tracking-tighter"
                     >
                       Analyze & Process Inquiry
                     </button>
@@ -161,7 +163,7 @@ export default function Contact() {
               className="space-y-10"
             >
               <div className="space-y-6">
-                <h3 className="text-5xl font-black text-white uppercase tracking-tighter italic">Direct <span className="text-blue-500">Node</span></h3>
+                <h3 className="text-5xl font-black text-white uppercase tracking-tighter italic">Direct <span className="heading-gradient">Node</span></h3>
                 <p className="text-xl text-gray-400 font-light leading-relaxed">Skip the queue. Connect with us directly if you require immediate architectural consultation.</p>
               </div>
 
@@ -215,7 +217,7 @@ export default function Contact() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="relative py-24 bg-black border-t border-white/5 overflow-hidden">
+      <section className="relative section-gap bg-black border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 bg-blue-500/5 blur-[120px] rounded-full translate-y-1/2" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.div
@@ -224,21 +226,19 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-10 uppercase tracking-tighter">Skip the <span className="text-blue-500 italic">Static</span></h2>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-10 uppercase tracking-tighter italic">Skip the <span className="heading-gradient">Static</span></h2>
             <p className="text-2xl text-gray-400 mb-12 font-light italic leading-relaxed">
               Prefer a direct consultation? Jump straight into the architectural deep-dive.
             </p>
-            <a
-              href="https://calendly.com/cloudagi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 px-12 py-6 bg-white text-black font-black text-xl rounded-2xl hover:bg-gray-100 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all duration-300 hover:scale-105 uppercase tracking-tighter"
+            <button
+              onClick={openChat}
+              className="inline-flex items-center gap-3 px-6 py-3.5 md:px-10 md:py-5 bg-white text-black font-black text-sm md:text-lg rounded-xl hover:bg-gray-100 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-all duration-300 hover:scale-105 uppercase tracking-tighter border-none cursor-pointer"
             >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
               </svg>
-              Execute Protocol Call
-            </a>
+              Access AI Concierge
+            </button>
           </motion.div>
         </div>
       </section>

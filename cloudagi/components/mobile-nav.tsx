@@ -2,11 +2,12 @@
 
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Button } from "@/components/button";
-import { cn } from "../components/lib/utils";
+import { cn } from "@/components/lib/utils";
 import { MenuIcon, XIcon, Home, Layers, Notebook, Users, ArrowRight, Zap } from "lucide-react";
 import React from "react";
 import { navLinks } from "@/components/navbar";
 import Link from "next/link";
+import { useChat } from "@/context/chat-context";
 import { useQuiz } from "@/context/quiz-context";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -15,6 +16,7 @@ import { createPortal } from "react-dom";
 export function MobileNav({ isDarkTheme = true }: { isDarkTheme?: boolean }) {
 	const [open, setOpen] = React.useState(false);
 	const { isMobile } = useMediaQuery();
+	const { openChat } = useChat();
 	const { openQuiz } = useQuiz();
 	const pathname = usePathname();
 	const [mounted, setMounted] = React.useState(false);
@@ -37,7 +39,6 @@ export function MobileNav({ isDarkTheme = true }: { isDarkTheme?: boolean }) {
 
 	const handleQuizClick = () => {
 		setOpen(false);
-		// Small delay to allow menu to close before modal opens
 		setTimeout(openQuiz, 300);
 	};
 
@@ -106,9 +107,9 @@ export function MobileNav({ isDarkTheme = true }: { isDarkTheme?: boolean }) {
 									<div className="flex items-center justify-between px-6 pt-6 pb-2">
 										<div className="flex items-center gap-2">
 											<div className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
-											<span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">Agentic Hub</span>
+											<span className="text-[10px] font-black text-gray-500 uppercase tracking-widest">Agentic Hub</span>
 										</div>
-										<div className="px-2 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-[8px] font-bold text-blue-400 uppercase tracking-widest">Enrypted</div>
+										<div className="px-2 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-[8px] font-bold text-blue-400 uppercase tracking-widest">Encrypted</div>
 									</div>
 
 									{/* Navigation Grid */}
@@ -128,7 +129,7 @@ export function MobileNav({ isDarkTheme = true }: { isDarkTheme?: boolean }) {
 														href={link.href}
 														onClick={() => setOpen(false)}
 														className={cn(
-															"flex flex-col items-center justify-center gap-3 px-4 py-8 rounded-[2rem] border transition-all duration-300 active:scale-95 group",
+															"flex flex-col items-center justify-center gap-3 px-4 py-6 rounded-[2rem] border transition-all duration-300 active:scale-95 group",
 															isDarkTheme
 																? (isActive
 																	? "bg-blue-600/20 border-blue-500/30 text-white"
@@ -147,7 +148,7 @@ export function MobileNav({ isDarkTheme = true }: { isDarkTheme?: boolean }) {
 															<Icon className="size-6" />
 														</div>
 														<span className={cn(
-															"text-[10px] font-black uppercase tracking-[0.15em] transition-colors",
+															"text-[10px] font-black uppercase tracking-widest transition-colors",
 															isActive ? "text-blue-400" : "text-gray-500 group-hover:text-gray-300"
 														)}>
 															{link.label}
@@ -162,9 +163,9 @@ export function MobileNav({ isDarkTheme = true }: { isDarkTheme?: boolean }) {
 									<div className="p-2 pt-1 pb-4">
 										<button
 											onClick={handleQuizClick}
-											className="group w-full flex items-center justify-between pl-8 pr-6 py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-black uppercase tracking-widest text-[11px] rounded-[2rem] shadow-xl shadow-blue-500/20 active:scale-[0.98] transition-all"
+											className="group w-full flex items-center justify-between pl-6 pr-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-black uppercase tracking-widest text-[10px] rounded-[1.5rem] shadow-xl shadow-blue-500/20 active:scale-[0.98] transition-all"
 										>
-											<span>Execute Blueprint</span>
+											<span>Book Your Session</span>
 											<div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md group-hover:bg-white/20 transition-colors">
 												<ArrowRight className="size-4" />
 											</div>

@@ -7,10 +7,15 @@ import { ROICalculator } from "@/components/roi-calculator";
 import { TrustBadges } from "@/components/trust-badges";
 import { SpotlightCard } from "@/components/spotlight-card";
 import { FAQAccordion } from "@/components/faq-accordion";
+import { useChat } from "@/context/chat-context";
 import { useQuiz } from "@/context/quiz-context";
+import { usePlaybook } from "@/context/playbook-context";
+import { Database, MessageSquare, Users, FileSearch, Calendar, Zap, Sparkles, Bot, Lightbulb, GraduationCap, Target, Briefcase, BarChart3, Settings } from "lucide-react";
 
 export default function Home() {
+  const { openChat } = useChat();
   const { openQuiz } = useQuiz();
+  const { openPlaybook } = usePlaybook();
 
   return (
     <main className="relative bg-dark-bg text-white overflow-hidden font-sans selection:bg-accent-blue selection:text-white">
@@ -62,13 +67,13 @@ export default function Home() {
           >
             <button
               onClick={openQuiz}
-              className="px-8 py-4 md:px-10 md:py-5 bg-white text-black font-bold text-base md:text-lg rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105 border-none cursor-pointer"
+              className="px-5 py-2.5 md:px-10 md:py-5 bg-white text-black font-bold text-xs md:text-lg rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105 border-none cursor-pointer"
             >
-              Get Started
+              Book Your Session
             </button>
             <Link
               href="/services"
-              className="px-8 py-4 md:px-10 md:py-5 bg-transparent border-2 border-white/30 text-white font-semibold text-base md:text-lg rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300 text-center"
+              className="px-5 py-2.5 md:px-10 md:py-5 bg-transparent border-2 border-white/30 text-white font-semibold text-xs md:text-lg rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300 text-center"
             >
               Explore Solutions
             </Link>
@@ -77,7 +82,7 @@ export default function Home() {
       </section>
 
       {/* ================= METRICS ================= */}
-      <section className="relative py-24 bg-dark-bg/50 border-b border-white/5">
+      <section className="relative section-gap bg-dark-bg/50 border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-12 text-center">
             <motion.div
@@ -128,63 +133,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= COMMON CHALLENGES ================= */}
-      <section className="relative py-24 bg-dark-bg">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* ================= SYSTEM FRICTION NODES ================= */}
+      <section className="relative section-gap bg-dark-bg overflow-hidden">
+        {/* Dynamic Background Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Common Challenges We Solve</h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              If your team is struggling with any of these, an AI agent can likely help.
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[9px] font-black uppercase tracking-[0.2em] mb-6"
+            >
+              <Zap className="size-3 animate-pulse" />
+              Efficiency Scan Result
+            </motion.div>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter italic font-outfit">
+              System <span className="heading-gradient">Friction Nodes</span>
+            </h2>
+            <p className="text-gray-400 max-w-xl mx-auto font-light italic text-sm md:text-base">
+              Identified high-latency workflows requiring autonomous intervention.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "Manual Data Entry",
-                desc: "Your team spends hours moving data between spreadsheets, CRMs, and other tools.",
-                features: ["Zero human error", "Real-time updates", "Cross-tool sync"]
+                title: "Data Lag",
+                icon: <Database className="size-10 text-blue-500" />
               },
               {
-                title: "Customer Support Overload",
-                desc: "Answering the same 50 questions every day instead of solving complex problems.",
-                features: ["24/7 instant response", "Natural conversation", "Automatic triage"]
+                title: "Support Load",
+                icon: <MessageSquare className="size-10 text-indigo-500" />
               },
               {
-                title: "Inconsistent Follow-ups",
-                desc: "Leads go cold because you don't have the bandwidth to stay in constant contact.",
-                features: ["Persistant engagement", "Personalized outreach", "Automatic scheduling"]
+                title: "Lead Decay",
+                icon: <Users className="size-10 text-purple-500" />
               },
               {
-                title: "Document Analysis",
-                desc: "Sifting through mountains of PDFs, contracts, or reports to find key information.",
-                features: ["Instant extraction", "Summary generation", "Critical data flagging"]
-              },
-              {
-                title: "Scheduling Chaos",
-                desc: "Going back and forth just to find a time to meet with clients or partners.",
-                features: ["Self-serve booking", "Calendar sync", "Automatic reminders"]
-              },
-              {
-                title: "Content Production",
-                desc: "Struggling to keep up with the demand for personalized emails, reports, and social posts.",
-                features: ["Brand-consistent copy", "Bulk generation", "Smart repurposing"]
+                title: "Doc Latency",
+                icon: <FileSearch className="size-10 text-blue-400" />
               }
             ].map((challenge, i) => (
-              <SpotlightCard key={i}>
-                <h3 className="text-2xl font-bold text-white mb-4 italic">{challenge.title}</h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">
-                  {challenge.desc}
-                </p>
-                <ul className="space-y-3">
-                  {challenge.features.map((feature, j) => (
-                    <li key={j} className="flex items-center text-sm text-blue-300">
-                      <span className="mr-2 text-blue-500">✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </SpotlightCard>
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group cursor-pointer"
+              >
+                <div className="relative h-full py-16 px-8 rounded-[2.5rem] border border-white/5 bg-slate-950/40 hover:bg-slate-900/60 hover:border-blue-500/30 transition-all duration-500 overflow-hidden flex flex-col items-center justify-center text-center">
+                  {/* Subtle hover background glow */}
+                  <div className="absolute -inset-2 bg-gradient-to-br from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity blur-2xl" />
+
+                  <div className="relative z-10 flex flex-col items-center gap-8">
+                    <div className="p-6 rounded-[2rem] bg-white/5 border border-white/5 group-hover:scale-110 group-hover:bg-blue-600/10 group-hover:border-blue-500/20 transition-all duration-500 shadow-xl group-hover:shadow-blue-500/40">
+                      {challenge.icon}
+                    </div>
+
+                    <h3 className="text-2xl font-black text-white italic uppercase tracking-tighter group-hover:text-blue-400 transition-colors duration-500 font-outfit">
+                      {challenge.title}
+                    </h3>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -195,7 +209,7 @@ export default function Home() {
 
 
       {/* ================= WHAT WE DO ================= */}
-      <section className="relative py-24 bg-dark-bg border-y border-white/5">
+      <section className="relative section-gap bg-dark-bg border-y border-white/5">
         <div className="max-w-5xl mx-auto px-6">
           {/* What We Do */}
           <motion.div
@@ -205,36 +219,37 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">What We Do</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 italic uppercase tracking-tighter">
+              What We Do
+            </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-4">
               CloudAGI builds custom AI agents and provides expert AI consultation for small and medium businesses.
-            </p>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-12">
-              We automate your repetitive tasks, integrate AI into your existing workflows, and train your team—without requiring any technical expertise from you.
             </p>
 
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               {[
                 {
-                  icon: "🤖",
-                  title: "AI Agent Development",
-                  desc: "Custom AI assistants that handle tasks like customer support, data entry, scheduling, and more."
+                  icon: <Bot className="size-10 text-blue-500" />,
+                  title: "Agentic Engineering",
+                  desc: "Custom AI assistants with persistent memory that handle high-latency tasks like support, data pipelines, and intelligent scheduling."
                 },
                 {
-                  icon: "💡",
-                  title: "AI Strategy Consultation",
-                  desc: "Expert guidance on where AI can save you time and money in your specific business."
+                  icon: <Lightbulb className="size-10 text-indigo-500" />,
+                  title: "Strategy Architecture",
+                  desc: "Expert diagnostic logic to identify where intelligent leverage can maximize ROI and minimize systemic friction."
                 },
                 {
-                  icon: "🎓",
-                  title: "Team Training & Implementation",
-                  desc: "We set everything up and train your team so AI actually gets used."
+                  icon: <GraduationCap className="size-10 text-purple-500" />,
+                  title: "Team Calibration",
+                  desc: "We deploy the architecture and conduct intensive upskilling to ensure your team operates at agentic velocity."
                 }
               ].map((item, i) => (
-                <SpotlightCard key={i}>
-                  <div className="text-5xl mb-4">{item.icon}</div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">
+                <SpotlightCard key={i} className="p-10 text-center flex flex-col items-center">
+                  <div className="mb-8 p-4 rounded-[2rem] bg-white/5 border border-white/5">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-2xl font-black text-white mb-4 uppercase tracking-tighter italic font-outfit">{item.title}</h3>
+                  <p className="text-gray-400 leading-relaxed font-light italic">
                     {item.desc}
                   </p>
                 </SpotlightCard>
@@ -249,7 +264,7 @@ export default function Home() {
 
 
       {/* ================= EXPERT LEADERSHIP ================= */}
-      <section className="relative py-24 bg-dark-card border-b border-white/5">
+      <section className="relative section-gap bg-dark-card border-b border-white/5">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -257,8 +272,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              Meet Your Strategic Partner
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight italic uppercase tracking-tighter">
+              Meet Your <span className="heading-gradient">Strategic Partner</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Business strategy meets AI execution. No theory. Just results.
@@ -313,11 +328,62 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================= PLAYBOOK CTA (NEW) ================= */}
+      <section className="relative py-24 bg-black overflow-hidden border-t border-white/5">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-xs font-black uppercase tracking-widest mb-6 inline-block">Interactive Audit</span>
+            <h2 className="text-4xl md:text-7xl font-black text-white italic uppercase tracking-tighter font-outfit mb-6">
+              Think Like An <span className="heading-gradient">Architect</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto italic leading-relaxed">
+              Stop guessing where AI fits. Use our diagnostic tool to identify friction points and see the exact agentic architecture needed for your role.
+            </p>
+          </motion.div>
+
+          <SpotlightCard className="p-1 max-w-3xl mx-auto rounded-[2.5rem] bg-gradient-to-br from-blue-600/20 to-indigo-600/20">
+            <div className="bg-slate-950 p-10 md:p-16 rounded-[2.3rem] flex flex-col items-center gap-10">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full opacity-50">
+                {[
+                  { label: "CEO", icon: <Briefcase /> },
+                  { label: "Sales", icon: <BarChart3 /> },
+                  { label: "Ops", icon: <Settings /> },
+                  { label: "Growth", icon: <Target /> }
+                ].map((p, i) => (
+                  <div key={i} className="flex flex-col items-center gap-3">
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/5 text-gray-500">
+                      {p.icon}
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-gray-600">{p.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="space-y-6 w-full">
+                <button
+                  onClick={openPlaybook}
+                  className="w-full py-6 bg-white text-black font-black text-xl md:text-2xl rounded-2xl hover:bg-blue-50 hover:shadow-[0_0_50px_rgba(255,255,255,0.2)] transition-all duration-300 hover:scale-105 transform border-none cursor-pointer uppercase tracking-tighter italic font-outfit"
+                >
+                  Start My Strategy Scan
+                </button>
+                <p className="text-sm text-gray-500 font-medium">3-minute diagnostic • Personalized to your role • Zero fluff</p>
+              </div>
+            </div>
+          </SpotlightCard>
+        </div>
+      </section>
+
       {/* ================= TRUST BADGES ================= */}
       <TrustBadges />
 
       {/* ================= CTA ================= */}
-      <section className="relative py-24 bg-dark-bg border-t border-white/5 overflow-hidden">
+      <section className="relative section-gap bg-dark-bg border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 bg-blue-600/5 blur-[100px] rounded-full translate-y-1/2" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.div
@@ -326,16 +392,18 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Experience AI Leverage?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 uppercase tracking-tighter italic">
+              Ready to <span className="heading-gradient">Experience</span> AI Leverage?
+            </h2>
             <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
               Book a free 20-minute strategy call to find the highest-impact workflow in your business that we can automate.
             </p>
             <button
               onClick={openQuiz}
-              className="inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg md:text-xl rounded-xl hover:from-blue-700 hover:to-indigo-700 hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105 transform border-none cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-3 md:px-10 md:py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm md:text-xl rounded-xl hover:from-blue-700 hover:to-indigo-700 hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105 transform border-none cursor-pointer"
             >
-              Book My Strategic Consultation
-              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              Book Your Strategy Session
+              <svg className="w-4 h-4 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             </button>

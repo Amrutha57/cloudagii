@@ -9,7 +9,7 @@ import { SpotlightCard } from "@/components/spotlight-card";
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["All", "AI Systems", "Architecture", "Business ROI", "Production", "Scaling"];
+  const categories = ["All", "AI Systems", "Architecture", "Business ROI", "Production", "Scaling", "Future Trends"];
 
   const blogs = [
     {
@@ -75,7 +75,7 @@ export default function BlogPage() {
   return (
     <main className="relative bg-dark-bg text-white overflow-hidden selection:bg-accent-blue selection:text-white pb-24">
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[40vh] flex items-center bg-gradient-dark py-20">
+      <section className="relative min-h-[40vh] flex items-center bg-gradient-dark section-gap">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-20 right-10 w-80 h-80 bg-accent-blue rounded-full mix-blend-multiply filter blur-3xl opacity-15"></div>
           <div className="absolute top-40 left-10 w-72 h-72 bg-accent-purple rounded-full mix-blend-multiply filter blur-3xl opacity-15"></div>
@@ -86,8 +86,8 @@ export default function BlogPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter">
-              Insights <span className="text-blue-500 italic">& Architecture</span>
+            <h1 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter italic">
+              Insights <span className="heading-gradient">& Architecture</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed italic">
               Strategic thoughts on building the next generation of business intelligence.
@@ -104,7 +104,7 @@ export default function BlogPage() {
           transition={{ duration: 0.6 }}
         >
           <Link
-            href="/blog1"
+            href={`/blog/${featuredPost.slug}`}
             className="group block relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-slate-950/50 backdrop-blur-xl shadow-2xl"
           >
             <div className="flex flex-col lg:flex-row items-stretch">
@@ -170,13 +170,7 @@ export default function BlogPage() {
                 transition={{ duration: 0.4 }}
               >
                 <Link
-                  href={blog.slug === "query-intelligence" ? "/blog1" :
-                    blog.slug === "tool-chaos" ? "/blog2" :
-                      blog.slug === "ai-roi" ? "/blog4" :
-                        blog.slug === "production-reliability" ? "/blog5" :
-                          blog.slug === "scaling-ai-tools" ? "/blog6" :
-                            blog.slug === "future-ai-systems" ? "/blog3" :
-                              `/blog/${blog.slug}`}
+                  href={`/blog/${blog.slug}`}
                   className="group block h-full focus:outline-none"
                 >
                   <SpotlightCard className="h-full flex flex-col p-6 group-focus:ring-2 group-focus:ring-blue-500">
@@ -192,7 +186,7 @@ export default function BlogPage() {
                       </div>
 
                       <div className="mb-4">
-                        <span className="text-[10px] font-black text-blue-400 uppercase tracking-[0.2em]">
+                        <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest leading-none">
                           {blog.category}
                         </span>
                       </div>
@@ -219,10 +213,10 @@ export default function BlogPage() {
       </section>
 
       {/* ================= NEWSLETTER ================= */}
-      <section className="relative mt-24 max-w-6xl mx-auto px-6">
+      <section className="relative section-gap max-w-6xl mx-auto px-6">
         <SpotlightCard className="p-10 lg:p-20 text-center">
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-widest italic">Join the Vanguard</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter italic">Join the <span className="heading-gradient">Vanguard</span></h2>
             <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed italic">
               Monthly deep dives into AI architecture, ROI models, and agentic workflows. No fluff. Just systems.
             </p>
@@ -234,7 +228,7 @@ export default function BlogPage() {
               />
               <button
                 type="submit"
-                className="px-8 py-4 bg-white text-black font-black uppercase tracking-widest text-xs rounded-xl hover:bg-gray-200 transition-all"
+                className="px-6 py-3.5 md:px-8 md:py-4 bg-white text-black font-black uppercase tracking-widest text-[10px] md:text-xs rounded-xl hover:bg-gray-200 transition-all shadow-xl active-scale"
               >
                 Subscribe
               </button>

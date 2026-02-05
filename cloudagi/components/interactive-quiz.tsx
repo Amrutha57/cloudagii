@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 interface QuizModalProps {
     isOpen: boolean;
@@ -78,8 +79,8 @@ export function InteractiveQuiz({ isOpen, onClose }: QuizModalProps) {
                                     className="space-y-6"
                                 >
                                     <div className="space-y-2 text-center">
-                                        <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Step 1 of 3</span>
-                                        <h2 className="text-3xl font-bold text-white leading-tight">What is your primary goal with AI?</h2>
+                                        <span className="text-blue-400 font-bold text-[10px] uppercase tracking-architect">Step 1 of 3</span>
+                                        <h2 className="text-3xl font-bold text-white leading-tight italic uppercase tracking-tighter font-outfit">Primary <span className="heading-gradient">Goal</span></h2>
                                     </div>
                                     <div className="grid gap-3">
                                         {[
@@ -91,10 +92,10 @@ export function InteractiveQuiz({ isOpen, onClose }: QuizModalProps) {
                                             <button
                                                 key={btn.id}
                                                 onClick={() => { setAnswers({ ...answers, goal: btn.label }); handleNext(); }}
-                                                className="flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all text-left text-white font-medium group"
+                                                className="flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all text-left text-white font-medium group active-scale"
                                             >
-                                                <span className="text-2xl">{btn.icon}</span>
-                                                <span className="flex-1">{btn.label}</span>
+                                                <span className="text-2xl group-hover:scale-110 transition-transform">{btn.icon}</span>
+                                                <span className="flex-1 uppercase tracking-tight font-bold">{btn.label}</span>
                                                 <svg className="w-5 h-5 text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                                                 </svg>
@@ -113,8 +114,8 @@ export function InteractiveQuiz({ isOpen, onClose }: QuizModalProps) {
                                     className="space-y-8"
                                 >
                                     <div className="space-y-2 text-center">
-                                        <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Step 2 of 3</span>
-                                        <h2 className="text-3xl font-bold text-white italic leading-tight">How many hours does your team waste on manual work weekly?</h2>
+                                        <span className="text-blue-400 font-bold text-[10px] uppercase tracking-architect">Step 2 of 3</span>
+                                        <h2 className="text-3xl font-bold text-white italic leading-tight uppercase tracking-tighter font-outfit">Manual <span className="heading-gradient">Workload</span></h2>
                                     </div>
                                     <div className="space-y-6">
                                         <div className="flex justify-between items-end">
@@ -159,20 +160,19 @@ export function InteractiveQuiz({ isOpen, onClose }: QuizModalProps) {
                                         </svg>
                                     </div>
                                     <div className="space-y-4">
-                                        <h2 className="text-4xl font-extrabold text-white leading-tight">We found a match!</h2>
+                                        <h2 className="text-4xl font-extrabold text-white leading-tight uppercase tracking-tighter italic font-outfit">Match <span className="heading-gradient">Confirmed</span></h2>
                                         <p className="text-gray-300 text-lg leading-relaxed max-w-sm mx-auto">
                                             Based on your <span className="text-white font-semibold">{answers.goal.toLowerCase()}</span> goal, we can save your team roughly <span className="text-blue-400 font-bold">{Math.round(answers.hours * 0.8)} hours</span> every single week.
                                         </p>
                                     </div>
                                     <div className="space-y-4 pt-4">
-                                        <a
-                                            href="https://calendly.com/cloudagi"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="block w-full py-5 bg-white text-dark-bg font-extrabold text-xl rounded-2xl hover:bg-blue-50 hover:scale-[1.02] transition-all"
+                                        <Link
+                                            href="/contact"
+                                            onClick={onClose}
+                                            className="block w-full py-4 md:py-5 bg-white text-dark-bg font-extrabold text-lg md:text-xl rounded-2xl hover:bg-blue-50 hover:scale-[1.02] transition-all text-center"
                                         >
                                             Schedule Your Deep Dive
-                                        </a>
+                                        </Link>
                                         <button
                                             onClick={onClose}
                                             className="text-gray-500 hover:text-white transition-colors text-sm font-medium"

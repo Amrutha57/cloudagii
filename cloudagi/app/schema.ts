@@ -13,7 +13,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     "contactType": "Customer Service",
     "url": "https://cloudagi.com/contact",
-    "email": "hello@cloudagi.com"
+    "email": "contact@cloudagi.com"
   }
 };
 
@@ -25,7 +25,7 @@ export const localBusinessSchema = {
   "description": "AI agent consultancy and agentic solution provider for SMBs",
   "url": "https://cloudagi.com",
   "telephone": "+1-xxx-xxx-xxxx",
-  "email": "hello@cloudagi.com",
+  "email": "contact@cloudagi.com",
   "areaServed": "US",
   "serviceType": "AI Consultancy"
 };

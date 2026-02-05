@@ -47,27 +47,27 @@ Arya Teja Rudraraju - Founder & AI Systems Architect
 
 ### Designing Query Intelligence
 How CloudAGI turns raw human intent into execution-ready AI systems through Query Intelligence - the missing layer in most AI systems.
-URL: https://cloudagi.com/blog1
+URL: https://cloudagi.com/blog/query-intelligence
 
 ### From Tool Chaos to Integrated AI Systems
 Why most AI stacks fail and how to design execution-first systems that scale.
-URL: https://cloudagi.com/blog2
+URL: https://cloudagi.com/blog/tool-chaos
 
 ### The Future of Business AI: From Tools to Systems
 How the shift from point solutions to integrated AI infrastructure changes competitive advantage.
-URL: https://cloudagi.com/blog3
+URL: https://cloudagi.com/blog/future-ai-systems
 
 ### Why Most Businesses Don't Get ROI from AI
-The real reasons AI projects fail and how to build systems that pay off.
-URL: https://cloudagi.com/blog4
+The real reasons AI projects fail and how to build systems that pay off for the long term.
+URL: https://cloudagi.com/blog/ai-roi
 
-### Building Production-Ready AI Agents
-A technical deep-dive into engineering reliable AI agents that work in production environments.
-URL: https://cloudagi.com/blog5
+### Why AI Feels Unreliable in Production
+It's not the models. It's the missing system layer that ensures consistency and logic in real-world deployment.
+URL: https://cloudagi.com/blog/production-reliability
 
-### The Economics of AI Automation
-Understanding the true cost and ROI of implementing AI agents in your business.
-URL: https://cloudagi.com/blog6
+### Why 'Just Using AI Tools' Breaks at Scale
+Scaling AI requires systems and architecture, not just more software and licenses.
+URL: https://cloudagi.com/blog/scaling-ai-tools
 
 ## Core Philosophy
 
@@ -96,5 +96,5 @@ Small and medium-sized businesses (SMBs) looking to:
 
 ---
 
-Last Updated: January 2025
+Last Updated: February 2026
 Format: llms.txt v0.1.0
