@@ -63,7 +63,7 @@ sitemap: https://cloudagi-liart.vercel.app/sitemap.xml
     "telephone": "+1-XXX-XXX-XXXX",
     "contactType": "Customer Service",
     "url": "https://cloudagi-liart.vercel.app/contact",
-    "email": "contact@cloudagi.com"
+    "email": "contact@cloudagidemo1.vercel.app"
   },
   "serviceArea": { "type": "Country", "name": "United States" }
 }

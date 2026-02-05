@@ -263,8 +263,8 @@ A: Absolutely. We build AI systems you own and control. Your data stays on your 
 
 ## Contact Information
 
-- **Website**: https://cloudagi.com
-- **Email**: contact@cloudagi.com
+- **Website**: https://cloudagidemo1.vercel.app
+- **Email**: contact@cloudagidemo1.vercel.app
 - **Booking**: https://calendly.com/cloudagi
 - **Response Time**: Usually within 24 hours
 - **Consultation**: Free 20-minute discovery call

@@ -31,43 +31,43 @@ Arya Teja Rudraraju - Founder & AI Systems Architect
 
 ### Contact
 
-- Website: https://cloudagi.com
-- Email: contact@cloudagi.com
+- Website: https://cloudagidemo1.vercel.app
+- Email: contact@cloudagidemo1.vercel.app
 - Schedule: https://calendly.com/cloudagi
 
 ## Key Pages
 
-- Home: https://cloudagi.com/
-- Services: https://cloudagi.com/services
-- About: https://cloudagi.com/about
-- Blog: https://cloudagi.com/blog
-- Contact: https://cloudagi.com/contact
+- Home: https://cloudagidemo1.vercel.app/
+- Services: https://cloudagidemo1.vercel.app/services
+- About: https://cloudagidemo1.vercel.app/about
+- Blog: https://cloudagidemo1.vercel.app/blog
+- Contact: https://cloudagidemo1.vercel.app/contact
 
 ## Featured Blog Posts
 
 ### Designing Query Intelligence
 How CloudAGI turns raw human intent into execution-ready AI systems through Query Intelligence - the missing layer in most AI systems.
-URL: https://cloudagi.com/blog/query-intelligence
+URL: https://cloudagidemo1.vercel.app/blog/query-intelligence
 
 ### From Tool Chaos to Integrated AI Systems
 Why most AI stacks fail and how to design execution-first systems that scale.
-URL: https://cloudagi.com/blog/tool-chaos
+URL: https://cloudagidemo1.vercel.app/blog/tool-chaos
 
 ### The Future of Business AI: From Tools to Systems
 How the shift from point solutions to integrated AI infrastructure changes competitive advantage.
-URL: https://cloudagi.com/blog/future-ai-systems
+URL: https://cloudagidemo1.vercel.app/blog/future-ai-systems
 
 ### Why Most Businesses Don't Get ROI from AI
 The real reasons AI projects fail and how to build systems that pay off for the long term.
-URL: https://cloudagi.com/blog/ai-roi
+URL: https://cloudagidemo1.vercel.app/blog/ai-roi
 
 ### Why AI Feels Unreliable in Production
 It's not the models. It's the missing system layer that ensures consistency and logic in real-world deployment.
-URL: https://cloudagi.com/blog/production-reliability
+URL: https://cloudagidemo1.vercel.app/blog/production-reliability
 
 ### Why 'Just Using AI Tools' Breaks at Scale
 Scaling AI requires systems and architecture, not just more software and licenses.
-URL: https://cloudagi.com/blog/scaling-ai-tools
+URL: https://cloudagidemo1.vercel.app/blog/scaling-ai-tools
 
 ## Core Philosophy
 

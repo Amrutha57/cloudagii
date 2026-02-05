@@ -26,7 +26,7 @@ export default function Services() {
             transition={{ duration: 0.6 }}
             className="inline-block mb-6"
           >
-            <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-xs md:text-sm font-medium">
+            <span className="protocol-label">
               AI Solutions That Work
             </span>
           </motion.div>
@@ -34,7 +34,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl md:text-8xl font-black text-white mb-6 italic uppercase tracking-tighter font-outfit"
+            className="text-4xl md:text-8xl protocol-heading text-white mb-6"
           >
             How We <span className="heading-gradient">Solve Problems</span>
           </motion.h1>
@@ -42,7 +42,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto protocol-body"
           >
             We don&apos;t sell AI tools. We engineer custom autonomous agents that integrate with your systems and deliver measurable business results.
           </motion.p>

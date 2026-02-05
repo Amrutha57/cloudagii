@@ -6,7 +6,7 @@
 **Location**: `app/robots.ts`
 
 **Changes**:
-- ✅ Fixed sitemap URL: `https://cloudagi.com/sitemap.xml`
+- ✅ Fixed sitemap URL: `https://cloudagidemo1.vercel.app/sitemap.xml`
 - ✅ Added comprehensive AI crawler support:
   - GPTBot (OpenAI)
   - anthropic-ai (Claude)
@@ -22,7 +22,7 @@
 
 ### 2. **llms.txt** (New)
 **Location**: `public/llms.txt`
-**URL**: `https://cloudagi.com/llms.txt`
+**URL**: `https://cloudagidemo1.vercel.app/llms.txt`
 
 **Contents**:
 - Company overview and mission
@@ -39,7 +39,7 @@
 
 ### 3. **llms-full.txt** (New)
 **Location**: `public/llms-full.txt`
-**URL**: `https://cloudagi.com/llms-full.txt`
+**URL**: `https://cloudagidemo1.vercel.app/llms-full.txt`
 
 **Contents**:
 - Detailed service offerings with results
@@ -60,7 +60,7 @@
 
 ### For Search Engines (SEO)
 ✅ Proper robots.txt ensures all pages are crawlable
-✅ Sitemap URL correctly points to cloudagi.com
+✅ Sitemap URL correctly points to cloudagidemo1.vercel.app
 ✅ API and admin routes properly excluded
 
 ### For AI Models (AEO - AI Engine Optimization)
@@ -95,15 +95,15 @@ Your website will be:
 ## 🔍 How to Verify
 
 ### Check robots.txt
-Visit: `https://cloudagi.com/robots.txt`
+Visit: `https://cloudagidemo1.vercel.app/robots.txt`
 Should show all AI crawlers allowed
 
 ### Check llms.txt
-Visit: `https://cloudagi.com/llms.txt`
+Visit: `https://cloudagidemo1.vercel.app/llms.txt`
 Should display company information
 
 ### Check llms-full.txt
-Visit: `https://cloudagi.com/llms-full.txt`
+Visit: `https://cloudagidemo1.vercel.app/llms-full.txt`
 Should display detailed information
 
 ### Test with AI
@@ -114,7 +114,7 @@ Ask ChatGPT: "What does CloudAGI do?"
 
 ## 📝 Next Steps
 
-1. **Deploy** your site to cloudagi.com
+1. **Deploy** your site to cloudagidemo1.vercel.app
 2. **Wait** 1-2 weeks for AI crawlers to index
 3. **Test** by asking AI models about CloudAGI
 4. **Monitor** referral traffic from AI sources

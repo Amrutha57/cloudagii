@@ -2,8 +2,8 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "CloudAGI",
-  "url": "https://cloudagi.com",
-  "logo": "https://cloudagi.com/logo.png",
+  "url": "https://cloudagidemo1.vercel.app",
+  "logo": "https://cloudagidemo1.vercel.app/logo.png",
   "description": "CloudAGI delivers custom AI agent solutions and agentic workflows for small and medium businesses. Expert AI consultancy with proven ROI.",
   "sameAs": [
     "https://twitter.com/cloudagi",
@@ -12,8 +12,8 @@ export const organizationSchema = {
   "contact": {
     "@type": "ContactPoint",
     "contactType": "Customer Service",
-    "url": "https://cloudagi.com/contact",
-    "email": "contact@cloudagi.com"
+    "url": "https://cloudagidemo1.vercel.app/contact",
+    "email": "contact@cloudagidemo1.vercel.app"
   }
 };
 
@@ -21,11 +21,11 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "CloudAGI",
-  "image": "https://cloudagi.com/logo.png",
+  "image": "https://cloudagidemo1.vercel.app/logo.png",
   "description": "AI agent consultancy and agentic solution provider for SMBs",
-  "url": "https://cloudagi.com",
+  "url": "https://cloudagidemo1.vercel.app",
   "telephone": "+1-xxx-xxx-xxxx",
-  "email": "contact@cloudagi.com",
+  "email": "contact@cloudagidemo1.vercel.app",
   "areaServed": "US",
   "serviceType": "AI Consultancy"
 };
@@ -38,7 +38,7 @@ export const serviceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "CloudAGI",
-    "url": "https://cloudagi.com"
+    "url": "https://cloudagidemo1.vercel.app"
   },
   "areaServed": "US",
   "availableLanguage": "en"
@@ -96,20 +96,20 @@ export const articleSchema = (title: string, description: string, datePublished:
   "@type": "BlogPosting",
   "headline": title,
   "description": description,
-  "image": "https://cloudagi.com/og-image.png",
+  "image": "https://cloudagidemo1.vercel.app/og-image.png",
   "datePublished": datePublished,
   "dateModified": dateModified,
   "author": {
     "@type": "Organization",
     "name": author,
-    "url": "https://cloudagi.com"
+    "url": "https://cloudagidemo1.vercel.app"
   },
   "publisher": {
     "@type": "Organization",
     "name": "CloudAGI",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://cloudagi.com/logo.png"
+      "url": "https://cloudagidemo1.vercel.app/logo.png"
     }
   }
 });

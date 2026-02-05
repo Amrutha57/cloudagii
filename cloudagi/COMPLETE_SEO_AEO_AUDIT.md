@@ -12,7 +12,7 @@
 - ✅ Title tags optimized (60 characters, includes keywords)
 - ✅ Meta descriptions compelling (155 characters)
 - ✅ H1-H6 hierarchy properly structured
-- ✅ Canonical URLs set to cloudagi.com
+- ✅ Canonical URLs set to cloudagidemo1.vercel.app
 - ✅ Open Graph tags for social sharing
 - ✅ Twitter Card metadata complete
 

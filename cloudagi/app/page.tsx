@@ -22,14 +22,17 @@ export default function Home() {
 
       {/* ================= HERO ================= */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-dark-bg/80 z-10" /> {/* Overlay for contrast */}
+        {/* Background Video Shell */}
+        <div className="absolute inset-0 z-0 bg-slate-950">
+          <div className="absolute inset-0 bg-dark-bg/80 z-10" />
+          {/* High-fidelity CSS Placeholder while video loads */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-slate-950 to-indigo-900/20 animate-pulse" />
           <video
             autoPlay
             loop
             muted
             playsInline
+            preload="auto"
             className="w-full h-full object-cover opacity-60"
           >
             <source src="/hero.mp4" type="video/mp4" />
@@ -42,11 +45,11 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-3xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 md:mb-8"
+            className="text-4xl md:text-6xl lg:text-7xl protocol-heading text-white mb-6 md:mb-8 tracking-tight"
           >
             We Build AI Agents &
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
-              Provide Expert Consultation
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 font-extrabold">
+              Expert Consultation
             </span>
           </motion.h1>
 
@@ -54,7 +57,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="hidden md:block text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10 md:mb-12"
+            className="hidden md:block text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto protocol-body mb-10 md:mb-12"
           >
             Custom AI solutions that automate your repetitive work and let your team focus on growth.
           </motion.p>
@@ -392,7 +395,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 uppercase tracking-tighter italic">
+            <h2 className="text-4xl md:text-5xl protocol-heading text-white mb-6">
               Ready to <span className="heading-gradient">Experience</span> AI Leverage?
             </h2>
             <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">

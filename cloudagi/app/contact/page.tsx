@@ -176,7 +176,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Inquiry Gateway</p>
-                    <p className="text-2xl font-bold text-white tracking-tight italic">contact@cloudagi.com</p>
+                    <p className="text-2xl font-bold text-white tracking-tight italic">contact@cloudagidemo1.vercel.app</p>
                   </div>
                 </div>
 

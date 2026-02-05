@@ -39,6 +39,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://cloudagi.com/sitemap.xml',
+    sitemap: 'https://cloudagidemo1.vercel.app/sitemap.xml',
   }
 }

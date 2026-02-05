@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About CloudAGI – Agentic AI Solutions",
     description: "Leading provider of AI agent and agentic automation solutions for SMBs.",
-    url: "https://cloudagi.com/about",
+    url: "https://cloudagidemo1.vercel.app/about",
     type: "website",
   },
 };

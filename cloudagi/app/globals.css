@@ -28,11 +28,26 @@
 }
 
 @layer base {
+  :root {
+    /* Typographic Protocols */
+    --tracking-tightest: -0.05em;
+    --tracking-tighter: -0.02em;
+    --tracking-architect: 0.15em;
+    --tracking-widest: 0.3em;
+
+    --word-spacing-standard: 0.05em;
+    --word-spacing-heading: 0.15em;
+    --word-spacing-architect: 0.4em;
+  }
+
   body {
     background: var(--bg);
     color: var(--text);
     font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
-    word-spacing: 0.1em;
+    letter-spacing: var(--tracking-tighter);
+    word-spacing: var(--word-spacing-standard);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1,
@@ -40,13 +55,17 @@
   h3,
   h4,
   h5,
-  h6,
-  button,
-  .font-outfit,
-  .heading-gradient,
-  nav a {
-    font-family: var(--font-outfit), sans-serif;
-    word-spacing: 0.45em;
+  h6 {
+    font-family: var(--font-plus-jakarta), sans-serif;
+    letter-spacing: -0.02em;
+    word-spacing: var(--word-spacing-heading);
+    @apply font-bold;
+  }
+
+  button {
+    font-family: var(--font-plus-jakarta), sans-serif;
+    letter-spacing: -0.01em;
+    word-spacing: var(--word-spacing-standard);
   }
 }
 
@@ -61,16 +80,30 @@
     @apply mb-12 md:mb-20;
   }
 
-  /* Architectural Typography */
-  .tracking-architect {
-    letter-spacing: 0.15em;
-    word-spacing: 0.4em;
-    @apply uppercase font-black;
-    font-family: var(--font-outfit), sans-serif;
+  /* Architectural Protocols */
+  .protocol-heading {
+    font-family: var(--font-plus-jakarta), sans-serif;
+    letter-spacing: -0.03em;
+    word-spacing: var(--word-spacing-heading);
+    @apply font-extrabold;
+  }
+
+  .protocol-label {
+    font-family: var(--font-inter), sans-serif;
+    letter-spacing: 0.1em;
+    word-spacing: 0.2em;
+    @apply uppercase font-bold text-[10px] text-gray-400;
+  }
+
+  .protocol-body {
+    font-family: var(--font-inter), sans-serif;
+    letter-spacing: -0.01em;
+    word-spacing: var(--word-spacing-standard);
+    @apply font-normal leading-relaxed text-gray-400;
   }
 
   .heading-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400 font-black italic;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400 font-bold;
   }
 
   /* Premium Effects */
@@ -97,9 +130,14 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Global Transitions */
-* {
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+/* Performance-Optimized Transitions */
+button,
+a,
+input,
+textarea,
+.group,
+.transition-node {
+  transition-property: background-color, border-color, color, opacity, box-shadow, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
