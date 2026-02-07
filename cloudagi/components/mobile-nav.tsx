@@ -7,7 +7,6 @@ import { MenuIcon, XIcon, Home, Layers, Notebook, Users, ArrowRight, Zap } from 
 import React from "react";
 import { navLinks } from "@/components/navbar";
 import Link from "next/link";
-import { useChat } from "@/context/chat-context";
 import { useQuiz } from "@/context/quiz-context";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -16,7 +15,6 @@ import { createPortal } from "react-dom";
 export function MobileNav({ isDarkTheme = true }: { isDarkTheme?: boolean }) {
 	const [open, setOpen] = React.useState(false);
 	const { isMobile } = useMediaQuery();
-	const { openChat } = useChat();
 	const { openQuiz } = useQuiz();
 	const pathname = usePathname();
 	const [mounted, setMounted] = React.useState(false);
@@ -42,7 +40,7 @@ export function MobileNav({ isDarkTheme = true }: { isDarkTheme?: boolean }) {
 		setTimeout(openQuiz, 300);
 	};
 
-	const iconMap: Record<string, any> = {
+	const iconMap: Record<string, React.ElementType> = {
 		"Home": Home,
 		"Services": Layers,
 		"Insights": Notebook,
@@ -165,7 +163,7 @@ export function MobileNav({ isDarkTheme = true }: { isDarkTheme?: boolean }) {
 											onClick={handleQuizClick}
 											className="group w-full flex items-center justify-between pl-6 pr-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-black uppercase tracking-widest text-[10px] rounded-[1.5rem] shadow-xl shadow-blue-500/20 active:scale-[0.98] transition-all"
 										>
-											<span>Book Your Session</span>
+											<span>Analyze My Architecture</span>
 											<div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md group-hover:bg-white/20 transition-colors">
 												<ArrowRight className="size-4" />
 											</div>

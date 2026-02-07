@@ -23,10 +23,7 @@ export function BlueprintModal({ isOpen, onClose }: BlueprintModalProps) {
         }
     }, [isOpen, step]);
 
-    const reset = () => {
-        setStep(0);
-        setAnswers({ focus: "", volume: 50 });
-    };
+
 
     if (!isOpen) return null;
 

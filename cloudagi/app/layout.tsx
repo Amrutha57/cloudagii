@@ -1,13 +1,14 @@
 import React from "react";
 import "./globals.css";
 
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, Outfit } from "next/font/google";
 import { Header } from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Providers } from "@/components/Providers";
 import { ChatBot } from "@/components/chatbot";
 import { BlueprintModalContainer } from "@/components/blueprint-modal-container";
 import { PlaybookModalContainer } from "@/components/playbook-modal-container";
+import { VisualEffects } from "@/components/visual-effects";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -18,6 +19,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
   display: "swap",
 });
 
@@ -129,7 +136,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="en" suppressHydrationWarning className={`${plusJakartaSans.variable} ${inter.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${plusJakartaSans.variable} ${inter.variable} ${outfit.variable}`}>
       <head>
         <meta name="google-site-verification" content="MQVJM9bDiVqazcztLFi5uMm_TOiz4Yl9yslYYGFHzG8" />
         <meta name="msvalidate.01" content="C84846955C8B8D3CA681FFEDD7F922FA" />
@@ -149,7 +156,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-inter">
         <Providers>
           <Header />
-          {children}
+          <VisualEffects>
+            {children}
+          </VisualEffects>
           <BlueprintModalContainer />
           <PlaybookModalContainer />
           <Footer />

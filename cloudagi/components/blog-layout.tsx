@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useDiagnostic } from "@/context/diagnostic-context";
 
 interface BlogLayoutProps {
     children: React.ReactNode;
@@ -37,8 +38,16 @@ export default function BlogLayout({
 }: BlogLayoutProps) {
     const [scrollProgress, setScrollProgress] = useState(0);
     const [showScrollTop, setShowScrollTop] = useState(false);
+    const { updatePageMetadata } = useDiagnostic();
 
     useEffect(() => {
+        updatePageMetadata({
+            title,
+            description: subtitle,
+            url: typeof window !== "undefined" ? window.location.href : slug,
+            type: "blog"
+        });
+
         const handleScroll = () => {
             const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const progress = (window.scrollY / totalHeight) * 100;
@@ -108,7 +117,7 @@ export default function BlogLayout({
                     </div>
 
                     {/* Title */}
-                    <h1 className="text-4xl md:text-6xl font-black text-gray-950 mb-6 leading-[1.1] uppercase tracking-tighter italic font-outfit">
+                    <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-gray-950 mb-6 leading-[1.1] uppercase tracking-tighter italic font-outfit">
                         {title}
                     </h1>
 
@@ -132,8 +141,8 @@ export default function BlogLayout({
                     </div>
 
                     {/* Social Share Buttons */}
-                    <div className="flex items-center gap-3 mb-16">
-                        <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest mr-2">Share Node:</span>
+                    <div className="flex flex-wrap items-center gap-3 mb-16">
+                        <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest mr-2 w-full md:w-auto mb-2 md:mb-0">Share Node:</span>
                         <button
                             onClick={shareOnLinkedIn}
                             className="flex items-center gap-2 px-5 py-2.5 bg-[#0077B5] text-white rounded-full hover:bg-[#006399] transition-all text-[10px] font-black uppercase tracking-widest active-scale"

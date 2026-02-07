@@ -2,12 +2,11 @@
 
 import { useScroll } from "@/hooks/use-scroll";
 import { Logo } from "@/components/logo";
-import { Button, buttonVariants } from "@/components/button";
+import { buttonVariants } from "@/components/button";
 import { cn } from "@/components/lib/utils";
 import { MobileNav } from "@/components/mobile-nav";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useChat } from "@/context/chat-context";
 import { useQuiz } from "@/context/quiz-context";
 
 export const navLinks = [
@@ -19,7 +18,6 @@ export const navLinks = [
 export function Header() {
   const scrolled = useScroll(10);
   const pathname = usePathname();
-  const { openChat } = useChat();
   const { openQuiz } = useQuiz();
 
   // Detect pages with white background (individual blog posts)

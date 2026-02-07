@@ -42,7 +42,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter italic"
+            className="text-3xl sm:text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter italic"
           >
             Execute <span className="heading-gradient">Your Vision</span>
           </motion.h1>
@@ -145,7 +145,7 @@ export default function Contact() {
 
                     <button
                       type="submit"
-                      className="w-full px-6 py-4 md:px-8 md:py-5 bg-white text-black font-black text-base md:text-lg rounded-2xl hover:bg-blue-50 transition-all duration-300 hover:scale-[1.02] uppercase tracking-tighter"
+                      className="w-full px-6 py-3.5 md:px-8 md:py-5 bg-white text-black font-black text-sm md:text-lg rounded-xl md:rounded-2xl hover:bg-blue-50 transition-all duration-300 hover:scale-[1.02] uppercase tracking-tighter"
                     >
                       Analyze & Process Inquiry
                     </button>
@@ -163,32 +163,32 @@ export default function Contact() {
               className="space-y-10"
             >
               <div className="space-y-6">
-                <h3 className="text-5xl font-black text-white uppercase tracking-tighter italic">Direct <span className="heading-gradient">Node</span></h3>
+                <h3 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tighter italic">Direct <span className="heading-gradient">Node</span></h3>
                 <p className="text-xl text-gray-400 font-light leading-relaxed">Skip the queue. Connect with us directly if you require immediate architectural consultation.</p>
               </div>
 
               <div className="space-y-8">
-                <div className="flex items-center gap-6 group cursor-pointer">
-                  <div className="w-16 h-16 rounded-[1.5rem] bg-white/5 border border-white/10 flex items-center justify-center text-blue-500 group-hover:bg-white group-hover:text-black transition-all">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="flex items-center gap-4 sm:gap-6 group cursor-pointer">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 shrink-0 rounded-[1.2rem] sm:rounded-[1.5rem] bg-white/5 border border-white/10 flex items-center justify-center text-blue-500 group-hover:bg-white group-hover:text-black transition-all">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Inquiry Gateway</p>
-                    <p className="text-2xl font-bold text-white tracking-tight italic">contact@cloudagidemo1.vercel.app</p>
+                    <p className="text-lg sm:text-2xl font-bold text-white tracking-tight italic break-all sm:break-normal">contact@cloudagidemo1.vercel.app</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-6 group cursor-pointer">
-                  <div className="w-16 h-16 rounded-[1.5rem] bg-white/5 border border-white/10 flex items-center justify-center text-blue-500 group-hover:bg-white group-hover:text-black transition-all">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="flex items-center gap-4 sm:gap-6 group cursor-pointer">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 shrink-0 rounded-[1.2rem] sm:rounded-[1.5rem] bg-white/5 border border-white/10 flex items-center justify-center text-blue-500 group-hover:bg-white group-hover:text-black transition-all">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div>
                     <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Processing Clock</p>
-                    <p className="text-2xl font-bold text-white tracking-tight italic">&lt; 12 Hours</p>
+                    <p className="text-lg sm:text-2xl font-bold text-white tracking-tight italic">&lt; 12 Hours</p>
                   </div>
                 </div>
               </div>

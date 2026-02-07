@@ -2,12 +2,10 @@
 
 import { motion } from "framer-motion";
 import { SpotlightCard } from "@/components/spotlight-card";
-import { useChat } from "@/context/chat-context";
 import { useQuiz } from "@/context/quiz-context";
 import { usePlaybook } from "@/context/playbook-context";
 
 export default function Services() {
-  const { openChat } = useChat();
   const { openQuiz } = useQuiz();
   const { openPlaybook } = usePlaybook();
 
@@ -34,7 +32,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl md:text-8xl protocol-heading text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-8xl protocol-heading text-white mb-6"
           >
             How We <span className="heading-gradient">Solve Problems</span>
           </motion.h1>
@@ -165,7 +163,7 @@ export default function Services() {
       <section className="relative section-gap bg-dark-bg border-t border-white/5">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-6 italic uppercase tracking-tighter font-outfit">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-6 italic uppercase tracking-tighter font-outfit">
               The Agent <span className="heading-gradient">Advantage</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto italic">Why businesses are migrating from legacy automations to decentralized agentic systems.</p>
@@ -223,7 +221,7 @@ export default function Services() {
             <div className="md:w-1/2 grid grid-cols-3 gap-4">
               {[
                 "OpenAI", "Anthropic", "LangChain", "Zapier", "Pinecone", "Vercel"
-              ].map((tech, i) => (
+              ].map((tech) => (
                 <div key={tech} className="p-6 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-xs font-black text-gray-500 uppercase tracking-widest hover:text-white hover:border-blue-500/50 transition-all cursor-default">
                   {tech}
                 </div>
@@ -286,7 +284,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-8xl font-black text-white mb-8 italic uppercase tracking-tighter font-outfit">
+            <h2 className="text-3xl sm:text-5xl md:text-8xl font-black text-white mb-8 italic uppercase tracking-tighter font-outfit">
               Ready to <span className="heading-gradient">Architect?</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed italic">Let&apos;s build the future of your workflow together. No fluff. Just architecture.</p>

@@ -20,7 +20,7 @@ export default function AboutContent() {
             transition={{ duration: 0.5 }}
             className="mb-6 md:mb-8"
           >
-            <h1 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter italic">
+            <h1 className="text-3xl sm:text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter italic">
               About <span className="heading-gradient">CloudAGI</span>
             </h1>
             <div className="h-1.5 w-24 bg-blue-500 mx-auto rounded-full" />
@@ -135,7 +135,7 @@ export default function AboutContent() {
                 className="space-y-6"
               >
                 <span className="px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-[10px] font-black uppercase tracking-widest inline-block">Methodology</span>
-                <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter italic leading-none">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter italic leading-none">
                   Operating <span className="heading-gradient">Principles</span>
                 </h2>
                 <div className="w-12 h-1.5 bg-blue-600 rounded-full" />
@@ -211,7 +211,7 @@ export default function AboutContent() {
 
             <div className="relative z-10 flex flex-col md:flex-row items-center gap-16">
               <div className="w-full md:w-1/3">
-                <div className="aspect-square bg-gradient-to-br from-blue-600 to-indigo-600 rounded-[2rem] flex items-center justify-center text-8xl font-black text-white shadow-2xl rotate-2">
+                <div className="aspect-square w-24 h-24 sm:w-32 sm:h-32 md:w-auto md:h-auto mx-auto bg-gradient-to-br from-blue-600 to-indigo-600 rounded-[2rem] flex items-center justify-center text-4xl sm:text-6xl md:text-8xl font-black text-white shadow-2xl rotate-2">
                   AR
                 </div>
                 <div className="mt-8 text-center">
@@ -262,7 +262,7 @@ export default function AboutContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl font-black text-white mb-8 uppercase tracking-tighter italic">Ready to <span className="heading-gradient">Work Together?</span></h2>
+            <h2 className="text-3xl sm:text-5xl font-black text-white mb-8 uppercase tracking-tighter italic">Ready to <span className="heading-gradient">Work Together?</span></h2>
             <p className="text-2xl text-gray-400 mb-12 font-light">Let&apos;s turn your business objectives into agentic reality.</p>
             <Link
               href="/contact"

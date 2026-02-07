@@ -5,9 +5,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { SpotlightCard } from "@/components/spotlight-card";
+import { useDiagnostic } from "@/context/diagnostic-context";
+import { useEffect } from "react";
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const { updatePageMetadata } = useDiagnostic();
+
+  useEffect(() => {
+    updatePageMetadata({
+      title: "CloudAGI Insights & Architecture",
+      description: "Strategic thoughts on building the next generation of business intelligence.",
+      url: typeof window !== "undefined" ? window.location.href : "/blog",
+      type: "index"
+    });
+  }, [updatePageMetadata]);
 
   const categories = ["All", "AI Systems", "Architecture", "Business ROI", "Production", "Scaling", "Future Trends"];
 
@@ -160,7 +172,7 @@ export default function BlogPage() {
       <section className="relative max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
-            {filteredBlogs.map((blog, i) => (
+            {filteredBlogs.map((blog) => (
               <motion.div
                 key={blog.slug}
                 layout
